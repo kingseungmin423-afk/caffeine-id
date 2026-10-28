@@ -10,3 +10,10 @@ export const DRAG_THRESHOLD = 5
 export const DRAG_MOMENTUM_MS = 160
 
 export const prefersReducedMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
+/** CSS 시간 값 → ms. 배포용 빌드는 '1000ms'를 '1s'로 줄여 쓰므로 단위를 꼭 본다 */
+export const cssTimeMs = (value: string) => {
+  const v = value.trim()
+  const n = parseFloat(v)
+  return v.endsWith('ms') ? n : v.endsWith('s') ? n * 1000 : n
+}

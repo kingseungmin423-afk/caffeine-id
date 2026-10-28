@@ -5,7 +5,7 @@
 // 카드 요소는 그대로 두고 자리(앞·뒤) 클래스만 바꿔서, 움직임이 끝난 모습과 바뀐 자리가 정확히 이어진다.
 import { useRef, type ReactNode } from 'react'
 import { flushSync } from 'react-dom'
-import { prefersReducedMotion } from '../../config/motion'
+import { cssTimeMs, prefersReducedMotion } from '../../config/motion'
 import { cx } from '../../components/cx'
 import styles from './Result.module.css'
 
@@ -61,7 +61,7 @@ export function CardDeck({ front, back, backCover, lanyard, flipped, onFlip }: P
     const dx = num(d, '--m-screen-result-card-back-x') - num(d, '--m-screen-result-card-front-x')
     const dy = num(d, '--m-screen-result-card-back-y') - num(d, '--m-screen-result-card-front-y')
     const rot = num(d, '--m-screen-result-card-back-rotate')
-    const duration = num(d, '--motion-card-swap')
+    const duration = cssTimeMs(css(d, '--motion-card-swap'))
     const w = top.offsetWidth
     const h = top.offsetHeight
     const ease = (e: string) => css(d, e)

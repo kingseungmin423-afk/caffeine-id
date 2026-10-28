@@ -20,8 +20,9 @@ export default defineConfig({
       transformIndexHtml: (html) => html.replace(/%TOKEN:(--[\w-]+)%/g, (_, name: string) => token(name)),
     },
     VitePWA({
-      // 새 버전은 받아 두기만 하고, 앱을 완전히 닫았다 다시 열 때 적용된다 (업데이트 안내 UI 없음)
-      registerType: 'prompt',
+      // 새 버전은 받자마자 대기 없이 교체되고, 다음에 앱을 열거나 새로고침할 때 화면에 적용된다 (업데이트 안내 UI 없음).
+      // 'prompt'(모든 창을 닫아야 교체)는 아이폰 홈 화면 앱처럼 창이 잘 안 닫히는 환경에서 업데이트가 계속 미뤄졌다
+      registerType: 'autoUpdate',
       injectRegister: 'script-defer',
       manifest: {
         name: '카페인 신원조회',
@@ -49,6 +50,8 @@ export default defineConfig({
         // /item/… 같은 주소로 바로 열어도 오프라인에서 앱이 뜬다
         navigateFallback: '/index.html',
         cleanupOutdatedCaches: true,
+        skipWaiting: true,
+        clientsClaim: true,
       },
     }),
   ],

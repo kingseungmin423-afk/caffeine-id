@@ -11,6 +11,17 @@ const { rules } = JSON.parse(readFileSync(resolve(root, 'src/data/category-rules
 // 검색용: 띄어쓰기·기호를 빼고 소문자로
 const norm = (s) => s.toLowerCase().replace(/[\s·()[\]{}\-_.,/]+/g, '')
 
+// 검색 키: 이름 + 별칭 + 브랜드.
+// - 이름·별칭은 어디에 들어 있어도 찾는다
+// - 제조사+이름처럼 이름 앞에 무언가를 붙인 별칭은 '^'를 붙여 앞부분이 맞을 때만 찾는다
+//   (콜라 → '코카콜라몬스터에너지', '커피' → '메가커피녹차라떼'가 걸리지 않게)
+// - 브랜드는 '@'를 붙여 앞부분이 맞을 때만
+const searchKeys = (x) => {
+  const name = norm(x.name_ko)
+  const aliases = x.aliases.split(';').filter(Boolean).map(norm).filter((a) => a && a !== name)
+  return [...new Set([name, ...aliases.map((a) => (a.endsWith(name) ? '^' + a : a))])].concat(x.brand ? ['@' + norm(x.brand)] : [])
+}
+
 const appCategory = (x) => {
   for (const r of rules) {
     if (r.category && !r.category.includes(x.category)) continue
@@ -33,8 +44,7 @@ const items = src.items.map((x) => ({
   caffeine: x.has_caffeine,
   confidence: x.confidence,
   checked: x.checked_at,
-  // 검색 키: 이름 + 별칭. 브랜드는 '@'를 붙여 따로 (앞부분이 맞을 때만 찾는다: '콜라' → 코카-콜라음료의 몬스터 제외)
-  keys: [...new Set([x.name_ko, ...x.aliases.split(';')].filter(Boolean).map(norm))].concat(x.brand ? ['@' + norm(x.brand)] : []),
+  keys: searchKeys(x),
 }))
 
 const counts = {}

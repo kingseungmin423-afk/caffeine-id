@@ -77,7 +77,7 @@ export function per100(item: Item): string | null {
 
 export const normalize = (s: string) => s.toLowerCase().replace(/[\s·()[\]{}\-_.,/]+/g, '')
 
-/** 띄어쓰기를 무시하고 이름·별칭(포함), 브랜드(앞부분 일치)에서 찾는다. 정확도순: 같음 > 앞부분 일치 > 포함, 같으면 이름이 짧은 순 */
+/** 띄어쓰기를 무시하고 이름·별칭(포함), 브랜드·'제조사+이름' 별칭(앞부분 일치)에서 찾는다. 정확도순: 같음 > 앞부분 일치 > 포함, 같으면 이름이 짧은 순 */
 export function search(items: Item[], query: string): Item[] {
   const q = normalize(query)
   if (!q) return []
@@ -85,9 +85,10 @@ export function search(items: Item[], query: string): Item[] {
   for (const item of items) {
     let score = 0
     for (const key of item.keys) {
-      const brand = key.startsWith('@')
-      const k = brand ? key.slice(1) : key
-      if (brand && !k.startsWith(q)) continue
+      // '@' 브랜드, '^' 제조사+이름 별칭: 앞부분이 맞을 때만
+      const prefixOnly = key.startsWith('@') || key.startsWith('^')
+      const k = prefixOnly ? key.slice(1) : key
+      if (prefixOnly && !k.startsWith(q)) continue
       if (k === q) score = Math.max(score, 3)
       else if (k.startsWith(q)) score = Math.max(score, 2)
       else if (k.includes(q)) score = Math.max(score, 1)
@@ -104,7 +105,7 @@ export function search(items: Item[], query: string): Item[] {
 export function similarItems(items: Item[], query: string, limit = 3): Item[] {
   const words = query.split(/\s+/).map(normalize).filter((w) => w.length >= 2)
   if (!words.length) return []
-  const has = (item: Item, w: string) => item.keys.some((k) => !k.startsWith('@') && k.includes(w))
+  const has = (item: Item, w: string) => item.keys.some((k) => !k.startsWith('@') && !k.startsWith('^') && k.includes(w))
   const head = words[words.length - 1]
   const pool = items.some((i) => has(i, head)) ? items.filter((i) => has(i, head)) : items
   const scored = pool.map((item) => ({ item, hits: words.filter((w) => has(item, w)).length })).filter((s) => s.hits > 0)

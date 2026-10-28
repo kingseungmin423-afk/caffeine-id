@@ -1,7 +1,7 @@
 # 카페인 신원조회 PWA — 작업 인수인계
 
 '음식 속에 숨어 있는 카페인 찾기' 포트폴리오 과제. 먹기 전에 음식의 카페인을 신분증 형식으로 조회하는 PWA.
-현재 상태(2026-10-28): **개발 순서 1~6 완료, 7의 피그마 비교 완료** (토큰·아이콘·이미지, 공통 컴포넌트, 화면 9개, 인터랙션, PWA, 제보 전송). 남은 것: 배포(사용자 허락 후) → 실제 폰 확인. 피그마 비교는 개발 서버 콘솔 `compareScreen(키)` (애니메이션 끝난 뒤, 375px). 의도한 차이: 한글 낱말 단위 줄바꿈(피그마는 글자 단위라 09 정보 줄 수가 다름), 05 사진 출처 줄(관련 음식이 아래로), 4칸 탭바, 커피 환산 실제 계산값.
+현재 상태(2026-10-28): **개발 순서 1~6 완료, 7의 피그마 비교 완료** (토큰·아이콘·이미지, 공통 컴포넌트, 화면 9개, 인터랙션, PWA, 제보 전송). 배포 완료(2026-10-28): GitHub `kingseungmin423-afk/caffeine-id`(공개, main 올리면 Vercel 자동 배포), Vercel 프로젝트 `caffeine-id`(Root Directory `app`, 환경 변수 2개) → https://caffeine-id-eosin.vercel.app . 남은 것: 실제 폰에서 설치·오프라인 확인. 피그마 비교는 개발 서버 콘솔 `compareScreen(키)` (애니메이션 끝난 뒤, 375px). 의도한 차이: 한글 낱말 단위 줄바꿈(피그마는 글자 단위라 09 정보 줄 수가 다름), 05 사진 출처 줄(관련 음식이 아래로), 4칸 탭바, 커피 환산 실제 계산값.
 - PWA: `app/vite.config.ts`(vite-plugin-pwa 1.3.0, manifest 색은 토큰, 처음 방문 때 앱·DB·사진·글꼴 전부 캐시, 새 버전은 앱을 완전히 닫았다 열 때 적용), `app/vercel.json`(주소 새로고침 → index.html). 임시 아이콘은 `npm run app-icons` → `public/icons/*` (진짜 아이콘 받으면 파일만 교체). 설치 팝업 자리 `screens/InstallPrompt.tsx` + `store/install.ts`(02 메인에서, 디자인 받기 전 임시). 배포본 확인은 `npm run build` 후 미리보기 `app-preview`(4173).
 - PC 화면(사용자 요청, 피그마에 없음): 마우스 쓰는 넓은 화면이면 양옆 회색(`--color-gray-200`), 앱은 가운데 375 폭을 화면 높이에 맞춰 키움(최대 1.5배). `screens/desktopFrame.ts` + `styles/base.css`. 상단 바 색(theme-color)은 화면 테마를 따라감(`TabDock.tsx`).
 - 인터랙션: 움직임 값은 `app/src/styles/motion.css`(피그마 프로토타입 값 + '추가' 표시), `app/src/config/motion.ts`. 탭바는 앱에 하나(`screens/TabDock.tsx`)라 화면이 바뀌어도 선택 표시가 튕기며 옮겨 간다. 가로 줄 끌기·카드 단위 멈춤은 `components/useDragScroll.ts` + `styles/drag-scroll.css`.

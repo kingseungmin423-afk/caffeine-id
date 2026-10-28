@@ -1,0 +1,103 @@
+.root {
+  position: relative;
+  flex: none;
+  width: var(--m-lanyard-w);
+}
+
+.Long {
+  height: var(--m-lanyard-dark-long-h);
+  --strap-h: var(--m-lanyard-dark-long-strap-h);
+  --label-y: var(--m-lanyard-dark-long-label-y);
+  --clip-y: var(--m-lanyard-dark-long-clip-y);
+  --connector-y: var(--m-lanyard-dark-long-connector-y);
+  --ring-y: var(--m-lanyard-dark-long-ring-y);
+}
+
+.Light.Long {
+  height: var(--m-lanyard-light-long-h);
+  --strap-h: var(--m-lanyard-light-long-strap-h);
+  --label-y: var(--m-lanyard-light-long-label-y);
+  --clip-y: var(--m-lanyard-light-long-clip-y);
+  --connector-y: var(--m-lanyard-light-long-connector-y);
+  --ring-y: var(--m-lanyard-light-long-ring-y);
+}
+
+.Visitor.Long {
+  height: var(--m-lanyard-visitor-long-h);
+  --strap-h: var(--m-lanyard-visitor-long-strap-h);
+  --label-y: var(--m-lanyard-visitor-long-label-y);
+  --clip-y: var(--m-lanyard-visitor-long-clip-y);
+  --connector-y: var(--m-lanyard-visitor-long-connector-y);
+  --ring-y: var(--m-lanyard-visitor-long-ring-y);
+}
+
+.Short {
+  height: var(--m-lanyard-dark-short-h);
+  --strap-h: var(--m-lanyard-dark-short-strap-h);
+  --label-y: var(--m-lanyard-dark-short-label-y);
+  --clip-y: var(--m-lanyard-dark-short-clip-y);
+  --connector-y: var(--m-lanyard-dark-short-connector-y);
+  --ring-y: var(--m-lanyard-dark-short-ring-y);
+}
+
+.strap,
+.label,
+.clip,
+.connector,
+.ring {
+  position: absolute;
+}
+
+.strap {
+  left: var(--m-lanyard-strap-x);
+  top: var(--m-lanyard-strap-y);
+  width: var(--m-lanyard-strap-w);
+  height: var(--strap-h);
+}
+
+.Dark .strap {
+  background: var(--bg-inverse-accent);
+}
+.Light .strap {
+  background: var(--bg-inverse);
+}
+.Visitor .strap {
+  background: var(--color-gray-750);
+}
+
+/* 피그마 텍스트 회전: 원점(왼쪽 위) 기준 */
+.label {
+  composes: t-caption-10-semibold from global;
+  left: var(--m-lanyard-label-x);
+  top: var(--label-y);
+  transform-origin: 0 0;
+  transform: rotate(var(--m-lanyard-label-rotate));
+  color: var(--text-inverse-subtle);
+  white-space: pre;
+}
+
+.clip {
+  left: var(--m-lanyard-clip-x);
+  top: var(--clip-y);
+  width: var(--m-lanyard-clip-w);
+  height: var(--m-lanyard-clip-h);
+  background: var(--bg-disabled);
+  border-radius: var(--radius-2);
+}
+
+.connector {
+  left: var(--m-lanyard-connector-x);
+  top: var(--connector-y);
+  width: var(--m-lanyard-connector-w);
+  height: var(--m-lanyard-connector-h);
+  background: var(--bg-disabled);
+}
+
+.ring {
+  left: var(--m-lanyard-ring-x);
+  top: var(--ring-y);
+  width: var(--m-lanyard-ring-w);
+  height: var(--m-lanyard-ring-h);
+  border: var(--m-lanyard-ring-stroke) solid var(--color-cool-gray-400);
+  border-radius: var(--radius-full);
+}

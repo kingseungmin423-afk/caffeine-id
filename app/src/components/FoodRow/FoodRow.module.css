@@ -1,0 +1,56 @@
+.root {
+  display: flex;
+  align-items: center;
+  gap: var(--space-14);
+  width: 100%;
+  height: var(--m-foodrow-h);
+  padding: 0;
+  border-style: solid;
+  border-width: var(--m-foodrow-stroke);
+  border-color: var(--border-default);
+  background: none;
+  text-align: left;
+  cursor: pointer;
+}
+
+.text {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--space-4);
+  min-width: 0;
+  overflow: hidden;
+}
+
+.name {
+  composes: t-body-15-semibold from global;
+  color: var(--text-primary);
+}
+
+.meta {
+  composes: t-body-13-regular from global;
+  color: var(--text-placeholder);
+}
+
+.name,
+.meta {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.value {
+  display: flex;
+  flex: none;
+  align-items: center;
+  gap: var(--space-8);
+}
+
+.amount {
+  composes: t-heading-16-bold from global;
+  color: var(--text-primary);
+}
+
+.unknown {
+  color: var(--text-placeholder);
+}

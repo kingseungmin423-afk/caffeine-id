@@ -1,0 +1,25 @@
+.root {
+  display: flex;
+  align-items: center;
+  gap: var(--space-16);
+  width: 100%;
+  padding: var(--space-12) 0;
+  overflow: hidden;
+  border: none;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+}
+
+.name {
+  composes: t-body-15-regular from global;
+  flex: 1;
+  min-width: 0;
+  color: var(--text-inverse);
+}
+
+.amount {
+  composes: t-body-15-bold from global;
+  flex: none;
+  color: var(--text-inverse);
+}

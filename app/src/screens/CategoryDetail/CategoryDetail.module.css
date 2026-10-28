@@ -1,0 +1,66 @@
+/* 피그마 02-2 카테고리 상세 (--m-screen-category-detail-*) */
+.screen {
+  align-items: flex-start;
+  padding-top: var(--m-screen-category-detail-카테고리-y);
+  padding-bottom: calc(
+    var(--m-screen-category-detail-h) - var(--m-screen-category-detail-미발급-카드를-누르면-바로-신원조회를-시작해요-y) -
+      var(--m-screen-category-detail-미발급-카드를-누르면-바로-신원조회를-시작해요-h)
+  );
+}
+
+.title {
+  composes: t-display-30-bold-125 from global;
+  margin: calc(var(--m-screen-category-detail-탄산음료-y) - var(--m-screen-category-detail-카테고리-y) - var(--m-screen-category-detail-카테고리-h)) 0 0;
+}
+
+.sub {
+  composes: t-body-13-regular from global;
+  margin: calc(
+      var(--m-screen-category-detail-조회한-음료는-사진이-붙은-신분증으로-보여요-y) - var(--m-screen-category-detail-탄산음료-y) -
+        var(--m-screen-category-detail-탄산음료-h)
+    )
+    0 0;
+  color: var(--text-inverse-tertiary);
+}
+
+.meta {
+  display: flex;
+  align-self: stretch;
+  justify-content: space-between;
+  margin-top: calc(
+    var(--m-screen-category-detail-전체-7장-y) - var(--m-screen-category-detail-조회한-음료는-사진이-붙은-신분증으로-보여요-y) -
+      var(--m-screen-category-detail-조회한-음료는-사진이-붙은-신분증으로-보여요-h)
+  );
+}
+
+.count {
+  composes: t-body-13-regular from global;
+  color: var(--text-inverse-tertiary);
+}
+
+.sort {
+  composes: t-body-13-medium from global;
+  color: var(--text-inverse);
+}
+
+/* 2열 지갑: 가로·세로 간격 space/20 */
+.wallet {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: var(--space-20);
+  align-self: stretch;
+  margin-top: calc(var(--m-screen-category-detail-id-wallet-y) - var(--m-screen-category-detail-전체-7장-y) - var(--m-screen-category-detail-전체-7장-h));
+}
+
+.hint {
+  composes: t-caption-12-regular from global;
+  align-self: stretch;
+  margin: calc(
+      var(--m-screen-category-detail-미발급-카드를-누르면-바로-신원조회를-시작해요-y) - var(--m-screen-category-detail-id-wallet-y) -
+        var(--m-screen-category-detail-id-wallet-h)
+    )
+    0 0;
+  text-align: center;
+  color: var(--text-inverse-muted);
+}

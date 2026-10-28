@@ -1,0 +1,41 @@
+/* 폭: 피그마 125 = 퀴즈 카드에서 VS를 뺀 반쪽 → 부모가 정한다 */
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-8);
+  width: 100%;
+  padding: calc(var(--space-16) + var(--m-quizoption-stroke)) calc(var(--space-12) + var(--m-quizoption-stroke));
+  overflow: hidden;
+  border: none;
+  border-radius: var(--radius-12);
+  background: var(--bg-paper);
+  box-shadow: inset 0 0 0 var(--m-quizoption-stroke) var(--border-default);
+  cursor: pointer;
+  transition: box-shadow var(--motion-press) var(--ease-screen);
+}
+
+/* 고른 결과: 테두리만 색과 굵기(기본의 두 배)를 바꾼다. 안쪽 여백은 그대로라 크기가 변하지 않는다 */
+.correct {
+  box-shadow: inset 0 0 0 calc(var(--m-quizoption-stroke) * 2) var(--status-info);
+}
+
+.wrong {
+  box-shadow: inset 0 0 0 calc(var(--m-quizoption-stroke) * 2) var(--border-danger);
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.name {
+  composes: t-body-14-semibold from global;
+  color: var(--text-primary);
+}
+
+.sub {
+  composes: t-caption-12-regular from global;
+  color: var(--text-placeholder);
+}

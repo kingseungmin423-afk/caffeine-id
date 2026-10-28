@@ -1,0 +1,37 @@
+.root {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* 피그마 Light는 높이 고정(24), Dark는 내용 높이 */
+.Light {
+  height: var(--m-sectionheader-h);
+}
+
+.title {
+  composes: t-heading-17-bold from global;
+  margin: 0;
+}
+
+.more {
+  composes: t-body-13-regular from global;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.Light .title {
+  color: var(--text-primary);
+}
+.Light .more {
+  color: var(--text-tertiary);
+}
+.Dark .title {
+  color: var(--text-inverse);
+}
+.Dark .more {
+  color: var(--text-inverse-tertiary);
+}

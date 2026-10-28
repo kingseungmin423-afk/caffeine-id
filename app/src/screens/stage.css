@@ -1,0 +1,19 @@
+/* 화면 위쪽 카드 무대: 피그마 375 프레임의 x 좌표를 화면 가운데 기준으로 옮긴다.
+ * 무대는 화면 폭 전체(좌우 여백 바깥까지), 높이는 각 화면이 정한다.
+ * 쓰는 법: 요소에 --x(피그마 x)·--y를 주고 composes: stage-item from global */
+.stage {
+  position: relative;
+  flex: none;
+  margin: 0 calc(-1 * var(--space-24));
+}
+
+.stage-item {
+  position: absolute;
+  left: calc(50% - var(--m-screen-main-w) / 2 + var(--x));
+  top: var(--y);
+}
+
+.stage-rotated {
+  transform-origin: 0 0;
+  transform: rotate(var(--rotate));
+}

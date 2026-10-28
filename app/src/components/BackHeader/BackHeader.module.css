@@ -1,0 +1,32 @@
+.root {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-8);
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.icon {
+  flex: none;
+  width: var(--m-backheader-icon-chevron-left-w);
+  height: var(--m-backheader-icon-chevron-left-h);
+}
+
+.title {
+  composes: t-heading-18-bold from global;
+}
+
+.Light {
+  color: var(--text-primary);
+}
+.Light .icon {
+  color: var(--icon-primary);
+}
+.Dark {
+  color: var(--text-inverse);
+}
+.Dark .icon {
+  color: var(--icon-inverse);
+}

@@ -1,0 +1,135 @@
+/* 피그마 02 메인 (확장). 요소 사이 간격은 --m-screen-main-* 위치에서 계산한다:
+ * 다음 요소 y − (앞 요소 y + 앞 요소 높이) */
+.screen {
+  padding-top: var(--m-screen-main-headline-y);
+  /* 마지막 요소 아래 ~ 화면 끝 (탭바 자리 포함) */
+  padding-bottom: calc(var(--m-screen-main-h) - var(--m-screen-main-quiz-card-y) - var(--m-screen-main-quiz-card-h));
+}
+
+.headline {
+  composes: t-display-30-bold from global;
+  margin: 0;
+  white-space: pre-line;
+}
+
+.sub {
+  composes: t-body-14-regular from global;
+  margin: calc(var(--m-screen-main-sub-y) - var(--m-screen-main-headline-y) - var(--m-screen-main-headline-h)) 0 0;
+  color: var(--text-secondary);
+}
+
+.search {
+  margin-top: calc(var(--m-screen-main-search-field-y) - var(--m-screen-main-sub-y) - var(--m-screen-main-sub-h));
+}
+
+.categoryHeader {
+  margin-top: calc(var(--m-screen-main-section-header-카테고리-y) - var(--m-screen-main-search-field-y) - var(--m-screen-main-search-field-h));
+}
+
+/* 4칸 격자: 가로 간격 space/20, 줄 간격 space/16 */
+.categoryRow {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  column-gap: var(--space-20);
+  row-gap: var(--space-16);
+  margin-top: calc(var(--m-screen-main-category-row-y) - var(--m-screen-main-section-header-카테고리-y) - var(--m-screen-main-section-header-카테고리-h));
+}
+
+.recentHeader {
+  margin-top: calc(var(--m-screen-main-section-header-y) - var(--m-screen-main-category-row-y) - var(--m-screen-main-category-row-h));
+}
+
+.recentList {
+  display: flex;
+  flex-direction: column;
+  margin-top: calc(var(--m-screen-main-recent-list-y) - var(--m-screen-main-section-header-y) - var(--m-screen-main-section-header-h));
+}
+
+/* 최근 조회가 없을 때 (피그마에 없는 상태: 기존 글자 스타일로) */
+.empty {
+  composes: t-body-13-regular from global;
+  margin: 0;
+  padding: var(--space-16) 0;
+  color: var(--text-tertiary);
+}
+
+.topHeader {
+  margin-top: calc(var(--m-screen-main-section-header-top5-y) - var(--m-screen-main-recent-list-y) - var(--m-screen-main-recent-list-h));
+}
+
+.topCard {
+  display: flex;
+  flex-direction: column;
+  margin-top: calc(var(--m-screen-main-top5-card-y) - var(--m-screen-main-section-header-top5-y) - var(--m-screen-main-section-header-top5-h));
+  /* 테두리가 레이아웃에 포함돼 안쪽 여백이 선 굵기만큼 늘어난다 */
+  padding: calc(var(--space-4) + var(--m-screen-main-top5-card-stroke)) calc(var(--space-16) + var(--m-screen-main-top5-card-stroke));
+  background: var(--bg-paper);
+  border-radius: var(--radius-16);
+  box-shadow: inset 0 0 0 var(--m-screen-main-top5-card-stroke) var(--border-default);
+}
+
+/* 마지막 줄은 아래 선이 없다 */
+.topCard > :last-child {
+  border-width: 0;
+}
+
+.quiz {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+  margin-top: calc(var(--m-screen-main-quiz-card-y) - var(--m-screen-main-top5-card-y) - var(--m-screen-main-top5-card-h));
+  padding: var(--space-20);
+  background: var(--bg-warm-subtle);
+  border-radius: var(--radius-16);
+}
+
+.quizTitle {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.quizLabel {
+  composes: t-caption-12-regular from global;
+  margin: 0;
+  color: var(--text-placeholder);
+}
+
+.quizQuestion {
+  composes: t-body-15-bold from global;
+  margin: 0;
+  white-space: pre-line;
+}
+
+.options {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+}
+
+.option {
+  display: flex;
+  flex: none;
+  width: var(--m-screen-main-quiz-card-options-option-콜라-w);
+}
+
+.vs {
+  composes: t-body-14-bold from global;
+  flex: none;
+  width: var(--m-screen-main-quiz-card-options-vs-w);
+  text-align: center;
+  color: var(--text-placeholder);
+}
+
+.quizHint {
+  composes: t-caption-12-regular from global;
+  margin: 0;
+  color: var(--text-secondary);
+}
+
+/* 퀴즈 답 (피그마에 없는 상태: 안내 문구 자리에 같은 크기, 굵게) */
+.quizResult {
+  composes: t-caption-12-semibold from global;
+  margin: 0;
+  color: var(--text-primary);
+}

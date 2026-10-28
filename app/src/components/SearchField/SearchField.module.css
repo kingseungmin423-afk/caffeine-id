@@ -1,0 +1,48 @@
+/* 폭은 부모를 채운다 (메인 327, 검색 화면 295 = 뒤로가기 옆 남은 폭) */
+.root {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  width: 100%;
+  height: var(--m-searchfield-h);
+  padding: 0 calc(var(--space-16) + var(--m-searchfield-empty-stroke));
+  overflow: hidden;
+  background: var(--bg-paper);
+  border-radius: var(--radius-14);
+  box-shadow: inset 0 0 0 var(--m-searchfield-empty-stroke) var(--border-default);
+  cursor: text;
+}
+
+.filled,
+.root:focus-within {
+  padding: 0 calc(var(--space-16) + var(--m-searchfield-filled-stroke));
+  box-shadow: inset 0 0 0 var(--m-searchfield-filled-stroke) var(--border-bold);
+}
+
+.icon {
+  flex: none;
+  width: var(--m-searchfield-icon-search-w);
+  height: var(--m-searchfield-icon-search-h);
+  color: var(--color-warm-600);
+}
+
+.input {
+  composes: t-heading-16-regular from global;
+  flex: 1;
+  min-width: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  background: none;
+  color: var(--text-primary);
+  appearance: none;
+}
+
+.input::placeholder {
+  color: var(--color-gray-350);
+  opacity: 1;
+}
+
+.input::-webkit-search-cancel-button {
+  appearance: none;
+}

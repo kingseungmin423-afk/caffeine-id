@@ -1,0 +1,26 @@
+/* 사용하는 쪽에서 정하는 값:
+ *   --dash-color   선 색 (토큰)
+ *   --dash-width   선 굵기 (--m-*-stroke)
+ *   --dash-pattern 점선 (--m-*-dash)
+ *   --dash-radius  모서리 (--radius-*)
+ * 선이 안쪽(INSIDE)에 그려지도록 굵기 절반만큼 안으로 들인다. */
+.root {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.rect {
+  x: calc(var(--dash-width) / 2);
+  y: calc(var(--dash-width) / 2);
+  width: calc(100% - var(--dash-width));
+  height: calc(100% - var(--dash-width));
+  rx: calc(var(--dash-radius) - var(--dash-width) / 2);
+  fill: none;
+  stroke: var(--dash-color);
+  stroke-width: var(--dash-width);
+  stroke-dasharray: var(--dash-pattern);
+}

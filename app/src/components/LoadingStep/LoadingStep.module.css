@@ -1,0 +1,116 @@
+.root {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: var(--m-loadingstep-h);
+}
+
+.group {
+  display: flex;
+  align-items: center;
+  gap: var(--space-14);
+}
+
+/* 체크 원의 흰 바탕은 SVG에 들어 있고, 체크 표시만 currentColor */
+.check {
+  flex: none;
+  width: var(--m-loadingstep-label-group-icon-check-circle-w);
+  height: var(--m-loadingstep-label-group-icon-check-circle-h);
+  color: var(--color-navy-900);
+}
+
+.status {
+  position: relative;
+  flex: none;
+  width: var(--m-loadingstep-label-group-status-icon-w);
+  height: var(--m-loadingstep-label-group-status-icon-h);
+}
+
+.ring {
+  position: absolute;
+  left: var(--m-loadingstep-label-group-status-icon-ring-x);
+  top: var(--m-loadingstep-label-group-status-icon-ring-y);
+  width: var(--m-loadingstep-label-group-status-icon-ring-w);
+  height: var(--m-loadingstep-label-group-status-icon-ring-h);
+  border: var(--m-loadingstep-label-group-status-icon-ring-stroke) solid;
+  border-radius: var(--radius-full);
+}
+
+.dot {
+  position: absolute;
+  left: var(--m-loadingstep-label-group-status-icon-dot-x);
+  top: var(--m-loadingstep-label-group-status-icon-dot-y);
+  width: var(--m-loadingstep-label-group-status-icon-dot-w);
+  height: var(--m-loadingstep-label-group-status-icon-dot-h);
+  border-radius: var(--radius-full);
+  background: var(--color-red-600);
+}
+
+/* 움직임 (피그마에 없음, 4단계 로딩 연출): 끝난 단계는 체크가 통 튀고, 진행 중인 점은 숨 쉬듯 커졌다 작아진다 */
+.완료 .check {
+  animation: step-pop var(--motion-tab) var(--ease-bounce);
+}
+
+.진행중 .dot {
+  animation: step-pulse var(--motion-scan) var(--ease-screen) infinite;
+}
+
+@keyframes step-pop {
+  0% {
+    transform: scale(0.6);
+  }
+  60% {
+    transform: scale(1.15);
+  }
+}
+
+@keyframes step-pulse {
+  50% {
+    transform: scale(0.7);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .완료 .check,
+  .진행중 .dot {
+    animation: none;
+  }
+}
+
+.label {
+  composes: t-heading-17-regular from global;
+}
+
+.state {
+  composes: t-body-13-regular from global;
+}
+
+.완료 .label {
+  color: var(--text-inverse-tertiary);
+}
+.완료 .state {
+  color: var(--color-navy-350);
+}
+
+.진행중 .ring {
+  border-color: var(--color-red-600);
+}
+/* Heading/17 Medium: Regular와 굵기만 다르다 */
+.진행중 .label {
+  font-weight: var(--font-weight-medium);
+  color: var(--text-inverse);
+}
+.진행중 .state {
+  color: var(--text-inverse-danger);
+}
+
+.대기 .ring {
+  border-color: var(--color-navy-600);
+}
+.대기 .label {
+  color: var(--color-navy-450);
+}
+.대기 .state {
+  color: var(--color-navy-350);
+}

@@ -1,0 +1,172 @@
+/* 피그마 04 로딩 (--m-screen-loading-*) */
+.screen {
+  padding-bottom: var(--space-24);
+}
+
+.stage {
+  composes: stage from global;
+  height: var(--m-screen-loading-step-label-y);
+}
+
+.lanyard {
+  composes: stage-item from global;
+  --x: var(--m-screen-loading-lanyard-x);
+  --y: var(--m-screen-loading-lanyard-y);
+}
+
+.card {
+  composes: stage-item from global;
+  --x: var(--m-screen-loading-idcard-x);
+  --y: var(--m-screen-loading-idcard-y);
+}
+
+.frame {
+  composes: stage-item from global;
+  --x: var(--m-screen-loading-scan-frame-x);
+  --y: var(--m-screen-loading-scan-frame-y);
+  width: var(--m-screen-loading-scan-frame-w);
+  height: var(--m-screen-loading-scan-frame-h);
+}
+
+/* 모서리 ㄱ자: 피그마 corner 프레임 안 Vector(26×26, 선 3)를 테두리 두 변으로 그린다 */
+.c1,
+.c2,
+.c3,
+.c4 {
+  position: absolute;
+  width: var(--m-screen-loading-scan-frame-corner-1-vector-w);
+  height: var(--m-screen-loading-scan-frame-corner-1-vector-h);
+  border: 0 solid var(--icon-inverse);
+}
+
+.c1 {
+  left: calc(var(--m-screen-loading-scan-frame-corner-1-x) + var(--m-screen-loading-scan-frame-corner-1-vector-x));
+  top: calc(var(--m-screen-loading-scan-frame-corner-1-y) + var(--m-screen-loading-scan-frame-corner-1-vector-y));
+  border-top-width: var(--m-screen-loading-scan-frame-corner-1-vector-stroke);
+  border-left-width: var(--m-screen-loading-scan-frame-corner-1-vector-stroke);
+}
+
+.c2 {
+  left: calc(var(--m-screen-loading-scan-frame-corner-2-x) + var(--m-screen-loading-scan-frame-corner-2-vector-x));
+  top: calc(var(--m-screen-loading-scan-frame-corner-2-y) + var(--m-screen-loading-scan-frame-corner-2-vector-y));
+  border-top-width: var(--m-screen-loading-scan-frame-corner-2-vector-stroke);
+  border-right-width: var(--m-screen-loading-scan-frame-corner-2-vector-stroke);
+}
+
+.c3 {
+  left: calc(var(--m-screen-loading-scan-frame-corner-3-x) + var(--m-screen-loading-scan-frame-corner-3-vector-x));
+  top: calc(var(--m-screen-loading-scan-frame-corner-3-y) + var(--m-screen-loading-scan-frame-corner-3-vector-y));
+  border-bottom-width: var(--m-screen-loading-scan-frame-corner-3-vector-stroke);
+  border-left-width: var(--m-screen-loading-scan-frame-corner-3-vector-stroke);
+}
+
+.c4 {
+  left: calc(var(--m-screen-loading-scan-frame-corner-4-x) + var(--m-screen-loading-scan-frame-corner-4-vector-x));
+  top: calc(var(--m-screen-loading-scan-frame-corner-4-y) + var(--m-screen-loading-scan-frame-corner-4-vector-y));
+  border-bottom-width: var(--m-screen-loading-scan-frame-corner-4-vector-stroke);
+  border-right-width: var(--m-screen-loading-scan-frame-corner-4-vector-stroke);
+}
+
+/* 스캔: 선과 빛을 감싼 .scan 하나가 스캔 틀 위아래를 오간다 (피그마 화면은 그 가운데 순간).
+ * 출발 = 틀 위 − 선 자리, 도착 = 틀 아래 − 선 자리. 한 방향에 --motion-scan, 끝에서 천천히 멈췄다 돌아선다(사인 곡선).
+ * 빛은 선이 지나온 쪽에 꼬리처럼 남고, 길이가 선의 빠르기를 따른다: 가운데서 가장 길고, 끝에서 0이 되며 반대쪽으로 넘어간다.
+ * 둘이 같은 요소에 붙어 있어서 서로 어긋날 수 없다 */
+.scan {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  animation: scan-move var(--motion-scan) var(--ease-scan) infinite alternate;
+}
+
+@keyframes scan-move {
+  from {
+    transform: translateY(calc(var(--m-screen-loading-scan-frame-y) - var(--m-screen-loading-scan-line-y)));
+  }
+  to {
+    transform: translateY(calc(var(--m-screen-loading-scan-frame-y) + var(--m-screen-loading-scan-frame-h) - var(--m-screen-loading-scan-line-y)));
+  }
+}
+
+/* 꼬리 길이 = 빠르기. 한 번 내려갔다 올라오는 동안(--motion-scan × 2) 사인 모양으로 1 → 0 → −1 → 0 */
+.glow {
+  transform-origin: 50% calc(100% - var(--m-screen-loading-scan-line-h) / 2);
+  animation: scan-trail calc(var(--motion-scan) * 2) linear infinite;
+}
+
+@keyframes scan-trail {
+  0% {
+    transform: scaleY(0);
+    animation-timing-function: var(--ease-scan-rise);
+  }
+  25% {
+    transform: scaleY(1);
+    animation-timing-function: var(--ease-scan-fall);
+  }
+  50% {
+    transform: scaleY(0);
+    animation-timing-function: var(--ease-scan-rise);
+  }
+  75% {
+    transform: scaleY(-1);
+    animation-timing-function: var(--ease-scan-fall);
+  }
+  100% {
+    transform: scaleY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scan,
+  .glow {
+    animation: none;
+  }
+}
+
+/* 단계가 바뀌면 제목이 살짝 올라오며 바뀐다 */
+.headline {
+  animation: screen-in-text var(--motion-screen) var(--ease-screen);
+}
+
+@keyframes screen-in-text {
+  from {
+    opacity: 0;
+    transform: translateY(var(--space-8));
+  }
+}
+
+.glow {
+  composes: stage-item from global;
+  --x: var(--m-screen-loading-scan-glow-x);
+  --y: var(--m-screen-loading-scan-glow-y);
+  width: var(--m-screen-loading-scan-glow-w);
+  height: var(--m-screen-loading-scan-glow-h);
+  background: var(--gradient-scan-glow);
+}
+
+.line {
+  composes: stage-item from global;
+  --x: var(--m-screen-loading-scan-line-x);
+  --y: var(--m-screen-loading-scan-line-y);
+  width: var(--m-screen-loading-scan-line-w);
+  height: var(--m-screen-loading-scan-line-h);
+  background: var(--bg-danger);
+}
+
+.stepLabel {
+  composes: t-body-13-regular from global;
+  margin: 0;
+  color: var(--text-inverse-tertiary);
+  white-space: pre;
+}
+
+.headline {
+  composes: t-title-24-bold from global;
+  margin: calc(var(--m-screen-loading-headline-y) - var(--m-screen-loading-step-label-y) - var(--m-screen-loading-step-label-h)) 0 0;
+}
+
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: var(--m-screen-loading-steps-gap);
+  margin-top: calc(var(--m-screen-loading-steps-y) - var(--m-screen-loading-headline-y) - var(--m-screen-loading-headline-h));
+}

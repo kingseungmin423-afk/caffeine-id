@@ -1,0 +1,80 @@
+.root {
+  position: relative;
+  flex: none;
+  width: var(--m-idcardback-w);
+  height: var(--m-idcardback-h);
+  overflow: hidden;
+  border-radius: var(--radius-12);
+}
+
+.표시 {
+  background: var(--bg-inverse);
+  box-shadow:
+    inset 0 0 0 var(--m-idcardback-stroke) var(--border-inverse-subtle),
+    var(--shadow-idcard-확인);
+}
+
+.숨김 {
+  background: var(--color-navy-800);
+  box-shadow: var(--shadow-idcard-검사중);
+}
+
+.handle {
+  position: absolute;
+  left: var(--m-idcardback-handle-x);
+  top: var(--m-idcardback-handle-y);
+  width: var(--m-idcardback-handle-w);
+  height: var(--m-idcardback-handle-h);
+  background: var(--bg-inverse-raised);
+  border-radius: var(--radius-4);
+}
+
+/* 아래에서 위로 읽는 세로 제목: 원점(왼쪽 위) 기준 회전 */
+.verticalTitle {
+  composes: t-display-50-black from global;
+  position: absolute;
+  left: var(--m-idcardback-vertical-title-x);
+  top: var(--m-idcardback-vertical-title-y);
+  color: var(--text-inverse);
+  white-space: nowrap;
+  transform-origin: 0 0;
+  transform: rotate(var(--m-idcardback-vertical-title-rotate));
+}
+
+.info {
+  position: absolute;
+  left: var(--m-idcardback-info-x);
+  top: var(--m-idcardback-info-y);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  width: var(--m-idcardback-info-w);
+  height: var(--m-idcardback-info-h);
+  margin: 0;
+  overflow: hidden;
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  composes: t-caption-12-regular from global;
+  color: var(--text-inverse-tertiary);
+}
+
+.value {
+  composes: t-heading-16-bold from global;
+  margin: 0;
+  color: var(--text-inverse);
+}
+
+.divider {
+  flex: none;
+  width: 100%;
+  height: var(--m-idcardback-info-divider-1-h);
+  margin: 0;
+  border: none;
+  background: var(--bg-inverse-raised);
+}

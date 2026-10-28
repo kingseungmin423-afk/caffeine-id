@@ -1,0 +1,68 @@
+/* 화면 폭 375에 좌우 24 여백 → 피그마와 같은 327 콘텐츠 폭 */
+.root {
+  display: flex;
+  flex-direction: column;
+}
+
+.light,
+.dark {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+  padding: var(--space-24);
+}
+
+.light {
+  background: var(--bg-canvas);
+}
+
+.dark {
+  background: var(--bg-inverse);
+}
+
+.blockTitle {
+  composes: t-caption-12-semibold from global;
+  margin: 0;
+  color: var(--text-tertiary);
+}
+
+.dark .blockTitle {
+  color: var(--text-inverse-muted);
+}
+
+.items {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: var(--space-16);
+}
+
+.items > * {
+  flex-shrink: 0;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-24);
+}
+
+.grid4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: var(--space-20);
+  width: 100%;
+}
+
+.grid2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: start;
+  gap: var(--space-20);
+  width: 100%;
+}
+
+.quiz {
+  display: flex;
+  width: var(--m-quizoption-w);
+}

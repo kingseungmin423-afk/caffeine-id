@@ -1,0 +1,9 @@
+/* Pretendard 가변 글꼴을 앱에 포함 (오프라인에서도 표시).
+ * 이름은 피그마 변수 font/family 값('Pretendard')과 같게 둔다. 굵기는 tokens.css의 --font-weight-* 사용. */
+@font-face {
+  font-family: 'Pretendard';
+  src: url('pretendard/dist/web/variable/woff2/PretendardVariable.woff2') format('woff2-variations');
+  font-weight: 45 920;
+  font-style: normal;
+  font-display: swap;
+}

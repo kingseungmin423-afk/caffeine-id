@@ -1,0 +1,90 @@
+/* 피그마 03 검색 (--m-screen-search-*) */
+.screen {
+  padding-top: var(--m-screen-search-search-field-y);
+  padding-bottom: calc(var(--m-screen-search-h) - var(--m-screen-search-tabbar-y) + var(--space-24));
+}
+
+/* 뒤로가기(x 24) + 검색창(x 56): 사이 간격 = 56 − 24 − 24 */
+.top {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--m-screen-search-search-field-x) - var(--m-screen-search-icon-chevron-left-x) - var(--m-screen-search-icon-chevron-left-w));
+  margin: 0;
+}
+
+.back {
+  display: flex;
+  flex: none;
+  padding: 0;
+  border: none;
+  background: none;
+  color: var(--icon-primary);
+  cursor: pointer;
+}
+
+.backIcon {
+  width: var(--m-screen-search-icon-chevron-left-w);
+  height: var(--m-screen-search-icon-chevron-left-h);
+}
+
+/* 칩이 많으면 가로로 밀어서 본다 (PC는 마우스로 끌기) */
+.chips {
+  composes: drag-scroll drag-scroll-chips from global;
+  display: flex;
+  gap: var(--space-8);
+  margin: calc(var(--m-screen-search-filter-chips-y) - var(--m-screen-search-search-field-y) - var(--m-screen-search-search-field-h)) calc(-1 * var(--space-24)) 0;
+  padding: 0 var(--space-24);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--m-screen-search-result-header-h);
+  margin-top: calc(var(--m-screen-search-result-header-y) - var(--m-screen-search-filter-chips-y) - var(--m-screen-search-filter-chips-h));
+}
+
+.count {
+  composes: t-body-13-regular from global;
+  color: var(--text-tertiary);
+}
+
+.sort {
+  composes: t-body-13-medium from global;
+  color: var(--text-secondary);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  margin-top: calc(var(--m-screen-search-result-list-y) - var(--m-screen-search-result-header-y) - var(--m-screen-search-result-header-h));
+}
+
+/* 결과가 없을 때 추정으로 넘어가는 줄 (피그마에 없는 상태: 신원 등록 링크와 같은 글자 스타일) */
+.estimate {
+  composes: t-body-14-semibold from global;
+  margin-top: calc(var(--m-screen-search-result-list-y) - var(--m-screen-search-result-header-y) - var(--m-screen-search-result-header-h));
+  padding: 0;
+  border: none;
+  background: none;
+  color: var(--text-primary);
+  text-align: left;
+  cursor: pointer;
+}
+
+/* 피그마 register-link: 14 Regular secondary + 14 SemiBold primary (줄 간격·자간은 Body/14와 같다) */
+.register {
+  margin: calc(var(--m-screen-search-register-link-y) - var(--m-screen-search-result-list-y) - var(--m-screen-search-result-list-h)) 0 0;
+  white-space: pre-wrap;
+}
+
+.registerQuestion {
+  composes: t-body-14-regular from global;
+  color: var(--text-secondary);
+}
+
+.registerLink {
+  composes: t-body-14-semibold from global;
+  color: var(--text-primary);
+  text-decoration: none;
+}

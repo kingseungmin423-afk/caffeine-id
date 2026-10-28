@@ -1,0 +1,17 @@
+<svg width="24" height="13" viewBox="0 0 24 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="24" height="13" fill="#1E1E1E"/>
+<g id="Components">
+<rect width="3200" height="1403" transform="translate(-406 -48)" fill="white"/>
+<g id="icon/battery">
+<g id="vector" clip-path="url(#clip0_0_1)">
+<path id="Vector" d="M20.25 0.75H3.75C2.09315 0.75 0.75 2.09315 0.75 3.75V8.75C0.75 10.4069 2.09315 11.75 3.75 11.75H20.25C21.9069 11.75 23.25 10.4069 23.25 8.75V3.75C23.25 2.09315 21.9069 0.75 20.25 0.75Z" stroke="#1F2A44" stroke-width="1.5"/>
+<path id="Vector_2" d="M19.7 2.5H4.3C3.30589 2.5 2.5 3.30589 2.5 4.3V8.2C2.5 9.19411 3.30589 10 4.3 10H19.7C20.6941 10 21.5 9.19411 21.5 8.2V4.3C21.5 3.30589 20.6941 2.5 19.7 2.5Z" fill="#1F2A44"/>
+</g>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_0_1">
+<rect width="24" height="13" fill="white"/>
+</clipPath>
+</defs>
+</svg>

@@ -1,0 +1,298 @@
+Badge|||w=39
+Badge|||h=26
+Badge|||stroke=1.2
+ProductThumb|Size=S, 상태=조회||w=36
+ProductThumb|Size=M, 상태=조회||w=43
+ProductThumb|Size=M, 상태=미조회||w=43
+ProductThumb|Size=L, 상태=조회||w=56
+ProductThumb|Size=S, 상태=조회||h=36
+ProductThumb|Size=M, 상태=조회||h=43
+ProductThumb|Size=M, 상태=미조회||h=43
+ProductThumb|Size=L, 상태=조회||h=56
+ProductThumb|Size=S, 상태=조회|photo|w=30
+ProductThumb|Size=M, 상태=조회|photo|w=35
+ProductThumb|Size=L, 상태=조회|photo|w=46
+ProductThumb|Size=S, 상태=조회|photo|h=30
+ProductThumb|Size=M, 상태=조회|photo|h=35
+ProductThumb|Size=L, 상태=조회|photo|h=46
+ProductThumb|Size=S, 상태=조회|photo|x=3
+ProductThumb|Size=M, 상태=조회|photo|x=4
+ProductThumb|Size=L, 상태=조회|photo|x=5
+ProductThumb|Size=S, 상태=조회|photo|y=3
+ProductThumb|Size=M, 상태=조회|photo|y=4
+ProductThumb|Size=L, 상태=조회|photo|y=5
+ProductThumb|||stroke=1
+ProductThumb|||dash=3 3
+Chip|||h=34
+Chip|||stroke=1.2
+Button|||w=327
+Button|||h=52
+Lanyard|||w=29
+Lanyard|Theme=Dark, Length=Long||h=108
+Lanyard|Theme=Light, Length=Long||h=108
+Lanyard|Theme=Visitor, Length=Long||h=108
+Lanyard|Theme=Dark, Length=Short||h=92
+Lanyard||strap|w=29
+Lanyard|Theme=Dark, Length=Long|strap|h=90
+Lanyard|Theme=Light, Length=Long|strap|h=90
+Lanyard|Theme=Visitor, Length=Long|strap|h=90
+Lanyard|Theme=Dark, Length=Short|strap|h=74
+Lanyard||strap|x=0
+Lanyard||strap|y=0
+Lanyard||label|rotate=-90
+Lanyard||label|x=8.5
+Lanyard|Theme=Dark, Length=Long|label|y=82
+Lanyard|Theme=Light, Length=Long|label|y=82
+Lanyard|Theme=Visitor, Length=Long|label|y=82
+Lanyard|Theme=Dark, Length=Short|label|y=66
+Lanyard||clip|w=21
+Lanyard||clip|h=9
+Lanyard||clip|x=4
+Lanyard|Theme=Dark, Length=Long|clip|y=86
+Lanyard|Theme=Light, Length=Long|clip|y=86
+Lanyard|Theme=Visitor, Length=Long|clip|y=86
+Lanyard|Theme=Dark, Length=Short|clip|y=70
+Lanyard||connector|w=3
+Lanyard||connector|h=6
+Lanyard||connector|x=13
+Lanyard|Theme=Dark, Length=Long|connector|y=94
+Lanyard|Theme=Light, Length=Long|connector|y=94
+Lanyard|Theme=Visitor, Length=Long|connector|y=94
+Lanyard|Theme=Dark, Length=Short|connector|y=78
+Lanyard||ring|w=11
+Lanyard||ring|h=11
+Lanyard||ring|stroke=2.5
+Lanyard||ring|x=9
+Lanyard|Theme=Dark, Length=Long|ring|y=96
+Lanyard|Theme=Light, Length=Long|ring|y=96
+Lanyard|Theme=Visitor, Length=Long|ring|y=96
+Lanyard|Theme=Dark, Length=Short|ring|y=80
+CategoryThumb|Size=L||w=56
+CategoryThumb|Size=M||w=44
+CategoryThumb|Size=L||h=56
+CategoryThumb|Size=M||h=44
+CategoryThumb|Size=L|CategoryIcon|w=32
+CategoryThumb|Size=M|CategoryIcon|w=25.14
+CategoryThumb|Size=L|CategoryIcon|h=32
+CategoryThumb|Size=M|CategoryIcon|h=25.14
+CategoryThumb|||radius=7.86
+FoodRow|||w=327
+FoodRow|||h=80
+FoodRow|||stroke=0 0 1 0
+FoodRow||thumb|w=43
+FoodRow||thumb|h=43
+FoodRow||value/Badge|w=39
+FoodRow||value/Badge|h=26
+FoodRow||value/Badge|stroke=1.2
+FoodRow||thumb|stroke=1
+FoodRow||thumb|dash=3 3
+RankRow|||w=293
+RankRow|||stroke=0 0 1 0
+RankRow||rank|w=16
+RankRow||rank|h=24
+RankRow||ProductThumb|w=36
+RankRow||ProductThumb|h=36
+EvidenceRow|||w=327
+EvidenceRow||ProductThumb|w=43
+EvidenceRow||ProductThumb|h=43
+CategoryItem|||w=66.75
+CategoryItem||CategoryThumb|w=56
+CategoryItem||CategoryThumb|h=56
+CategoryCard|||w=153.5
+CategoryCard|||stroke=1
+CategoryCard||CategoryThumb|w=44
+CategoryCard||CategoryThumb|h=44
+QuizOption|||w=125
+QuizOption|||stroke=1
+QuizOption||ProductThumb|w=56
+QuizOption||ProductThumb|h=56
+LoadingStep|||w=327
+LoadingStep|||h=24
+LoadingStep||label-group/icon/check-circle|w=22
+LoadingStep||label-group/icon/check-circle|h=22
+LoadingStep||label-group/status-icon|w=22
+LoadingStep||label-group/status-icon|h=22
+LoadingStep||label-group/status-icon/ring|w=22
+LoadingStep||label-group/status-icon/ring|h=22
+LoadingStep||label-group/status-icon/ring|stroke=2
+LoadingStep||label-group/status-icon/ring|x=0
+LoadingStep||label-group/status-icon/ring|y=0
+LoadingStep||label-group/status-icon/dot|w=10
+LoadingStep||label-group/status-icon/dot|h=10
+LoadingStep||label-group/status-icon/dot|x=6
+LoadingStep||label-group/status-icon/dot|y=6
+PhotoUpload||add-photo|w=72
+PhotoUpload||add-photo|h=72
+PhotoUpload||add-photo|stroke=1.2
+PhotoUpload||add-photo|dash=4 3
+SearchField|State=Empty||w=327
+SearchField|State=Filled||w=295
+SearchField|||h=52
+SearchField|State=Empty||stroke=1
+SearchField|State=Filled||stroke=2
+SearchField||icon/search|w=24
+SearchField||icon/search|h=24
+TextField|||w=327
+TextField||input|h=51
+TextField|State=Filled|input|stroke=1.5
+TextField|State=Empty|input|stroke=1
+SectionHeader|||w=327
+SectionHeader|||h=24
+BackHeader||icon/chevron-left|w=24
+BackHeader||icon/chevron-left|h=24
+DailyRatio|||w=327
+DailyRatio||ratio/daily-ratio|h=20
+DailyRatio||ratio/progress|h=5
+DailyRatio||ratio/progress/fill|w=28
+DailyRatio||ratio/progress/fill|h=5
+DailyRatio||ratio/progress/fill|x=0
+DailyRatio||ratio/progress/fill|y=0
+DailyRatio||ratio/progress/range|w=8
+DailyRatio||ratio/progress/range|h=5
+DailyRatio||ratio/progress/range|x=8
+DailyRatio||ratio/progress/range|y=0
+IDCard|||w=213
+IDCard|||h=338
+IDCard||handle/bar|w=37
+IDCard||handle/bar|h=6
+IDCard||title-row/title/id-mark|w=16
+IDCard||title-row/title/id-mark|h=16
+IDCard||title-row/title/id-mark|stroke=1.3
+IDCard||title-row/title/id-mark/ID|fs=6.5
+IDCard||illust-box|w=181
+IDCard||illust-box|h=129
+IDCard||stats/stat-1|w=96
+IDCard||stats/stat-2|w=85
+IDCard||stamp|w=66
+IDCard||stamp|h=66
+IDCard||stamp|stroke=2.2
+IDCard||stamp|rotate=-12
+IDCard||stamp|x=129.86
+IDCard||stamp|y=170.58
+IDCard||stamp/inner-ring|w=57
+IDCard||stamp/inner-ring|h=57
+IDCard||stamp/inner-ring|stroke=1
+IDCard||stamp/inner-ring|x=4.5
+IDCard||stamp/inner-ring|y=4.5
+IDCard||illust-box/illust/can|w=52
+IDCard||illust-box/illust/can|h=117
+IDCard||illust-box/illust/can|x=64.5
+IDCard||illust-box/illust/can|y=12
+IDCard||info/skeleton/name|w=104
+IDCard||info/skeleton/name|h=20
+IDCard||info/meta-row/skeleton/meta|w=64
+IDCard||info/meta-row/skeleton/meta|h=10
+IDCard||stats/stat-1/skeleton/label|w=48
+IDCard||stats/stat-1/skeleton/label|h=8
+IDCard||stats/stat-1/skeleton/value|w=64
+IDCard||stats/stat-1/skeleton/value|h=16
+IDCard||stats/stat-2/skeleton/label|w=48
+IDCard||stats/stat-2/skeleton/label|h=8
+IDCard||stats/stat-2/skeleton/value|w=56
+IDCard||stats/stat-2/skeleton/value|h=16
+IDCard|||stroke=1.5
+IDCard|||dash=5 3
+IDCard||illust-box|stroke=1
+IDCard||illust-box|dash=4 3
+IDCard||stamp|dash=4 3
+IDCard||stamp/inner-ring|dash=3 3
+IDCard||photo-unknown|x=99.5
+IDCard||photo-unknown|y=120
+IDCardBack|||w=213
+IDCardBack|||h=338
+IDCardBack|||stroke=1
+IDCardBack||handle|w=37
+IDCardBack||handle|h=6
+IDCardBack||handle|x=88
+IDCardBack||handle|y=10
+IDCardBack||vertical-title|rotate=-90
+IDCardBack||vertical-title|x=14
+IDCardBack||vertical-title|y=318
+IDCardBack||info|w=101
+IDCardBack||info|h=286
+IDCardBack||info|x=99
+IDCardBack||info|y=33
+IDCardBack||info/divider-1|h=1
+IDCardBack||info/divider-2|h=1
+IDCardBack||info/divider-3|h=1
+IDCardBack||info/divider-4|h=1
+IDCardMini|||w=153.5
+IDCardMini||handle/bar|w=26
+IDCardMini||handle/bar|h=4
+IDCardMini||title-row/id-mark|w=11.2
+IDCardMini||title-row/id-mark|h=11.2
+IDCardMini||title-row/id-mark|stroke=0.91
+IDCardMini||title-row/id-mark/ID|fs=4.55
+IDCardMini||photo-box|h=92
+IDCardMini||photo-box/photo|w=118
+IDCardMini||photo-box/photo|h=76
+IDCardMini||photo-box/photo|x=8
+IDCardMini||photo-box/photo|y=8
+IDCardMini||stamp|w=44
+IDCardMini||stamp|h=44
+IDCardMini||stamp|stroke=1.6
+IDCardMini|상태=발급|stamp|rotate=-12
+IDCardMini|상태=미발급|stamp|rotate=8
+IDCardMini||stamp|x=103.5
+IDCardMini||stamp|y=108
+IDCardMini||stamp/inner-ring|w=38
+IDCardMini||stamp/inner-ring|h=38
+IDCardMini||stamp/inner-ring|stroke=0.8
+IDCardMini||stamp/inner-ring|x=3
+IDCardMini||stamp/inner-ring|y=3
+IDCardMini|||stroke=1.2
+IDCardMini|||dash=5 4
+IDCardMini||photo-box|stroke=1
+IDCardMini||photo-box|dash=3 3
+RelatedCard|||w=99
+RelatedCard|||h=162
+RelatedCard||handle/bar|w=20
+RelatedCard||handle/bar|h=4
+RelatedCard||illust-box|w=83
+RelatedCard||illust-box|h=63
+RelatedCard||illust-box/photo|w=75
+RelatedCard||illust-box/photo|h=55
+RelatedCard||illust-box/photo|x=4
+RelatedCard||illust-box/photo|y=4
+RelatedCard|||stroke=1.2
+RelatedCard|||dash=4 3
+RelatedCard||illust-box|stroke=1
+RelatedCard||illust-box|dash=3 3
+TabBar|||w=375
+TabBar|||h=100
+TabBar||bar|w=375
+TabBar||bar|h=60
+TabBar||bar|gap=35
+TabBar||bar|x=0
+TabBar||bar|y=6
+TabBar||bar/capsule|w=327
+TabBar||bar/capsule|h=60
+TabBar||bar/capsule|stroke=1
+TabBar||bar/capsule/tab/홈|h=56
+TabBar||bar/capsule/tab/홈/active-pill|w=56
+TabBar||bar/capsule/tab/홈/active-pill|h=30
+TabBar||bar/capsule/tab/홈/active-pill|x=9.13
+TabBar||bar/capsule/tab/홈/active-pill|y=1
+TabBar||bar/capsule/tab/홈/icon/home|w=24
+TabBar||bar/capsule/tab/홈/icon/home|h=24
+TabBar||bar/capsule/tab/조회/icon/id-card|w=24
+TabBar||bar/capsule/tab/조회/icon/id-card|h=24
+TabBar||bar/capsule/tab/제보/icon/report|w=24
+TabBar||bar/capsule/tab/제보/icon/report|h=24
+TabBar||bar/capsule/tab/정보/icon/info|w=24
+TabBar||bar/capsule/tab/정보/icon/info|h=24
+TabBar||bar/capsule/tab/조회|h=56
+TabBar||bar/capsule/tab/조회/active-pill|w=56
+TabBar||bar/capsule/tab/조회/active-pill|h=30
+TabBar||bar/capsule/tab/조회/active-pill|x=9.13
+TabBar||bar/capsule/tab/조회/active-pill|y=1
+TabBar||bar/capsule/tab/제보|h=56
+TabBar||bar/capsule/tab/제보/active-pill|w=56
+TabBar||bar/capsule/tab/제보/active-pill|h=30
+TabBar||bar/capsule/tab/제보/active-pill|x=9.13
+TabBar||bar/capsule/tab/제보/active-pill|y=1
+TabBar||bar/capsule/tab/정보|h=56
+TabBar||bar/capsule/tab/정보/active-pill|w=56
+TabBar||bar/capsule/tab/정보/active-pill|h=30
+TabBar||bar/capsule/tab/정보/active-pill|x=9.13
+TabBar||bar/capsule/tab/정보/active-pill|y=1

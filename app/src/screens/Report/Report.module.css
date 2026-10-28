@@ -1,0 +1,98 @@
+/* 피그마 08 음식 제보 (--m-screen-report-*) */
+.screen {
+  align-items: flex-start;
+  padding-top: var(--m-screen-report-title-y);
+  padding-bottom: calc(var(--m-screen-report-h) - var(--m-screen-report-button-y) - var(--m-screen-report-button-h));
+}
+
+.headline {
+  composes: t-title-24-bold from global;
+  margin: calc(var(--m-screen-report-headline-y) - var(--m-screen-report-title-y) - var(--m-screen-report-title-h)) 0 0;
+}
+
+.sub {
+  composes: t-body-14-regular from global;
+  margin: calc(var(--m-screen-report-sub-y) - var(--m-screen-report-headline-y) - var(--m-screen-report-headline-h)) 0 0;
+  color: var(--text-secondary);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+  margin: calc(var(--m-screen-report-field-label-1-y) - var(--m-screen-report-sub-y) - var(--m-screen-report-sub-h)) 0 0;
+}
+
+/* 입력칸 아래 ~ 다음 라벨 (모두 같다) */
+.field,
+.group {
+  margin: calc(var(--m-screen-report-field-label-2-y) - var(--m-screen-report-input-1-y) - var(--m-screen-report-input-1-h)) 0 0;
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 0;
+  border: none;
+}
+
+/* TextField 라벨과 같은 스타일·간격 */
+.label {
+  composes: t-body-13-regular from global;
+  float: left;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  color: var(--text-secondary);
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-8);
+  clear: both;
+  margin-top: calc(var(--m-screen-report-category-chips-y) - var(--m-screen-report-field-label-3-y) - var(--m-screen-report-field-label-3-h));
+}
+
+.photo {
+  margin-top: calc(var(--m-screen-report-photo-upload-y) - var(--m-screen-report-field-label-4-y) - var(--m-screen-report-field-label-4-h));
+}
+
+.submit {
+  margin-top: calc(var(--m-screen-report-button-y) - var(--m-screen-report-photo-upload-y) - var(--m-screen-report-photo-upload-h));
+}
+
+/* 접수 완료 (피그마에 없는 상태): 제목은 신청서와 같은 높이, 버튼은 온보딩처럼 화면 아래 */
+.doneScreen {
+  align-items: stretch;
+  padding-top: var(--m-screen-report-headline-y);
+  padding-bottom: calc(var(--m-screen-welcome-h) - var(--m-screen-welcome-button-y) - var(--m-screen-welcome-button-h));
+}
+
+.doneHeadline {
+  composes: t-title-24-bold from global;
+  margin: 0;
+}
+
+.spacer {
+  flex: 1;
+  min-height: var(--space-48);
+}
+
+/* 접수 결과 설명: 줄바꿈(\n) 유지 */
+.doneSub {
+  composes: sub;
+  white-space: pre-line;
+}
+
+/* 봇 막기용 칸: 화면에 보이지 않고 자리도 차지하지 않는다 */
+.trap {
+  position: absolute;
+  width: 0;
+  height: 0;
+  padding: 0;
+  border: 0;
+  opacity: 0;
+  pointer-events: none;
+}

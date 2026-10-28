@@ -1,0 +1,29 @@
+/* 폭: 피그마 327 = 화면 폭 375 - 좌우 여백 24×2 → 부모 폭을 채운다 */
+.root {
+  composes: t-heading-16-semibold from global;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: var(--m-button-h);
+  margin: 0;
+  border: none;
+  border-radius: var(--radius-14);
+  cursor: pointer;
+}
+
+.root:disabled {
+  cursor: default;
+  background: var(--bg-disabled);
+  color: var(--text-inverse);
+}
+
+.White {
+  background: var(--bg-surface);
+  color: var(--text-primary);
+}
+
+.Navy {
+  background: var(--bg-inverse);
+  color: var(--text-inverse);
+}

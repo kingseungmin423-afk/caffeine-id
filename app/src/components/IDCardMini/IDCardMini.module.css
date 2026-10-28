@@ -1,0 +1,233 @@
+/* 폭: 피그마 153.5 = 2열 지갑 격자의 한 칸 → 격자가 정한다 */
+.root {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  width: 100%;
+  padding: var(--space-8) var(--space-10) var(--space-12);
+  margin: 0;
+  border: none;
+  border-radius: var(--radius-12);
+  text-align: left;
+  cursor: pointer;
+}
+
+.발급 {
+  background: var(--bg-paper);
+}
+
+/* 미발급: 점선 테두리가 레이아웃에 포함돼 안쪽 여백이 선 굵기만큼 늘어난다 */
+.미발급 {
+  padding: calc(var(--space-8) + var(--m-idcardmini-stroke)) calc(var(--space-10) + var(--m-idcardmini-stroke)) calc(var(--space-12) + var(--m-idcardmini-stroke));
+  background: var(--bg-inverse-subtle);
+}
+
+.dashCard {
+  --dash-color: var(--border-inverse);
+  --dash-width: var(--m-idcardmini-stroke);
+  --dash-pattern: var(--m-idcardmini-dash);
+  --dash-radius: var(--radius-12);
+}
+
+.handle {
+  display: flex;
+  justify-content: center;
+}
+
+.bar {
+  width: var(--m-idcardmini-handle-bar-w);
+  height: var(--m-idcardmini-handle-bar-h);
+  border-radius: var(--radius-2);
+}
+.발급 .bar {
+  background: var(--bg-warm-muted);
+}
+.미발급 .bar {
+  background: var(--bg-inverse-strong);
+}
+
+.titleRow {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-4);
+}
+
+.title {
+  composes: t-heading-16-extrabold-140 from global;
+}
+
+.idMark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  width: var(--m-idcardmini-title-row-id-mark-w);
+  height: var(--m-idcardmini-title-row-id-mark-h);
+  border: var(--m-idcardmini-title-row-id-mark-stroke) solid;
+  border-radius: var(--radius-6);
+}
+
+/* 피그마에서 텍스트 스타일 없이 Bold 4.55 */
+.idText {
+  composes: t-caption-10-bold from global;
+  font-size: var(--m-idcardmini-title-row-id-mark-id-fs);
+}
+
+.발급 .title,
+.발급 .idText {
+  color: var(--text-primary);
+}
+.발급 .idMark {
+  border-color: var(--border-bold);
+}
+.미발급 .title,
+.미발급 .idText {
+  color: var(--text-inverse-disabled);
+}
+.미발급 .idMark {
+  border-color: var(--color-navy-550);
+}
+
+.photoBox {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--m-idcardmini-photo-box-h);
+  border-radius: var(--radius-8);
+}
+.발급 .photoBox {
+  background: var(--bg-subtle);
+}
+.미발급 .photoBox {
+  background: var(--bg-inverse);
+}
+
+.photo {
+  position: absolute;
+  inset: var(--m-idcardmini-photo-box-photo-y) var(--m-idcardmini-photo-box-photo-x);
+  overflow: hidden;
+  background: var(--bg-muted);
+  border-radius: var(--radius-4);
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.dashBox {
+  --dash-color: var(--border-inverse);
+  --dash-width: var(--m-idcardmini-photo-box-stroke);
+  --dash-pattern: var(--m-idcardmini-photo-box-dash);
+  --dash-radius: var(--radius-8);
+}
+
+.unknown {
+  composes: t-title-26-semibold-125 from global;
+  color: var(--text-inverse-disabled);
+}
+
+.stamp {
+  position: absolute;
+  /* 오른쪽 기준: 카드 폭이 바뀌어도 피그마의 오른쪽 여백(153.5 − 103.5 − 44)을 지킨다 */
+  right: calc(var(--m-idcardmini-w) - var(--m-idcardmini-stamp-x) - var(--m-idcardmini-stamp-w));
+  top: var(--m-idcardmini-stamp-y);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--m-idcardmini-stamp-w);
+  height: var(--m-idcardmini-stamp-h);
+  border-radius: var(--radius-22);
+  transform-origin: 0 0;
+}
+.발급 .stamp {
+  background: var(--color-alpha-warm-50-60);
+  box-shadow: inset 0 0 0 var(--m-idcardmini-stamp-stroke) var(--border-danger);
+  transform: rotate(var(--m-idcardmini-발급-stamp-rotate));
+}
+.미발급 .stamp {
+  box-shadow: inset 0 0 0 var(--m-idcardmini-stamp-stroke) var(--color-navy-400);
+  transform: rotate(var(--m-idcardmini-미발급-stamp-rotate));
+}
+
+.innerRing {
+  position: absolute;
+  left: var(--m-idcardmini-stamp-inner-ring-x);
+  top: var(--m-idcardmini-stamp-inner-ring-y);
+  width: var(--m-idcardmini-stamp-inner-ring-w);
+  height: var(--m-idcardmini-stamp-inner-ring-h);
+  border-radius: var(--radius-full);
+}
+.발급 .innerRing {
+  box-shadow: inset 0 0 0 var(--m-idcardmini-stamp-inner-ring-stroke) var(--icon-danger);
+}
+.미발급 .innerRing {
+  box-shadow: inset 0 0 0 var(--m-idcardmini-stamp-inner-ring-stroke) var(--icon-inverse-muted);
+}
+
+.stampIssued {
+  composes: t-body-13-bold-125 from global;
+  position: relative;
+  color: var(--text-danger);
+}
+
+.stampUnissued {
+  composes: t-caption-10-bold from global;
+  position: relative;
+  color: var(--text-inverse-muted);
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.name {
+  composes: t-body-15-bold from global;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.metaRow {
+  display: flex;
+  justify-content: space-between;
+}
+
+.meta {
+  composes: t-caption-11-regular from global;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  composes: t-caption-10-regular from global;
+}
+
+.value {
+  composes: t-heading-16-bold-140 from global;
+}
+
+.발급 .name,
+.발급 .value {
+  color: var(--text-primary);
+}
+.발급 .meta,
+.발급 .label {
+  color: var(--text-tertiary);
+}
+.미발급 .name,
+.미발급 .value {
+  color: var(--text-inverse-secondary);
+}
+.미발급 .meta,
+.미발급 .label {
+  color: var(--text-inverse-muted);
+}

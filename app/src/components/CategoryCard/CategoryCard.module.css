@@ -1,0 +1,41 @@
+/* 폭: 피그마 153.5 = 2칸 격자의 한 칸 → 격자가 정한다 */
+.root {
+  display: flex;
+  align-items: center;
+  gap: var(--space-10);
+  width: 100%;
+  padding: calc(var(--space-14) + var(--m-categorycard-stroke)) calc(var(--space-10) + var(--m-categorycard-stroke)) calc(var(--space-14) + var(--m-categorycard-stroke)) calc(var(--space-14) + var(--m-categorycard-stroke));
+  overflow: hidden;
+  border: none;
+  border-radius: var(--radius-14);
+  background: var(--bg-paper);
+  box-shadow: inset 0 0 0 var(--m-categorycard-stroke) var(--border-default);
+  text-align: left;
+  cursor: pointer;
+}
+
+.text {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--space-2);
+  min-width: 0;
+}
+
+.title {
+  composes: t-body-15-semibold from global;
+  color: var(--text-primary);
+}
+
+.examples {
+  composes: t-caption-12-regular from global;
+  color: var(--text-placeholder);
+}
+
+/* 피그마는 예시 문구 칸이 글자 폭에 딱 맞아(73.5) 브라우저에서는 줄이 넘어간다 → 한 줄로 두고 넘치면 말줄임 */
+.title,
+.examples {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

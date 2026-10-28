@@ -1,0 +1,26 @@
+/* 피그마 02-1 카테고리 (--m-screen-category-*) */
+.screen {
+  align-items: flex-start;
+  padding-top: var(--m-screen-category-icon-chevron-left-y);
+  padding-bottom: calc(var(--m-screen-category-h) - var(--m-screen-category-tabbar-y) + var(--space-24));
+}
+
+.title {
+  composes: t-display-30-bold from global;
+  margin: calc(var(--m-screen-category-카테고리-y) - var(--m-screen-category-icon-chevron-left-y) - var(--m-screen-category-icon-chevron-left-h)) 0 0;
+}
+
+.sub {
+  composes: t-body-14-regular from global;
+  margin: calc(var(--m-screen-category-분류별로-숨은-카페인을-찾아보세요-y) - var(--m-screen-category-카테고리-y) - var(--m-screen-category-카테고리-h)) 0 0;
+  color: var(--text-secondary);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: var(--space-20);
+  row-gap: var(--space-16);
+  align-self: stretch;
+  margin-top: calc(var(--m-screen-category-category-grid-y) - var(--m-screen-category-분류별로-숨은-카페인을-찾아보세요-y) - var(--m-screen-category-분류별로-숨은-카페인을-찾아보세요-h));
+}

@@ -1,0 +1,27 @@
+{
+  "_comment": "피그마 컴포넌트 이름 → 노드 ID. Figma MCP download_assets(nodeId, svg)로 받은 파일을 design/figma-svg/<이름의 /를 __로>.svg 에 저장한 뒤 npm run icons",
+  "fileKey": "2UocI4QnNWt4WWg6w0cVn4",
+  "icons": {
+    "icon/search": "1:3206",
+    "icon/chevron-left": "1:3210",
+    "icon/id-card": "1:3213",
+    "icon/info": "1:3218",
+    "icon/check-circle": "1:3223",
+    "icon/battery": "1:3227",
+    "icon/home": "41:1555",
+    "icon/report": "41:1560",
+    "illust/can": "1:3231",
+    "illust/energy-drink": "1:3291",
+    "illust/ice-cream": "1:3324",
+    "illust/cookie": "1:3351",
+    "illust/chocolate": "1:3448",
+    "CategoryIcon/탄산음료": "1:3673",
+    "CategoryIcon/에너지음료": "1:3679",
+    "CategoryIcon/커피": "1:3682",
+    "CategoryIcon/차": "1:3686",
+    "CategoryIcon/빙과류": "1:3690",
+    "CategoryIcon/과자류": "1:3693",
+    "CategoryIcon/초콜릿": "1:3695",
+    "CategoryIcon/약": "1:3701"
+  }
+}

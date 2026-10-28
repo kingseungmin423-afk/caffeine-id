@@ -1,0 +1,16 @@
+{
+  "_comment": "DB 분류(category·subcategory·brand·이름) → 앱 카테고리 8개 대응표. 위에서부터 처음 맞는 규칙을 쓴다. 맞는 규칙이 없으면 카테고리 없음(검색으로만 찾을 수 있음). scripts/build-db.mjs가 읽는다.",
+  "rules": [
+    { "app": "탄산음료", "category": ["탄산음료"] },
+    { "app": "에너지음료", "category": ["에너지음료"] },
+    { "app": "차", "category": ["차"] },
+    { "app": "차", "category": ["카페 음료"], "subcategory": ["티(티바나)"] },
+    { "app": "차", "category": ["카페 음료"], "brand": ["공차"] },
+    { "app": "커피", "category": ["카페 음료", "커피(RTD)", "커피(캡슐)", "커피"] },
+    { "app": "빙과류", "category": ["디저트"], "name": "아이스크림|소프트|프로즌" },
+    { "app": "초콜릿", "category": ["디저트"], "name": "시럽|스프레드" },
+    { "app": "과자류", "category": ["디저트", "빵", "시리얼"] },
+    { "app": "초콜릿", "category": ["초콜릿", "코코아"] },
+    { "app": "약", "category": ["의약품"] }
+  ]
+}

@@ -1,0 +1,51 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+  width: 100%;
+}
+
+.ratio {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--m-dailyratio-ratio-daily-ratio-h);
+}
+
+.label {
+  composes: t-body-14-regular from global;
+  color: var(--text-inverse-tertiary);
+}
+
+.value {
+  composes: t-body-15-bold from global;
+  color: var(--text-inverse);
+}
+
+.progress {
+  position: relative;
+  height: var(--m-dailyratio-ratio-progress-h);
+  overflow: hidden;
+  background: var(--bg-inverse-raised);
+  border-radius: var(--radius-4);
+}
+
+.fill {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  background: var(--bg-surface);
+  border-radius: var(--radius-4);
+}
+
+.source {
+  composes: t-body-14-regular from global;
+  margin: 0;
+  color: var(--text-inverse-muted);
+}

@@ -1,0 +1,47 @@
+/* 피그마 01 온보딩. 위치는 --m-screen-welcome-* (화면 높이 812 기준, 버튼은 화면 아래에 붙인다) */
+.screen {
+  padding-bottom: calc(var(--m-screen-welcome-h) - var(--m-screen-welcome-button-y) - var(--m-screen-welcome-button-h));
+}
+
+.stage {
+  composes: stage from global;
+  height: var(--m-screen-welcome-headline-y);
+}
+
+.back {
+  composes: stage-item stage-rotated from global;
+  --x: var(--m-screen-welcome-idcardback-behind-x);
+  --y: var(--m-screen-welcome-idcardback-behind-y);
+  --rotate: var(--m-screen-welcome-idcardback-behind-rotate);
+}
+
+.lanyard {
+  composes: stage-item from global;
+  --x: var(--m-screen-welcome-lanyard-x);
+  --y: var(--m-screen-welcome-lanyard-y);
+}
+
+.card {
+  composes: stage-item from global;
+  --x: var(--m-screen-welcome-idcard-x);
+  --y: var(--m-screen-welcome-idcard-y);
+}
+
+.headline {
+  composes: t-display-30-bold from global;
+  margin: 0;
+  color: var(--text-inverse);
+  white-space: pre-line;
+}
+
+.sub {
+  composes: t-body-15-regular from global;
+  margin: calc(var(--m-screen-welcome-sub-y) - var(--m-screen-welcome-headline-y) - var(--m-screen-welcome-headline-h)) 0 0;
+  color: var(--text-inverse-tertiary);
+}
+
+/* 남는 높이는 문구와 버튼 사이로 (피그마 812에서는 130, 그보다 줄지 않는다) */
+.spacer {
+  flex: 1;
+  min-height: calc(var(--m-screen-welcome-button-y) - var(--m-screen-welcome-sub-y) - var(--m-screen-welcome-sub-h));
+}

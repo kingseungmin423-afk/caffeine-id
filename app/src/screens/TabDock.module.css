@@ -1,0 +1,29 @@
+/* 피그마 TabBar 프레임: 높이 100, 그 안에서 bar가 위에서 6. 아래 34는 홈 인디케이터 자리 → 기기 안전 영역이 더 크면 그만큼 */
+.dock {
+  position: fixed;
+  left: 50%;
+  bottom: 0;
+  z-index: 10;
+  width: 100%;
+  max-width: var(--m-tabbar-w);
+  padding-top: var(--m-tabbar-bar-y);
+  padding-bottom: max(
+    calc(var(--m-tabbar-h) - var(--m-tabbar-bar-y) - var(--m-tabbar-bar-h)),
+    env(safe-area-inset-bottom)
+  );
+  transform: translateX(-50%);
+  transition: transform var(--motion-tab) var(--ease-bounce);
+  pointer-events: none;
+}
+
+.dock > * {
+  pointer-events: auto;
+}
+
+/* 탭바가 없는 화면: 아래로 내려 숨긴다 */
+.hidden {
+  transform: translate(-50%, 100%);
+  transition-timing-function: var(--ease-screen);
+  visibility: hidden;
+  transition-property: transform, visibility;
+}

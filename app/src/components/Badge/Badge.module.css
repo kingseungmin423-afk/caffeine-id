@@ -1,0 +1,12 @@
+.root {
+  composes: t-body-13-medium from global;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  width: var(--m-badge-w);
+  height: var(--m-badge-h);
+  border: var(--m-badge-stroke) solid var(--border-danger);
+  border-radius: var(--radius-6);
+  color: var(--text-danger);
+}

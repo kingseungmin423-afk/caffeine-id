@@ -1,0 +1,13 @@
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="24" height="24" fill="#1E1E1E"/>
+<g id="Components">
+<rect width="3200" height="1403" transform="translate(-264 -48)" fill="white"/>
+<g id="icon/info">
+<g id="vector">
+<path id="Vector" d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#1F2A44" stroke-width="1.8"/>
+<path id="Vector_2" d="M12 10.5V17" stroke="#1F2A44" stroke-width="2" stroke-linecap="round"/>
+<path id="Vector_3" d="M12 8.6C12.718 8.6 13.3 8.01797 13.3 7.3C13.3 6.58203 12.718 6 12 6C11.282 6 10.7 6.58203 10.7 7.3C10.7 8.01797 11.282 8.6 12 8.6Z" fill="#1F2A44"/>
+</g>
+</g>
+</g>
+</svg>

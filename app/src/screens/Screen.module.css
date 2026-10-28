@@ -1,0 +1,43 @@
+/* 화면 폭은 피그마 기준 375까지, 더 넓은 화면에서는 가운데에 둔다.
+ * 위쪽 여백은 피그마 그대로(상태바 자리 포함), 좌우 여백 24. */
+.root {
+  min-height: calc(100dvh / var(--app-zoom, 1));
+  transition: background-color var(--motion-screen) var(--ease-screen);
+}
+
+/* PC: 배경은 앱 폭(375)만, 양옆은 body 회색 (base.css) */
+:global(html[data-frame]) .root {
+  max-width: var(--m-screen-main-w);
+  margin: 0 auto;
+}
+
+.Light {
+  background: var(--bg-canvas);
+  color: var(--text-primary);
+}
+
+.Dark {
+  background: var(--bg-inverse);
+  color: var(--text-inverse);
+}
+
+.column {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: var(--m-screen-main-w);
+  min-height: calc(100dvh / var(--app-zoom, 1));
+  margin: 0 auto;
+  padding: 0 var(--space-24);
+  overflow-x: clip;
+  /* 화면 전환 (피그마 Smart Animate 0.25s Ease Out): 새 화면이 살짝 올라오며 나타난다 */
+  animation: screen-in var(--motion-screen) var(--ease-screen) both;
+}
+
+@keyframes screen-in {
+  from {
+    opacity: 0;
+    transform: translateY(var(--space-8));
+  }
+}

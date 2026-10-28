@@ -1,0 +1,117 @@
+/* 피그마 05 결과 앞면 (--m-screen-result-*). 06 뒷면은 앞·뒤 카드 자리만 바뀌고 나머지는 같다 */
+.screen {
+  padding-bottom: calc(var(--m-screen-result-h) - var(--m-screen-result-related-foods-y) - var(--m-screen-result-related-foods-h));
+}
+
+.stage {
+  composes: stage from global;
+  height: var(--m-screen-result-caption-y);
+}
+
+.header {
+  composes: stage-item from global;
+  --x: var(--m-screen-result-icon-chevron-left-x);
+  --y: var(--m-screen-result-title-y);
+  z-index: 4;
+}
+
+/* 카드 두 장과 목줄 (CardDeck): 앞 자리 = 피그마 05 앞 카드, 뒤 자리 = 뒤 카드(기울어짐), 목줄은 그 사이.
+ * deck은 겹침 순서를 새로 만들지 않아서(transform·z-index 없음) 카드가 목줄 위·아래로 오갈 수 있다.
+ * 앞뒤는 z-index로만 정한다. 3D로 움직이는 건 들려서 다가오는 카드 하나뿐이라 아이폰(WebKit)에서도 순서가 꼬이지 않는다 */
+.deck {
+  composes: stage-item from global;
+  --x: var(--m-screen-result-card-front-x);
+  --y: var(--m-screen-result-card-front-y);
+}
+
+.lanyard {
+  position: absolute;
+  left: calc(var(--m-screen-result-lanyard-x) - var(--m-screen-result-card-front-x));
+  top: calc(var(--m-screen-result-lanyard-y) - var(--m-screen-result-card-front-y));
+  z-index: 2;
+}
+
+.slot {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+  transform-origin: 0 0;
+  will-change: transform;
+  /* 넘길 때 카드가 뒤집혀 보이는 일이 없도록 (움직임에서도 그 구간은 투명하게 숨긴다) */
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.slotTop {
+  z-index: 3;
+}
+
+.slotBehind {
+  transform: translate(
+      calc(var(--m-screen-result-card-back-x) - var(--m-screen-result-card-front-x)),
+      calc(var(--m-screen-result-card-back-y) - var(--m-screen-result-card-front-y))
+    )
+    rotate(var(--m-screen-result-card-back-rotate));
+  z-index: 1;
+}
+
+/* 피그마 caption은 화면 전체 폭(x 0, w 375): 좌우 여백 밖까지 써서 한 줄에 들어가게 */
+/* 뒤에 있는 뒷면 위의 덮개 (피그마 05 뒤 카드 = 정보 숨김 뒷면). 앞으로 오면 걷힌다 */
+.cover {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.slotBehind .cover {
+  opacity: 1;
+}
+
+.caption {
+  composes: t-body-13-regular from global;
+  width: var(--m-screen-result-caption-w);
+  margin: 0 0 0 calc(var(--m-screen-result-caption-x) - var(--space-24));
+  text-align: center;
+  color: var(--text-inverse-tertiary);
+}
+
+.infoTitle {
+  composes: t-heading-17-bold from global;
+  margin: calc(var(--m-screen-result-section-title-정보-y) - var(--m-screen-result-caption-y) - var(--m-screen-result-caption-h)) 0 0;
+}
+
+.summary {
+  composes: t-heading-16-regular from global;
+  margin: calc(var(--m-screen-result-summary-y) - var(--m-screen-result-section-title-정보-y) - var(--m-screen-result-section-title-정보-h)) 0 0;
+  white-space: pre-line;
+}
+
+.ratio {
+  margin-top: calc(var(--m-screen-result-daily-ratio-y) - var(--m-screen-result-summary-y) - var(--m-screen-result-summary-h));
+}
+
+.relatedHeader {
+  margin-top: calc(var(--m-screen-result-section-title-y) - var(--m-screen-result-source-y) - var(--m-screen-result-source-h));
+}
+
+/* 관련 음식은 오른쪽 화면 끝까지 밀어서 본다 (PC는 마우스로 끌기, 카드 단위로 멈춤) */
+.related {
+  composes: drag-scroll drag-scroll-cards from global;
+  display: flex;
+  gap: var(--space-16);
+  margin: calc(var(--m-screen-result-related-foods-y) - var(--m-screen-result-section-title-y) - var(--m-screen-result-section-title-h)) calc(-1 * var(--space-24)) 0;
+  padding: 0 var(--space-24);
+}
+
+.notFound {
+  composes: t-heading-16-regular from global;
+  margin: calc(var(--m-screen-result-title-y) * 2) 0 0;
+  color: var(--text-inverse-tertiary);
+}

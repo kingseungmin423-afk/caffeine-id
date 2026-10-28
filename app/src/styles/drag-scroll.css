@@ -1,0 +1,44 @@
+/* 가로로 넘기는 줄 (useDragScroll과 함께). 카드 단위로 멈춘다.
+ * 쓰는 쪽: composes: drag-scroll from global; 카드 줄은 drag-scroll-cards, 칩 줄은 drag-scroll-chips */
+.drag-scroll {
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-padding-inline: var(--space-24);
+  scrollbar-width: none;
+}
+
+.drag-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.drag-scroll > * {
+  scroll-snap-align: start;
+}
+
+/* 카드: 반쯤 걸친 채로 멈추지 않는다 */
+.drag-scroll-cards {
+  scroll-snap-type: x mandatory;
+}
+
+/* 칩: 가까울 때만 맞춘다 (칩은 짧아서 강하게 맞추면 오히려 걸린다) */
+.drag-scroll-chips {
+  scroll-snap-type: x proximity;
+}
+
+@media (pointer: fine) {
+  .drag-scroll {
+    cursor: grab;
+  }
+}
+
+/* 끄는 동안: 멈춤을 잠시 끄고(손을 따라오게), 글자 선택·사진 끌림을 막는다 */
+.drag-scroll[data-dragging] {
+  cursor: grabbing;
+  scroll-snap-type: none;
+  user-select: none;
+}
+
+.drag-scroll img {
+  -webkit-user-drag: none;
+  user-select: none;
+}

@@ -1,0 +1,54 @@
+/* 설치 안내 팝업 자리 (임시). 아래에서 올라오는 판: 밝은 화면 배경 + 기존 버튼, 뒤는 어두운 덮개 */
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  background: var(--bg-overlay);
+  animation: fade-in var(--motion-screen) var(--ease-screen);
+}
+
+.sheet {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: var(--m-screen-main-w);
+  padding: var(--space-32) var(--space-24) max(var(--space-24), env(safe-area-inset-bottom));
+  border-radius: var(--radius-22) var(--radius-22) 0 0;
+  background: var(--bg-canvas);
+  color: var(--text-primary);
+  animation: sheet-in var(--motion-tab) var(--ease-bounce);
+}
+
+.title {
+  composes: t-title-20-bold from global;
+  margin: 0;
+}
+
+.body {
+  composes: t-body-15-regular from global;
+  margin: var(--space-8) 0 0;
+  color: var(--text-secondary);
+  white-space: pre-line;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  margin-top: var(--space-24);
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes sheet-in {
+  from {
+    transform: translateY(100%);
+  }
+}

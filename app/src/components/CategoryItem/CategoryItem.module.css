@@ -1,0 +1,17 @@
+/* 폭: 피그마 66.75 = 4칸 격자의 한 칸 → 격자가 정한다 */
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-6);
+  width: 100%;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.label {
+  composes: t-caption-12-medium from global;
+  color: var(--text-secondary);
+}

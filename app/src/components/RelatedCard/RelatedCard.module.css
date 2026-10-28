@@ -1,0 +1,149 @@
+.root {
+  position: relative;
+  display: flex;
+  flex: none;
+  flex-direction: column;
+  gap: var(--space-6);
+  width: var(--m-relatedcard-w);
+  height: var(--m-relatedcard-h);
+  padding: var(--space-8);
+  margin: 0;
+  border: none;
+  border-radius: var(--radius-10);
+  box-shadow: var(--shadow-relatedcard);
+  text-align: left;
+  cursor: pointer;
+}
+
+.조회 {
+  background: var(--bg-paper);
+}
+
+/* 미조회: 점선 테두리가 레이아웃에 포함돼 안쪽 여백이 선 굵기만큼 늘어난다 */
+.미조회 {
+  padding: calc(var(--space-8) + var(--m-relatedcard-stroke));
+  background: var(--bg-inverse-subtle);
+}
+
+.dashCard {
+  --dash-color: var(--border-inverse);
+  --dash-width: var(--m-relatedcard-stroke);
+  --dash-pattern: var(--m-relatedcard-dash);
+  --dash-radius: var(--radius-10);
+}
+
+.handle {
+  display: flex;
+  justify-content: center;
+}
+
+.bar {
+  width: var(--m-relatedcard-handle-bar-w);
+  height: var(--m-relatedcard-handle-bar-h);
+  border-radius: var(--radius-2);
+}
+.조회 .bar {
+  background: var(--bg-warm-muted);
+}
+.미조회 .bar {
+  background: var(--bg-inverse-strong);
+}
+
+.illustBox {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  width: var(--m-relatedcard-illust-box-w);
+  height: var(--m-relatedcard-illust-box-h);
+  border-radius: var(--radius-6);
+}
+.조회 .illustBox {
+  background: var(--bg-subtle);
+}
+.미조회 .illustBox {
+  background: var(--bg-inverse);
+}
+
+.photo {
+  position: absolute;
+  left: var(--m-relatedcard-illust-box-photo-x);
+  top: var(--m-relatedcard-illust-box-photo-y);
+  width: var(--m-relatedcard-illust-box-photo-w);
+  height: var(--m-relatedcard-illust-box-photo-h);
+  overflow: hidden;
+  background: var(--bg-muted);
+  border-radius: var(--radius-4);
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.dashBox {
+  --dash-color: var(--border-inverse);
+  --dash-width: var(--m-relatedcard-illust-box-stroke);
+  --dash-pattern: var(--m-relatedcard-illust-box-dash);
+  --dash-radius: var(--radius-6);
+}
+
+.unknown {
+  composes: t-title-20-semibold-auto from global;
+  color: var(--text-inverse-disabled);
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding-top: var(--space-4);
+}
+
+.category {
+  composes: t-caption-11-regular from global;
+}
+
+.name {
+  composes: t-body-15-bold from global;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.bottom {
+  display: flex;
+  justify-content: space-between;
+}
+
+.amount {
+  composes: t-body-13-regular from global;
+}
+
+.status {
+  composes: t-body-13-medium from global;
+}
+
+.조회 .category {
+  color: var(--text-placeholder);
+}
+.조회 .name {
+  color: var(--text-primary);
+}
+.조회 .amount {
+  color: var(--text-secondary);
+}
+.조회 .status {
+  color: var(--text-danger);
+}
+
+.미조회 .category,
+.미조회 .amount,
+.미조회 .status {
+  color: var(--text-inverse-muted);
+}
+.미조회 .name {
+  color: var(--text-inverse-secondary);
+}

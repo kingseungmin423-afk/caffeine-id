@@ -1,0 +1,22 @@
+# 의존성·빌드 결과
+node_modules/
+dist/
+dist-ssr/
+
+# 키·로컬 설정 (Supabase 키는 Vercel 환경 변수에)
+.env
+.env.*
+!.env.example
+*.local
+
+# 원본 데이터 내려받기 캐시 (357MB, data/scripts로 다시 받을 수 있음)
+data/cache/
+
+# 개인 작업 설정·편집기
+.claude/
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+Thumbs.db
+*.log

@@ -1,0 +1,78 @@
+.root {
+  position: relative;
+  display: block;
+  flex: none;
+  overflow: hidden;
+  background: var(--bg-subtle);
+  border-radius: var(--radius-8);
+}
+
+.photo {
+  position: absolute;
+  display: block;
+  background: var(--bg-muted);
+  border-radius: var(--radius-4);
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.S {
+  width: var(--m-productthumb-s-조회-w);
+  height: var(--m-productthumb-s-조회-h);
+}
+.S .photo {
+  left: var(--m-productthumb-s-조회-photo-x);
+  top: var(--m-productthumb-s-조회-photo-y);
+  width: var(--m-productthumb-s-조회-photo-w);
+  height: var(--m-productthumb-s-조회-photo-h);
+}
+
+.M {
+  width: var(--m-productthumb-m-조회-w);
+  height: var(--m-productthumb-m-조회-h);
+}
+.M .photo {
+  left: var(--m-productthumb-m-조회-photo-x);
+  top: var(--m-productthumb-m-조회-photo-y);
+  width: var(--m-productthumb-m-조회-photo-w);
+  height: var(--m-productthumb-m-조회-photo-h);
+}
+
+.L {
+  width: var(--m-productthumb-l-조회-w);
+  height: var(--m-productthumb-l-조회-h);
+  border-radius: var(--radius-12);
+}
+.L .photo {
+  left: var(--m-productthumb-l-조회-photo-x);
+  top: var(--m-productthumb-l-조회-photo-y);
+  width: var(--m-productthumb-l-조회-photo-w);
+  height: var(--m-productthumb-l-조회-photo-h);
+  border-radius: var(--radius-8);
+}
+
+/* 미조회: 피그마에는 M만 있다 */
+.unseen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--m-productthumb-m-미조회-w);
+  height: var(--m-productthumb-m-미조회-h);
+  background: var(--bg-warm-subtle);
+}
+
+.dash {
+  --dash-color: var(--border-strong);
+  --dash-width: var(--m-productthumb-stroke);
+  --dash-pattern: var(--m-productthumb-dash);
+  --dash-radius: var(--radius-8);
+}
+
+.unknown {
+  composes: t-heading-16-semibold-auto from global;
+  color: var(--text-warm-muted);
+}

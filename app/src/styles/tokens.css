@@ -1,0 +1,1521 @@
+/* 자동 생성 파일 — 직접 수정 금지.
+ * 원본: 피그마 2UocI4QnNWt4WWg6w0cVn4 / 시안 찐 확정(1026) (내보낸 시각 2026-10-27T07:47:49.305Z)
+ * 다시 만들기: scripts/figma/export-tokens.figma.js 실행 → design/figma-tokens.json 저장 → npm run tokens
+ */
+
+:root {
+  /* Atomic */
+  --color-navy-900: #1f2a44;
+  --color-navy-850: #26324f;
+  --color-navy-800: #2e3b66;
+  --color-navy-750: #36437a;
+  --color-navy-700: #3a4566;
+  --color-navy-600: #4a5675;
+  --color-navy-550: #56627e;
+  --color-navy-500: #5f6680;
+  --color-navy-450: #6e7891;
+  --color-navy-400: #7f88a3;
+  --color-navy-350: #8d97ae;
+  --color-navy-300: #a9b0c2;
+  --color-navy-200: #c9ceda;
+  --color-navy-150: #d3dae4;
+  --color-navy-100: #e6ebf2;
+  --color-navy-50: #eef1f4;
+  --color-gray-800: #4a4f5e;
+  --color-gray-750: #5b5f6b;
+  --color-gray-700: #5e6270;
+  --color-gray-500: #8e9198;
+  --color-gray-450: #8e8e8e;
+  --color-gray-400: #9a9a9a;
+  --color-gray-350: #a3a3a3;
+  --color-gray-200: #dddddd;
+  --color-cool-gray-400: #9aa0aa;
+  --color-warm-50: #fffdf8;
+  --color-warm-100: #f4f2ef;
+  --color-warm-150: #ece9e3;
+  --color-warm-200: #e0ddd8;
+  --color-warm-250: #d6d2cb;
+  --color-warm-300: #cfcac2;
+  --color-warm-500: #a9a49c;
+  --color-warm-600: #8e8a84;
+  --color-gold-200: #e3c38e;
+  --color-gold-300: #d9b07a;
+  --color-gold-400: #c7a46e;
+  --color-gold-500: #c59d5c;
+  --color-gold-600: #b58e58;
+  --color-red-500: #e5483f;
+  --color-red-600: #d93a33;
+  --color-red-700: #c62b27;
+  --color-green-300: #a8c59a;
+  --color-green-500: #7e9c72;
+  --color-blue-400: #7fa6cc;
+  --color-yellow-400: #e2c35f;
+  --color-white: #ffffff;
+  --color-alpha-white-0: #ffffff00;
+  --color-alpha-white-12: #ffffff1f;
+  --color-alpha-white-14: #ffffff24;
+  --color-alpha-white-70: #ffffffb3;
+  --color-alpha-white-80: #ffffffcc;
+  --color-alpha-navy-900-8: #1f2a4414;
+  --color-alpha-navy-900-68: #1f2a44ad;
+  --color-alpha-navy-900-72: #1f2a44b8;
+  --color-alpha-warm-50-60: #fffdf899;
+  --color-alpha-warm-50-68: #fffdf8ad;
+  --color-alpha-warm-50-72: #fffdf8b8;
+  --color-alpha-warm-200-70: #e0ddd8b3;
+  --color-gray-100: #f1f1f1;
+  --color-gray-300: #b6b6b6;
+  --color-gray-600: #727788;
+  --color-gray-900: #31343c;
+  --color-cool-gray-100: #edeeef;
+  --color-cool-gray-200: #d9dbdf;
+  --color-cool-gray-300: #bdc1c8;
+  --color-cool-gray-500: #808894;
+  --color-cool-gray-600: #676e7b;
+  --color-cool-gray-700: #525862;
+  --color-cool-gray-800: #3d4249;
+  --color-cool-gray-900: #292b2f;
+  --color-warm-400: #bbb7b0;
+  --color-warm-700: #6d6964;
+  --color-warm-800: #55524e;
+  --color-warm-900: #3c3b38;
+  --color-gold-100: #efe2ce;
+  --color-gold-700: #8f6d3f;
+  --color-gold-800: #6f5531;
+  --color-gold-900: #4c3c26;
+  --color-red-100: #fbeded;
+  --color-red-200: #f8cecc;
+  --color-red-300: #f2a39f;
+  --color-red-400: #eb746e;
+  --color-red-800: #8b1e1b;
+  --color-red-900: #5f1c1a;
+  --color-green-100: #e5ece1;
+  --color-green-200: #d1e0c9;
+  --color-green-400: #94ad8a;
+  --color-green-600: #69855e;
+  --color-green-700: #546a4b;
+  --color-green-800: #3e4f38;
+  --color-green-900: #2a3326;
+  --color-blue-100: #eaf0f5;
+  --color-blue-200: #cfdeec;
+  --color-blue-300: #abc5de;
+  --color-blue-500: #5b8dbe;
+  --color-blue-600: #4173a4;
+  --color-blue-700: #345c83;
+  --color-blue-800: #274562;
+  --color-blue-900: #1d2e3f;
+  --color-yellow-100: #f8f3e3;
+  --color-yellow-200: #f4e8c2;
+  --color-yellow-300: #ecd897;
+  --color-yellow-500: #dbb438;
+  --color-yellow-600: #be9922;
+  --color-yellow-700: #977a1b;
+  --color-yellow-800: #705a14;
+  --color-yellow-900: #453912;
+
+  /* Semantic */
+  --bg-canvas: var(--color-warm-100);
+  --bg-inverse: var(--color-navy-900);
+  --bg-surface: var(--color-white);
+  --bg-paper: var(--color-warm-50);
+  --bg-paper-dim: var(--color-alpha-warm-50-68);
+  --bg-subtle: var(--color-navy-100);
+  --bg-muted: var(--color-navy-150);
+  --bg-warm-subtle: var(--color-warm-150);
+  --bg-warm-muted: var(--color-warm-200);
+  --bg-inverse-subtle: var(--color-navy-850);
+  --bg-inverse-raised: var(--color-navy-700);
+  --bg-inverse-strong: var(--color-navy-600);
+  --bg-inverse-accent: var(--color-navy-750);
+  --bg-inverse-glass: var(--color-alpha-white-12);
+  --bg-disabled: var(--color-cool-gray-400);
+  --bg-overlay: var(--color-alpha-navy-900-68);
+  --bg-overlay-subtle: var(--color-alpha-navy-900-8);
+  --bg-danger: var(--color-red-600);
+  --text-primary: var(--color-navy-900);
+  --text-secondary: var(--color-gray-700);
+  --text-tertiary: var(--color-gray-450);
+  --text-placeholder: var(--color-gray-400);
+  --text-warm-muted: var(--color-warm-500);
+  --text-danger: var(--color-red-700);
+  --text-inverse: var(--color-white);
+  --text-inverse-secondary: var(--color-navy-200);
+  --text-inverse-tertiary: var(--color-navy-300);
+  --text-inverse-muted: var(--color-navy-400);
+  --text-inverse-disabled: var(--color-navy-550);
+  --text-inverse-subtle: var(--color-alpha-white-70);
+  --text-inverse-danger: var(--color-red-500);
+  --border-default: var(--color-warm-200);
+  --border-strong: var(--color-warm-300);
+  --border-bold: var(--color-navy-900);
+  --border-danger: var(--color-red-700);
+  --border-glass: var(--color-alpha-white-80);
+  --border-inverse: var(--color-navy-600);
+  --border-inverse-subtle: var(--color-alpha-white-14);
+  --icon-primary: var(--color-navy-900);
+  --icon-secondary: var(--color-gray-700);
+  --icon-tertiary: var(--color-gray-450);
+  --icon-danger: var(--color-red-700);
+  --icon-inverse: var(--color-white);
+  --icon-inverse-secondary: var(--color-navy-300);
+  --icon-inverse-muted: var(--color-navy-400);
+  --accent-gold: var(--color-gold-400);
+  --status-caffeine: var(--color-red-700);
+  --status-safe: var(--color-green-500);
+  --status-info: var(--color-blue-400);
+  --status-warning: var(--color-yellow-400);
+
+  /* Layout */
+  --space-0: 0px;
+  --space-2: 2px;
+  --space-4: 4px;
+  --space-6: 6px;
+  --space-8: 8px;
+  --space-10: 10px;
+  --space-12: 12px;
+  --space-14: 14px;
+  --space-16: 16px;
+  --space-20: 20px;
+  --space-24: 24px;
+  --space-32: 32px;
+  --space-40: 40px;
+  --space-48: 48px;
+  --radius-2: 2px;
+  --radius-4: 4px;
+  --radius-6: 6px;
+  --radius-8: 8px;
+  --radius-10: 10px;
+  --radius-12: 12px;
+  --radius-14: 14px;
+  --radius-16: 16px;
+  --radius-22: 22px;
+  --radius-30: 30px;
+  --radius-full: 999px;
+
+  /* Typography */
+  --font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+  --font-size-10: 10px;
+  --font-size-11: 11px;
+  --font-size-12: 12px;
+  --font-size-13: 13px;
+  --font-size-14: 14px;
+  --font-size-15: 15px;
+  --font-size-16: 16px;
+  --font-size-17: 17px;
+  --font-size-18: 18px;
+  --font-size-19: 19px;
+  --font-size-20: 20px;
+  --font-size-22: 22px;
+  --font-size-24: 24px;
+  --font-size-26: 26px;
+  --font-size-28: 28px;
+  --font-size-30: 30px;
+  --font-size-31: 31px;
+  --font-size-32: 32px;
+  --font-size-50: 50px;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+  --font-weight-black: 900;
+
+  /* Effects (피그마 노드에서 수집) */
+  --shadow-idcard-확인: 0px 10px 28px 0px #080d1a73;
+  --shadow-idcard-검사중: 0px 12px 28px 0px #0d142659;
+  --shadow-relatedcard: 0px 2px 6px 0px #0000000a;
+  --shadow-tabbar-light: 0px 8px 24px 0px #0f142624;
+  --blur-tabbar-light: blur(12px);
+  --shadow-tabbar-dark: 0px 8px 24px 0px #0f142659;
+  --blur-tabbar-dark: blur(12px);
+
+  /* Gradients */
+  --gradient-scan-glow: linear-gradient(180deg, #d93a3300 0%, #d93a3373 100%);
+
+  /* Component metrics (Components v2에서 수집, 변수가 없는 값) */
+  --m-badge-w: 39px;
+  --m-badge-h: 26px;
+  --m-badge-stroke: 1.2px;
+  --m-productthumb-s-조회-w: 36px;
+  --m-productthumb-m-조회-w: 43px;
+  --m-productthumb-m-미조회-w: 43px;
+  --m-productthumb-l-조회-w: 56px;
+  --m-productthumb-s-조회-h: 36px;
+  --m-productthumb-m-조회-h: 43px;
+  --m-productthumb-m-미조회-h: 43px;
+  --m-productthumb-l-조회-h: 56px;
+  --m-productthumb-s-조회-photo-w: 30px;
+  --m-productthumb-m-조회-photo-w: 35px;
+  --m-productthumb-l-조회-photo-w: 46px;
+  --m-productthumb-s-조회-photo-h: 30px;
+  --m-productthumb-m-조회-photo-h: 35px;
+  --m-productthumb-l-조회-photo-h: 46px;
+  --m-productthumb-s-조회-photo-x: 3px;
+  --m-productthumb-m-조회-photo-x: 4px;
+  --m-productthumb-l-조회-photo-x: 5px;
+  --m-productthumb-s-조회-photo-y: 3px;
+  --m-productthumb-m-조회-photo-y: 4px;
+  --m-productthumb-l-조회-photo-y: 5px;
+  --m-productthumb-stroke: 1px;
+  --m-productthumb-dash: 3 3;
+  --m-chip-h: 34px;
+  --m-chip-stroke: 1.2px;
+  --m-button-w: 327px;
+  --m-button-h: 52px;
+  --m-lanyard-w: 29px;
+  --m-lanyard-dark-long-h: 108px;
+  --m-lanyard-light-long-h: 108px;
+  --m-lanyard-visitor-long-h: 108px;
+  --m-lanyard-dark-short-h: 92px;
+  --m-lanyard-strap-w: 29px;
+  --m-lanyard-dark-long-strap-h: 90px;
+  --m-lanyard-light-long-strap-h: 90px;
+  --m-lanyard-visitor-long-strap-h: 90px;
+  --m-lanyard-dark-short-strap-h: 74px;
+  --m-lanyard-strap-x: 0px;
+  --m-lanyard-strap-y: 0px;
+  --m-lanyard-label-rotate: -90deg;
+  --m-lanyard-label-x: 8.5px;
+  --m-lanyard-dark-long-label-y: 82px;
+  --m-lanyard-light-long-label-y: 82px;
+  --m-lanyard-visitor-long-label-y: 82px;
+  --m-lanyard-dark-short-label-y: 66px;
+  --m-lanyard-clip-w: 21px;
+  --m-lanyard-clip-h: 9px;
+  --m-lanyard-clip-x: 4px;
+  --m-lanyard-dark-long-clip-y: 86px;
+  --m-lanyard-light-long-clip-y: 86px;
+  --m-lanyard-visitor-long-clip-y: 86px;
+  --m-lanyard-dark-short-clip-y: 70px;
+  --m-lanyard-connector-w: 3px;
+  --m-lanyard-connector-h: 6px;
+  --m-lanyard-connector-x: 13px;
+  --m-lanyard-dark-long-connector-y: 94px;
+  --m-lanyard-light-long-connector-y: 94px;
+  --m-lanyard-visitor-long-connector-y: 94px;
+  --m-lanyard-dark-short-connector-y: 78px;
+  --m-lanyard-ring-w: 11px;
+  --m-lanyard-ring-h: 11px;
+  --m-lanyard-ring-stroke: 2.5px;
+  --m-lanyard-ring-x: 9px;
+  --m-lanyard-dark-long-ring-y: 96px;
+  --m-lanyard-light-long-ring-y: 96px;
+  --m-lanyard-visitor-long-ring-y: 96px;
+  --m-lanyard-dark-short-ring-y: 80px;
+  --m-categorythumb-l-w: 56px;
+  --m-categorythumb-m-w: 44px;
+  --m-categorythumb-l-h: 56px;
+  --m-categorythumb-m-h: 44px;
+  --m-categorythumb-l-categoryicon-w: 32px;
+  --m-categorythumb-m-categoryicon-w: 25.14px;
+  --m-categorythumb-l-categoryicon-h: 32px;
+  --m-categorythumb-m-categoryicon-h: 25.14px;
+  --m-categorythumb-radius: 7.86px;
+  --m-foodrow-w: 327px;
+  --m-foodrow-h: 80px;
+  --m-foodrow-stroke: 0px 0px 1px 0px;
+  --m-foodrow-thumb-w: 43px;
+  --m-foodrow-thumb-h: 43px;
+  --m-foodrow-value-badge-w: 39px;
+  --m-foodrow-value-badge-h: 26px;
+  --m-foodrow-value-badge-stroke: 1.2px;
+  --m-foodrow-thumb-stroke: 1px;
+  --m-foodrow-thumb-dash: 3 3;
+  --m-rankrow-w: 293px;
+  --m-rankrow-stroke: 0px 0px 1px 0px;
+  --m-rankrow-rank-w: 16px;
+  --m-rankrow-rank-h: 24px;
+  --m-rankrow-productthumb-w: 36px;
+  --m-rankrow-productthumb-h: 36px;
+  --m-evidencerow-w: 327px;
+  --m-evidencerow-productthumb-w: 43px;
+  --m-evidencerow-productthumb-h: 43px;
+  --m-categoryitem-w: 66.75px;
+  --m-categoryitem-categorythumb-w: 56px;
+  --m-categoryitem-categorythumb-h: 56px;
+  --m-categorycard-w: 153.5px;
+  --m-categorycard-stroke: 1px;
+  --m-categorycard-categorythumb-w: 44px;
+  --m-categorycard-categorythumb-h: 44px;
+  --m-quizoption-w: 125px;
+  --m-quizoption-stroke: 1px;
+  --m-quizoption-productthumb-w: 56px;
+  --m-quizoption-productthumb-h: 56px;
+  --m-loadingstep-w: 327px;
+  --m-loadingstep-h: 24px;
+  --m-loadingstep-label-group-icon-check-circle-w: 22px;
+  --m-loadingstep-label-group-icon-check-circle-h: 22px;
+  --m-loadingstep-label-group-status-icon-w: 22px;
+  --m-loadingstep-label-group-status-icon-h: 22px;
+  --m-loadingstep-label-group-status-icon-ring-w: 22px;
+  --m-loadingstep-label-group-status-icon-ring-h: 22px;
+  --m-loadingstep-label-group-status-icon-ring-stroke: 2px;
+  --m-loadingstep-label-group-status-icon-ring-x: 0px;
+  --m-loadingstep-label-group-status-icon-ring-y: 0px;
+  --m-loadingstep-label-group-status-icon-dot-w: 10px;
+  --m-loadingstep-label-group-status-icon-dot-h: 10px;
+  --m-loadingstep-label-group-status-icon-dot-x: 6px;
+  --m-loadingstep-label-group-status-icon-dot-y: 6px;
+  --m-photoupload-add-photo-w: 72px;
+  --m-photoupload-add-photo-h: 72px;
+  --m-photoupload-add-photo-stroke: 1.2px;
+  --m-photoupload-add-photo-dash: 4 3;
+  --m-searchfield-empty-w: 327px;
+  --m-searchfield-filled-w: 295px;
+  --m-searchfield-h: 52px;
+  --m-searchfield-empty-stroke: 1px;
+  --m-searchfield-filled-stroke: 2px;
+  --m-searchfield-icon-search-w: 24px;
+  --m-searchfield-icon-search-h: 24px;
+  --m-textfield-w: 327px;
+  --m-textfield-input-h: 51px;
+  --m-textfield-filled-input-stroke: 1.5px;
+  --m-textfield-empty-input-stroke: 1px;
+  --m-sectionheader-w: 327px;
+  --m-sectionheader-h: 24px;
+  --m-backheader-icon-chevron-left-w: 24px;
+  --m-backheader-icon-chevron-left-h: 24px;
+  --m-dailyratio-w: 327px;
+  --m-dailyratio-ratio-daily-ratio-h: 20px;
+  --m-dailyratio-ratio-progress-h: 5px;
+  --m-dailyratio-ratio-progress-fill-w: 28px;
+  --m-dailyratio-ratio-progress-fill-h: 5px;
+  --m-dailyratio-ratio-progress-fill-x: 0px;
+  --m-dailyratio-ratio-progress-fill-y: 0px;
+  --m-dailyratio-ratio-progress-range-w: 8px;
+  --m-dailyratio-ratio-progress-range-h: 5px;
+  --m-dailyratio-ratio-progress-range-x: 8px;
+  --m-dailyratio-ratio-progress-range-y: 0px;
+  --m-idcard-w: 213px;
+  --m-idcard-h: 338px;
+  --m-idcard-handle-bar-w: 37px;
+  --m-idcard-handle-bar-h: 6px;
+  --m-idcard-title-row-title-id-mark-w: 16px;
+  --m-idcard-title-row-title-id-mark-h: 16px;
+  --m-idcard-title-row-title-id-mark-stroke: 1.3px;
+  --m-idcard-title-row-title-id-mark-id-fs: 6.5px;
+  --m-idcard-illust-box-w: 181px;
+  --m-idcard-illust-box-h: 129px;
+  --m-idcard-stats-stat-1-w: 96px;
+  --m-idcard-stats-stat-2-w: 85px;
+  --m-idcard-stamp-w: 66px;
+  --m-idcard-stamp-h: 66px;
+  --m-idcard-stamp-stroke: 2.2px;
+  --m-idcard-stamp-rotate: -12deg;
+  --m-idcard-stamp-x: 129.86px;
+  --m-idcard-stamp-y: 170.58px;
+  --m-idcard-stamp-inner-ring-w: 57px;
+  --m-idcard-stamp-inner-ring-h: 57px;
+  --m-idcard-stamp-inner-ring-stroke: 1px;
+  --m-idcard-stamp-inner-ring-x: 4.5px;
+  --m-idcard-stamp-inner-ring-y: 4.5px;
+  --m-idcard-illust-box-illust-can-w: 52px;
+  --m-idcard-illust-box-illust-can-h: 117px;
+  --m-idcard-illust-box-illust-can-x: 64.5px;
+  --m-idcard-illust-box-illust-can-y: 12px;
+  --m-idcard-info-skeleton-name-w: 104px;
+  --m-idcard-info-skeleton-name-h: 20px;
+  --m-idcard-info-meta-row-skeleton-meta-w: 64px;
+  --m-idcard-info-meta-row-skeleton-meta-h: 10px;
+  --m-idcard-stats-stat-1-skeleton-label-w: 48px;
+  --m-idcard-stats-stat-1-skeleton-label-h: 8px;
+  --m-idcard-stats-stat-1-skeleton-value-w: 64px;
+  --m-idcard-stats-stat-1-skeleton-value-h: 16px;
+  --m-idcard-stats-stat-2-skeleton-label-w: 48px;
+  --m-idcard-stats-stat-2-skeleton-label-h: 8px;
+  --m-idcard-stats-stat-2-skeleton-value-w: 56px;
+  --m-idcard-stats-stat-2-skeleton-value-h: 16px;
+  --m-idcard-stroke: 1.5px;
+  --m-idcard-dash: 5 3;
+  --m-idcard-illust-box-stroke: 1px;
+  --m-idcard-illust-box-dash: 4 3;
+  --m-idcard-stamp-dash: 4 3;
+  --m-idcard-stamp-inner-ring-dash: 3 3;
+  --m-idcard-photo-unknown-x: 99.5px;
+  --m-idcard-photo-unknown-y: 120px;
+  --m-idcardback-w: 213px;
+  --m-idcardback-h: 338px;
+  --m-idcardback-stroke: 1px;
+  --m-idcardback-handle-w: 37px;
+  --m-idcardback-handle-h: 6px;
+  --m-idcardback-handle-x: 88px;
+  --m-idcardback-handle-y: 10px;
+  --m-idcardback-vertical-title-rotate: -90deg;
+  --m-idcardback-vertical-title-x: 14px;
+  --m-idcardback-vertical-title-y: 318px;
+  --m-idcardback-info-w: 101px;
+  --m-idcardback-info-h: 286px;
+  --m-idcardback-info-x: 99px;
+  --m-idcardback-info-y: 33px;
+  --m-idcardback-info-divider-1-h: 1px;
+  --m-idcardback-info-divider-2-h: 1px;
+  --m-idcardback-info-divider-3-h: 1px;
+  --m-idcardback-info-divider-4-h: 1px;
+  --m-idcardmini-w: 153.5px;
+  --m-idcardmini-handle-bar-w: 26px;
+  --m-idcardmini-handle-bar-h: 4px;
+  --m-idcardmini-title-row-id-mark-w: 11.2px;
+  --m-idcardmini-title-row-id-mark-h: 11.2px;
+  --m-idcardmini-title-row-id-mark-stroke: 0.91px;
+  --m-idcardmini-title-row-id-mark-id-fs: 4.55px;
+  --m-idcardmini-photo-box-h: 92px;
+  --m-idcardmini-photo-box-photo-w: 118px;
+  --m-idcardmini-photo-box-photo-h: 76px;
+  --m-idcardmini-photo-box-photo-x: 8px;
+  --m-idcardmini-photo-box-photo-y: 8px;
+  --m-idcardmini-stamp-w: 44px;
+  --m-idcardmini-stamp-h: 44px;
+  --m-idcardmini-stamp-stroke: 1.6px;
+  --m-idcardmini-발급-stamp-rotate: -12deg;
+  --m-idcardmini-미발급-stamp-rotate: 8deg;
+  --m-idcardmini-stamp-x: 103.5px;
+  --m-idcardmini-stamp-y: 108px;
+  --m-idcardmini-stamp-inner-ring-w: 38px;
+  --m-idcardmini-stamp-inner-ring-h: 38px;
+  --m-idcardmini-stamp-inner-ring-stroke: 0.8px;
+  --m-idcardmini-stamp-inner-ring-x: 3px;
+  --m-idcardmini-stamp-inner-ring-y: 3px;
+  --m-idcardmini-stroke: 1.2px;
+  --m-idcardmini-dash: 5 4;
+  --m-idcardmini-photo-box-stroke: 1px;
+  --m-idcardmini-photo-box-dash: 3 3;
+  --m-relatedcard-w: 99px;
+  --m-relatedcard-h: 162px;
+  --m-relatedcard-handle-bar-w: 20px;
+  --m-relatedcard-handle-bar-h: 4px;
+  --m-relatedcard-illust-box-w: 83px;
+  --m-relatedcard-illust-box-h: 63px;
+  --m-relatedcard-illust-box-photo-w: 75px;
+  --m-relatedcard-illust-box-photo-h: 55px;
+  --m-relatedcard-illust-box-photo-x: 4px;
+  --m-relatedcard-illust-box-photo-y: 4px;
+  --m-relatedcard-stroke: 1.2px;
+  --m-relatedcard-dash: 4 3;
+  --m-relatedcard-illust-box-stroke: 1px;
+  --m-relatedcard-illust-box-dash: 3 3;
+  --m-tabbar-w: 375px;
+  --m-tabbar-h: 100px;
+  --m-tabbar-bar-w: 375px;
+  --m-tabbar-bar-h: 60px;
+  --m-tabbar-bar-gap: 35px;
+  --m-tabbar-bar-x: 0px;
+  --m-tabbar-bar-y: 6px;
+  --m-tabbar-bar-capsule-w: 327px;
+  --m-tabbar-bar-capsule-h: 60px;
+  --m-tabbar-bar-capsule-stroke: 1px;
+  --m-tabbar-bar-capsule-tab-홈-h: 56px;
+  --m-tabbar-bar-capsule-tab-홈-active-pill-w: 56px;
+  --m-tabbar-bar-capsule-tab-홈-active-pill-h: 30px;
+  --m-tabbar-bar-capsule-tab-홈-active-pill-x: 9.13px;
+  --m-tabbar-bar-capsule-tab-홈-active-pill-y: 1px;
+  --m-tabbar-bar-capsule-tab-홈-icon-home-w: 24px;
+  --m-tabbar-bar-capsule-tab-홈-icon-home-h: 24px;
+  --m-tabbar-bar-capsule-tab-조회-icon-id-card-w: 24px;
+  --m-tabbar-bar-capsule-tab-조회-icon-id-card-h: 24px;
+  --m-tabbar-bar-capsule-tab-제보-icon-report-w: 24px;
+  --m-tabbar-bar-capsule-tab-제보-icon-report-h: 24px;
+  --m-tabbar-bar-capsule-tab-정보-icon-info-w: 24px;
+  --m-tabbar-bar-capsule-tab-정보-icon-info-h: 24px;
+  --m-tabbar-bar-capsule-tab-조회-h: 56px;
+  --m-tabbar-bar-capsule-tab-조회-active-pill-w: 56px;
+  --m-tabbar-bar-capsule-tab-조회-active-pill-h: 30px;
+  --m-tabbar-bar-capsule-tab-조회-active-pill-x: 9.13px;
+  --m-tabbar-bar-capsule-tab-조회-active-pill-y: 1px;
+  --m-tabbar-bar-capsule-tab-제보-h: 56px;
+  --m-tabbar-bar-capsule-tab-제보-active-pill-w: 56px;
+  --m-tabbar-bar-capsule-tab-제보-active-pill-h: 30px;
+  --m-tabbar-bar-capsule-tab-제보-active-pill-x: 9.13px;
+  --m-tabbar-bar-capsule-tab-제보-active-pill-y: 1px;
+  --m-tabbar-bar-capsule-tab-정보-h: 56px;
+  --m-tabbar-bar-capsule-tab-정보-active-pill-w: 56px;
+  --m-tabbar-bar-capsule-tab-정보-active-pill-h: 30px;
+  --m-tabbar-bar-capsule-tab-정보-active-pill-x: 9.13px;
+  --m-tabbar-bar-capsule-tab-정보-active-pill-y: 1px;
+  --m-screen-welcome-w: 375px;
+  --m-screen-welcome-h: 812px;
+  --m-screen-welcome-idcardback-behind-x: 84px;
+  --m-screen-welcome-idcardback-behind-y: 123.99px;
+  --m-screen-welcome-idcardback-behind-w: 213px;
+  --m-screen-welcome-idcardback-behind-h: 338px;
+  --m-screen-welcome-idcardback-behind-rotate: -10deg;
+  --m-screen-welcome-lanyard-x: 173px;
+  --m-screen-welcome-lanyard-y: 0px;
+  --m-screen-welcome-lanyard-w: 29px;
+  --m-screen-welcome-lanyard-h: 92px;
+  --m-screen-welcome-idcard-x: 81px;
+  --m-screen-welcome-idcard-y: 92px;
+  --m-screen-welcome-idcard-w: 213px;
+  --m-screen-welcome-idcard-h: 338px;
+  --m-screen-welcome-headline-x: 24px;
+  --m-screen-welcome-headline-y: 483px;
+  --m-screen-welcome-headline-w: 243px;
+  --m-screen-welcome-headline-h: 90px;
+  --m-screen-welcome-sub-x: 24px;
+  --m-screen-welcome-sub-y: 573px;
+  --m-screen-welcome-sub-w: 246px;
+  --m-screen-welcome-sub-h: 23px;
+  --m-screen-welcome-button-x: 24px;
+  --m-screen-welcome-button-y: 726px;
+  --m-screen-welcome-button-w: 327px;
+  --m-screen-welcome-button-h: 52px;
+  --m-screen-main-w: 375px;
+  --m-screen-main-h: 1716px;
+  --m-screen-main-headline-x: 24px;
+  --m-screen-main-headline-y: 79px;
+  --m-screen-main-headline-w: 191px;
+  --m-screen-main-headline-h: 90px;
+  --m-screen-main-sub-x: 24px;
+  --m-screen-main-sub-y: 169px;
+  --m-screen-main-sub-w: 221px;
+  --m-screen-main-sub-h: 21px;
+  --m-screen-main-search-field-x: 24px;
+  --m-screen-main-search-field-y: 212px;
+  --m-screen-main-search-field-w: 327px;
+  --m-screen-main-search-field-h: 52px;
+  --m-screen-main-search-field-stroke: 1px;
+  --m-screen-main-section-header-x: 24px;
+  --m-screen-main-section-header-y: 558px;
+  --m-screen-main-section-header-w: 327px;
+  --m-screen-main-section-header-h: 24px;
+  --m-screen-main-recent-list-x: 24px;
+  --m-screen-main-recent-list-y: 589px;
+  --m-screen-main-recent-list-w: 327px;
+  --m-screen-main-recent-list-h: 240px;
+  --m-screen-main-recent-list-foodrow-1-w: 327px;
+  --m-screen-main-recent-list-foodrow-1-h: 80px;
+  --m-screen-main-recent-list-foodrow-2-w: 327px;
+  --m-screen-main-recent-list-foodrow-2-h: 80px;
+  --m-screen-main-recent-list-foodrow-3-w: 327px;
+  --m-screen-main-recent-list-foodrow-3-h: 80px;
+  --m-screen-main-section-header-카테고리-x: 24px;
+  --m-screen-main-section-header-카테고리-y: 304px;
+  --m-screen-main-section-header-카테고리-w: 327px;
+  --m-screen-main-section-header-카테고리-h: 24px;
+  --m-screen-main-category-row-x: 24px;
+  --m-screen-main-category-row-y: 344px;
+  --m-screen-main-category-row-w: 327px;
+  --m-screen-main-category-row-h: 176px;
+  --m-screen-main-category-row-categoryitem-1-w: 66.75px;
+  --m-screen-main-category-row-categoryitem-2-w: 66.75px;
+  --m-screen-main-category-row-categoryitem-3-w: 66.75px;
+  --m-screen-main-category-row-categoryitem-4-w: 66.75px;
+  --m-screen-main-category-row-categoryitem-5-w: 66.75px;
+  --m-screen-main-category-row-categoryitem-6-w: 66.75px;
+  --m-screen-main-category-row-categoryitem-7-w: 66.75px;
+  --m-screen-main-category-row-categoryitem-8-w: 66.75px;
+  --m-screen-main-section-header-top5-x: 24px;
+  --m-screen-main-section-header-top5-y: 869px;
+  --m-screen-main-section-header-top5-w: 327px;
+  --m-screen-main-section-header-top5-h: 24px;
+  --m-screen-main-top5-card-x: 24px;
+  --m-screen-main-top5-card-y: 905px;
+  --m-screen-main-top5-card-w: 327px;
+  --m-screen-main-top5-card-h: 349px;
+  --m-screen-main-top5-card-stroke: 1px;
+  --m-screen-main-top5-card-rank-1-stroke: 0px 0px 1px 0px;
+  --m-screen-main-top5-card-rank-2-stroke: 0px 0px 1px 0px;
+  --m-screen-main-top5-card-rank-3-stroke: 0px 0px 1px 0px;
+  --m-screen-main-top5-card-rank-4-stroke: 0px 0px 1px 0px;
+  --m-screen-main-quiz-card-x: 24px;
+  --m-screen-main-quiz-card-y: 1289px;
+  --m-screen-main-quiz-card-w: 327px;
+  --m-screen-main-quiz-card-h: 295px;
+  --m-screen-main-quiz-card-options-option-콜라-w: 125px;
+  --m-screen-main-quiz-card-options-option-콜라-stroke: 1px;
+  --m-screen-main-quiz-card-options-vs-w: 21px;
+  --m-screen-main-quiz-card-options-vs-h: 21px;
+  --m-screen-main-quiz-card-options-option-녹차-아이스크림-w: 125px;
+  --m-screen-main-quiz-card-options-option-녹차-아이스크림-stroke: 1px;
+  --m-screen-main-tabbar-x: 0px;
+  --m-screen-main-tabbar-y: 1616px;
+  --m-screen-main-tabbar-w: 375px;
+  --m-screen-main-tabbar-h: 100px;
+  --m-screen-category-w: 375px;
+  --m-screen-category-h: 812px;
+  --m-screen-category-icon-chevron-left-x: 24px;
+  --m-screen-category-icon-chevron-left-y: 56px;
+  --m-screen-category-icon-chevron-left-w: 24px;
+  --m-screen-category-icon-chevron-left-h: 24px;
+  --m-screen-category-카테고리-x: 24px;
+  --m-screen-category-카테고리-y: 104px;
+  --m-screen-category-카테고리-w: 102px;
+  --m-screen-category-카테고리-h: 45px;
+  --m-screen-category-분류별로-숨은-카페인을-찾아보세요-x: 24px;
+  --m-screen-category-분류별로-숨은-카페인을-찾아보세요-y: 152px;
+  --m-screen-category-분류별로-숨은-카페인을-찾아보세요-w: 191px;
+  --m-screen-category-분류별로-숨은-카페인을-찾아보세요-h: 21px;
+  --m-screen-category-category-grid-x: 24px;
+  --m-screen-category-category-grid-y: 197px;
+  --m-screen-category-category-grid-w: 327px;
+  --m-screen-category-category-grid-h: 344px;
+  --m-screen-category-category-grid-category-탄산음료-w: 153.5px;
+  --m-screen-category-category-grid-category-탄산음료-stroke: 1px;
+  --m-screen-category-category-grid-category-에너지음료-w: 153.5px;
+  --m-screen-category-category-grid-category-에너지음료-stroke: 1px;
+  --m-screen-category-category-grid-category-커피-w: 153.5px;
+  --m-screen-category-category-grid-category-커피-stroke: 1px;
+  --m-screen-category-category-grid-category-차-w: 153.5px;
+  --m-screen-category-category-grid-category-차-stroke: 1px;
+  --m-screen-category-category-grid-category-빙과류-w: 153.5px;
+  --m-screen-category-category-grid-category-빙과류-stroke: 1px;
+  --m-screen-category-category-grid-category-과자류-w: 153.5px;
+  --m-screen-category-category-grid-category-과자류-stroke: 1px;
+  --m-screen-category-category-grid-category-초콜릿-w: 153.5px;
+  --m-screen-category-category-grid-category-초콜릿-stroke: 1px;
+  --m-screen-category-category-grid-category-약-w: 153.5px;
+  --m-screen-category-category-grid-category-약-stroke: 1px;
+  --m-screen-category-tabbar-x: 0px;
+  --m-screen-category-tabbar-y: 712px;
+  --m-screen-category-tabbar-w: 375px;
+  --m-screen-category-tabbar-h: 100px;
+  --m-screen-category-detail-w: 375px;
+  --m-screen-category-detail-h: 1459.2px;
+  --m-screen-category-detail-icon-chevron-left-x: 24px;
+  --m-screen-category-detail-icon-chevron-left-y: 56px;
+  --m-screen-category-detail-icon-chevron-left-w: 24px;
+  --m-screen-category-detail-icon-chevron-left-h: 24px;
+  --m-screen-category-detail-카테고리-x: 56px;
+  --m-screen-category-detail-카테고리-y: 55px;
+  --m-screen-category-detail-카테고리-w: 62px;
+  --m-screen-category-detail-카테고리-h: 27px;
+  --m-screen-category-detail-탄산음료-x: 24px;
+  --m-screen-category-detail-탄산음료-y: 106px;
+  --m-screen-category-detail-탄산음료-w: 102px;
+  --m-screen-category-detail-탄산음료-h: 38px;
+  --m-screen-category-detail-조회한-음료는-사진이-붙은-신분증으로-보여요-x: 24px;
+  --m-screen-category-detail-조회한-음료는-사진이-붙은-신분증으로-보여요-y: 152px;
+  --m-screen-category-detail-조회한-음료는-사진이-붙은-신분증으로-보여요-w: 224px;
+  --m-screen-category-detail-조회한-음료는-사진이-붙은-신분증으로-보여요-h: 20px;
+  --m-screen-category-detail-전체-7장-x: 24px;
+  --m-screen-category-detail-전체-7장-y: 204px;
+  --m-screen-category-detail-전체-7장-w: 44px;
+  --m-screen-category-detail-전체-7장-h: 20px;
+  --m-screen-category-detail-가나다순-x: 306px;
+  --m-screen-category-detail-가나다순-y: 204px;
+  --m-screen-category-detail-가나다순-w: 45px;
+  --m-screen-category-detail-가나다순-h: 20px;
+  --m-screen-category-detail-id-wallet-x: 24px;
+  --m-screen-category-detail-id-wallet-y: 238px;
+  --m-screen-category-detail-id-wallet-w: 327px;
+  --m-screen-category-detail-id-wallet-h: 1065.6px;
+  --m-screen-category-detail-id-wallet-idcardmini-닥터페퍼-w: 153.5px;
+  --m-screen-category-detail-id-wallet-idcardmini-마운틴듀-w: 153.5px;
+  --m-screen-category-detail-id-wallet-idcardmini-칠성사이다-w: 153.5px;
+  --m-screen-category-detail-id-wallet-idcardmini-코카콜라-w: 153.5px;
+  --m-screen-category-detail-id-wallet-idcardmini-코카콜라-제로-w: 153.5px;
+  --m-screen-category-detail-id-wallet-idcardmini-펩시-콜라-w: 153.5px;
+  --m-screen-category-detail-id-wallet-idcardmini-환타-오렌지-w: 153.5px;
+  --m-screen-category-detail-미발급-카드를-누르면-바로-신원조회를-시작해요-x: 76px;
+  --m-screen-category-detail-미발급-카드를-누르면-바로-신원조회를-시작해요-y: 1309.2px;
+  --m-screen-category-detail-미발급-카드를-누르면-바로-신원조회를-시작해요-w: 217px;
+  --m-screen-category-detail-미발급-카드를-누르면-바로-신원조회를-시작해요-h: 18px;
+  --m-screen-category-detail-tabbar-x: 0px;
+  --m-screen-category-detail-tabbar-y: 1359.2px;
+  --m-screen-category-detail-tabbar-w: 375px;
+  --m-screen-category-detail-tabbar-h: 100px;
+  --m-screen-search-w: 375px;
+  --m-screen-search-h: 812px;
+  --m-screen-search-icon-chevron-left-x: 24px;
+  --m-screen-search-icon-chevron-left-y: 70px;
+  --m-screen-search-icon-chevron-left-w: 24px;
+  --m-screen-search-icon-chevron-left-h: 24px;
+  --m-screen-search-search-field-x: 56px;
+  --m-screen-search-search-field-y: 56px;
+  --m-screen-search-search-field-w: 295px;
+  --m-screen-search-search-field-h: 52px;
+  --m-screen-search-search-field-stroke: 2px;
+  --m-screen-search-filter-chips-x: 24px;
+  --m-screen-search-filter-chips-y: 124px;
+  --m-screen-search-filter-chips-w: 257.8px;
+  --m-screen-search-filter-chips-h: 34px;
+  --m-screen-search-filter-chips-chip-1-h: 34px;
+  --m-screen-search-filter-chips-chip-2-h: 34px;
+  --m-screen-search-filter-chips-chip-3-h: 34px;
+  --m-screen-search-result-header-x: 24px;
+  --m-screen-search-result-header-y: 182px;
+  --m-screen-search-result-header-w: 327px;
+  --m-screen-search-result-header-h: 18px;
+  --m-screen-search-result-list-x: 24px;
+  --m-screen-search-result-list-y: 212px;
+  --m-screen-search-result-list-w: 327px;
+  --m-screen-search-result-list-h: 320px;
+  --m-screen-search-result-list-foodrow-펩시-콜라-조회-w: 327px;
+  --m-screen-search-result-list-foodrow-펩시-콜라-조회-h: 80px;
+  --m-screen-search-result-list-foodrow-코카콜라-조회-w: 327px;
+  --m-screen-search-result-list-foodrow-코카콜라-조회-h: 80px;
+  --m-screen-search-result-list-foodrow-코카콜라-제로-미조회-w: 327px;
+  --m-screen-search-result-list-foodrow-코카콜라-제로-미조회-h: 80px;
+  --m-screen-search-result-list-foodrow-콜라맛-젤리-미조회-w: 327px;
+  --m-screen-search-result-list-foodrow-콜라맛-젤리-미조회-h: 80px;
+  --m-screen-search-register-link-x: 24px;
+  --m-screen-search-register-link-y: 556px;
+  --m-screen-search-register-link-w: 215px;
+  --m-screen-search-register-link-h: 21px;
+  --m-screen-search-register-link-fs: 14px;
+  --m-screen-search-tabbar-x: 0px;
+  --m-screen-search-tabbar-y: 712px;
+  --m-screen-search-tabbar-w: 375px;
+  --m-screen-search-tabbar-h: 100px;
+  --m-screen-loading-w: 375px;
+  --m-screen-loading-h: 812px;
+  --m-screen-loading-lanyard-x: 173px;
+  --m-screen-loading-lanyard-y: 0px;
+  --m-screen-loading-lanyard-w: 29px;
+  --m-screen-loading-lanyard-h: 92px;
+  --m-screen-loading-idcard-x: 81px;
+  --m-screen-loading-idcard-y: 92px;
+  --m-screen-loading-idcard-w: 213px;
+  --m-screen-loading-idcard-h: 338px;
+  --m-screen-loading-scan-frame-x: 24px;
+  --m-screen-loading-scan-frame-y: 76px;
+  --m-screen-loading-scan-frame-w: 327px;
+  --m-screen-loading-scan-frame-h: 369px;
+  --m-screen-loading-scan-frame-corner-1-x: 0px;
+  --m-screen-loading-scan-frame-corner-1-y: 0px;
+  --m-screen-loading-scan-frame-corner-1-w: 28px;
+  --m-screen-loading-scan-frame-corner-1-h: 28px;
+  --m-screen-loading-scan-frame-corner-1-vector-x: 2px;
+  --m-screen-loading-scan-frame-corner-1-vector-y: 2px;
+  --m-screen-loading-scan-frame-corner-1-vector-w: 26px;
+  --m-screen-loading-scan-frame-corner-1-vector-h: 26px;
+  --m-screen-loading-scan-frame-corner-1-vector-stroke: 3px;
+  --m-screen-loading-scan-frame-corner-2-x: 299px;
+  --m-screen-loading-scan-frame-corner-2-y: 0px;
+  --m-screen-loading-scan-frame-corner-2-w: 28px;
+  --m-screen-loading-scan-frame-corner-2-h: 28px;
+  --m-screen-loading-scan-frame-corner-2-vector-x: 0px;
+  --m-screen-loading-scan-frame-corner-2-vector-y: 2px;
+  --m-screen-loading-scan-frame-corner-2-vector-w: 26px;
+  --m-screen-loading-scan-frame-corner-2-vector-h: 26px;
+  --m-screen-loading-scan-frame-corner-2-vector-stroke: 3px;
+  --m-screen-loading-scan-frame-corner-3-x: 0px;
+  --m-screen-loading-scan-frame-corner-3-y: 341px;
+  --m-screen-loading-scan-frame-corner-3-w: 28px;
+  --m-screen-loading-scan-frame-corner-3-h: 28px;
+  --m-screen-loading-scan-frame-corner-3-vector-x: 2px;
+  --m-screen-loading-scan-frame-corner-3-vector-y: 0px;
+  --m-screen-loading-scan-frame-corner-3-vector-w: 26px;
+  --m-screen-loading-scan-frame-corner-3-vector-h: 26px;
+  --m-screen-loading-scan-frame-corner-3-vector-stroke: 3px;
+  --m-screen-loading-scan-frame-corner-4-x: 299px;
+  --m-screen-loading-scan-frame-corner-4-y: 341px;
+  --m-screen-loading-scan-frame-corner-4-w: 28px;
+  --m-screen-loading-scan-frame-corner-4-h: 28px;
+  --m-screen-loading-scan-frame-corner-4-vector-x: 0px;
+  --m-screen-loading-scan-frame-corner-4-vector-y: 0px;
+  --m-screen-loading-scan-frame-corner-4-vector-w: 26px;
+  --m-screen-loading-scan-frame-corner-4-vector-h: 26px;
+  --m-screen-loading-scan-frame-corner-4-vector-stroke: 3px;
+  --m-screen-loading-scan-glow-x: 24px;
+  --m-screen-loading-scan-glow-y: 205px;
+  --m-screen-loading-scan-glow-w: 327px;
+  --m-screen-loading-scan-glow-h: 57px;
+  --m-screen-loading-scan-line-x: 24px;
+  --m-screen-loading-scan-line-y: 260px;
+  --m-screen-loading-scan-line-w: 327px;
+  --m-screen-loading-scan-line-h: 2px;
+  --m-screen-loading-step-label-x: 24px;
+  --m-screen-loading-step-label-y: 477px;
+  --m-screen-loading-step-label-w: 99px;
+  --m-screen-loading-step-label-h: 20px;
+  --m-screen-loading-headline-x: 24px;
+  --m-screen-loading-headline-y: 500px;
+  --m-screen-loading-headline-w: 214px;
+  --m-screen-loading-headline-h: 36px;
+  --m-screen-loading-steps-x: 24px;
+  --m-screen-loading-steps-y: 556px;
+  --m-screen-loading-steps-w: 327px;
+  --m-screen-loading-steps-h: 109px;
+  --m-screen-loading-steps-gap: 18.5px;
+  --m-screen-result-w: 375px;
+  --m-screen-result-h: 1134px;
+  --m-screen-result-icon-chevron-left-x: 24px;
+  --m-screen-result-icon-chevron-left-y: 56px;
+  --m-screen-result-icon-chevron-left-w: 24px;
+  --m-screen-result-icon-chevron-left-h: 24px;
+  --m-screen-result-title-x: 56px;
+  --m-screen-result-title-y: 56px;
+  --m-screen-result-title-w: 65px;
+  --m-screen-result-title-h: 27px;
+  --m-screen-result-card-back-x: 83px;
+  --m-screen-result-card-back-y: 139.99px;
+  --m-screen-result-card-back-w: 213px;
+  --m-screen-result-card-back-h: 338px;
+  --m-screen-result-card-back-rotate: -10deg;
+  --m-screen-result-lanyard-x: 173px;
+  --m-screen-result-lanyard-y: 0px;
+  --m-screen-result-lanyard-w: 29px;
+  --m-screen-result-lanyard-h: 108px;
+  --m-screen-result-card-front-x: 81px;
+  --m-screen-result-card-front-y: 108px;
+  --m-screen-result-card-front-w: 213px;
+  --m-screen-result-card-front-h: 338px;
+  --m-screen-result-caption-x: 0px;
+  --m-screen-result-caption-y: 490px;
+  --m-screen-result-caption-w: 375px;
+  --m-screen-result-caption-h: 20px;
+  --m-screen-result-summary-x: 24px;
+  --m-screen-result-summary-y: 600px;
+  --m-screen-result-summary-w: 269px;
+  --m-screen-result-summary-h: 48px;
+  --m-screen-result-daily-ratio-x: 24px;
+  --m-screen-result-daily-ratio-y: 668px;
+  --m-screen-result-daily-ratio-w: 327px;
+  --m-screen-result-daily-ratio-h: 20px;
+  --m-screen-result-progress-x: 24px;
+  --m-screen-result-progress-y: 696px;
+  --m-screen-result-progress-w: 327px;
+  --m-screen-result-progress-h: 5px;
+  --m-screen-result-progress-fill-x: 0px;
+  --m-screen-result-progress-fill-y: 0px;
+  --m-screen-result-progress-fill-w: 28px;
+  --m-screen-result-progress-fill-h: 5px;
+  --m-screen-result-source-x: 24px;
+  --m-screen-result-source-y: 713px;
+  --m-screen-result-source-w: 165px;
+  --m-screen-result-source-h: 21px;
+  --m-screen-result-section-title-x: 24px;
+  --m-screen-result-section-title-y: 782px;
+  --m-screen-result-section-title-w: 62px;
+  --m-screen-result-section-title-h: 26px;
+  --m-screen-result-related-foods-x: 24px;
+  --m-screen-result-related-foods-y: 824px;
+  --m-screen-result-related-foods-w: 444px;
+  --m-screen-result-related-foods-h: 162px;
+  --m-screen-result-related-foods-relatedcard-펩시-콜라-w: 99px;
+  --m-screen-result-related-foods-relatedcard-펩시-콜라-h: 162px;
+  --m-screen-result-related-foods-relatedcard-코카콜라-제로-w: 99px;
+  --m-screen-result-related-foods-relatedcard-코카콜라-제로-h: 162px;
+  --m-screen-result-related-foods-relatedcard-닥터페퍼-w: 99px;
+  --m-screen-result-related-foods-relatedcard-닥터페퍼-h: 162px;
+  --m-screen-result-related-foods-relatedcard-마운틴듀-w: 99px;
+  --m-screen-result-related-foods-relatedcard-마운틴듀-h: 162px;
+  --m-screen-result-section-more-x: 302px;
+  --m-screen-result-section-more-y: 785px;
+  --m-screen-result-section-more-w: 48px;
+  --m-screen-result-section-more-h: 20px;
+  --m-screen-result-section-title-정보-x: 24px;
+  --m-screen-result-section-title-정보-y: 558px;
+  --m-screen-result-section-title-정보-w: 76px;
+  --m-screen-result-section-title-정보-h: 26px;
+  --m-screen-result-tabbar-x: 0px;
+  --m-screen-result-tabbar-y: 1034px;
+  --m-screen-result-tabbar-w: 375px;
+  --m-screen-result-tabbar-h: 100px;
+  --m-screen-result-back-w: 375px;
+  --m-screen-result-back-h: 1134px;
+  --m-screen-result-back-icon-chevron-left-x: 24px;
+  --m-screen-result-back-icon-chevron-left-y: 56px;
+  --m-screen-result-back-icon-chevron-left-w: 24px;
+  --m-screen-result-back-icon-chevron-left-h: 24px;
+  --m-screen-result-back-title-x: 56px;
+  --m-screen-result-back-title-y: 56px;
+  --m-screen-result-back-title-w: 65px;
+  --m-screen-result-back-title-h: 27px;
+  --m-screen-result-back-card-front-x: 83px;
+  --m-screen-result-back-card-front-y: 139.99px;
+  --m-screen-result-back-card-front-w: 213px;
+  --m-screen-result-back-card-front-h: 338px;
+  --m-screen-result-back-card-front-rotate: -10deg;
+  --m-screen-result-back-lanyard-x: 173px;
+  --m-screen-result-back-lanyard-y: 0px;
+  --m-screen-result-back-lanyard-w: 29px;
+  --m-screen-result-back-lanyard-h: 108px;
+  --m-screen-result-back-card-back-x: 81px;
+  --m-screen-result-back-card-back-y: 108px;
+  --m-screen-result-back-card-back-w: 213px;
+  --m-screen-result-back-card-back-h: 338px;
+  --m-screen-result-back-caption-x: 0px;
+  --m-screen-result-back-caption-y: 490px;
+  --m-screen-result-back-caption-w: 375px;
+  --m-screen-result-back-caption-h: 20px;
+  --m-screen-result-back-section-title-정보-x: 24px;
+  --m-screen-result-back-section-title-정보-y: 558px;
+  --m-screen-result-back-section-title-정보-w: 76px;
+  --m-screen-result-back-section-title-정보-h: 26px;
+  --m-screen-result-back-summary-x: 24px;
+  --m-screen-result-back-summary-y: 600px;
+  --m-screen-result-back-summary-w: 269px;
+  --m-screen-result-back-summary-h: 48px;
+  --m-screen-result-back-daily-ratio-x: 24px;
+  --m-screen-result-back-daily-ratio-y: 668px;
+  --m-screen-result-back-daily-ratio-w: 327px;
+  --m-screen-result-back-daily-ratio-h: 20px;
+  --m-screen-result-back-progress-x: 24px;
+  --m-screen-result-back-progress-y: 696px;
+  --m-screen-result-back-progress-w: 327px;
+  --m-screen-result-back-progress-h: 5px;
+  --m-screen-result-back-progress-fill-x: 0px;
+  --m-screen-result-back-progress-fill-y: 0px;
+  --m-screen-result-back-progress-fill-w: 28px;
+  --m-screen-result-back-progress-fill-h: 5px;
+  --m-screen-result-back-source-x: 24px;
+  --m-screen-result-back-source-y: 713px;
+  --m-screen-result-back-source-w: 165px;
+  --m-screen-result-back-source-h: 21px;
+  --m-screen-result-back-section-title-x: 24px;
+  --m-screen-result-back-section-title-y: 782px;
+  --m-screen-result-back-section-title-w: 62px;
+  --m-screen-result-back-section-title-h: 26px;
+  --m-screen-result-back-section-more-x: 302px;
+  --m-screen-result-back-section-more-y: 785px;
+  --m-screen-result-back-section-more-w: 48px;
+  --m-screen-result-back-section-more-h: 20px;
+  --m-screen-result-back-related-foods-x: 24px;
+  --m-screen-result-back-related-foods-y: 824px;
+  --m-screen-result-back-related-foods-w: 444px;
+  --m-screen-result-back-related-foods-h: 162px;
+  --m-screen-result-back-related-foods-relatedcard-펩시-콜라-w: 99px;
+  --m-screen-result-back-related-foods-relatedcard-펩시-콜라-h: 162px;
+  --m-screen-result-back-related-foods-relatedcard-코카콜라-제로-w: 99px;
+  --m-screen-result-back-related-foods-relatedcard-코카콜라-제로-h: 162px;
+  --m-screen-result-back-related-foods-relatedcard-닥터페퍼-w: 99px;
+  --m-screen-result-back-related-foods-relatedcard-닥터페퍼-h: 162px;
+  --m-screen-result-back-related-foods-relatedcard-마운틴듀-w: 99px;
+  --m-screen-result-back-related-foods-relatedcard-마운틴듀-h: 162px;
+  --m-screen-result-back-tabbar-x: 0px;
+  --m-screen-result-back-tabbar-y: 1034px;
+  --m-screen-result-back-tabbar-w: 375px;
+  --m-screen-result-back-tabbar-h: 100px;
+  --m-screen-estimate-w: 375px;
+  --m-screen-estimate-h: 1131px;
+  --m-screen-estimate-icon-chevron-left-x: 24px;
+  --m-screen-estimate-icon-chevron-left-y: 56px;
+  --m-screen-estimate-icon-chevron-left-w: 24px;
+  --m-screen-estimate-icon-chevron-left-h: 24px;
+  --m-screen-estimate-title-x: 56px;
+  --m-screen-estimate-title-y: 56px;
+  --m-screen-estimate-title-w: 65px;
+  --m-screen-estimate-title-h: 27px;
+  --m-screen-estimate-lanyard-x: 173px;
+  --m-screen-estimate-lanyard-y: 0px;
+  --m-screen-estimate-lanyard-w: 29px;
+  --m-screen-estimate-lanyard-h: 108px;
+  --m-screen-estimate-idcard-x: 81px;
+  --m-screen-estimate-idcard-y: 108px;
+  --m-screen-estimate-idcard-w: 213px;
+  --m-screen-estimate-idcard-h: 338px;
+  --m-screen-estimate-photo-unknown-x: 180.5px;
+  --m-screen-estimate-photo-unknown-y: 228px;
+  --m-screen-estimate-photo-unknown-w: 17px;
+  --m-screen-estimate-photo-unknown-h: 38px;
+  --m-screen-estimate-caption-x: 0px;
+  --m-screen-estimate-caption-y: 490px;
+  --m-screen-estimate-caption-w: 375px;
+  --m-screen-estimate-caption-h: 20px;
+  --m-screen-estimate-similar-foods-x: 24px;
+  --m-screen-estimate-similar-foods-y: 756px;
+  --m-screen-estimate-similar-foods-w: 327px;
+  --m-screen-estimate-similar-foods-h: 135px;
+  --m-screen-estimate-similar-foods-similar-row-1-w: 327px;
+  --m-screen-estimate-similar-foods-divider-w: 327px;
+  --m-screen-estimate-similar-foods-divider-h: 1px;
+  --m-screen-estimate-similar-foods-similar-row-2-w: 327px;
+  --m-screen-estimate-button-x: 24px;
+  --m-screen-estimate-button-y: 939px;
+  --m-screen-estimate-button-w: 327px;
+  --m-screen-estimate-button-h: 52px;
+  --m-screen-estimate-section-title-정보-x: 24px;
+  --m-screen-estimate-section-title-정보-y: 558px;
+  --m-screen-estimate-section-title-정보-w: 76px;
+  --m-screen-estimate-section-title-정보-h: 26px;
+  --m-screen-estimate-daily-ratio-x: 24px;
+  --m-screen-estimate-daily-ratio-y: 600px;
+  --m-screen-estimate-daily-ratio-w: 327px;
+  --m-screen-estimate-daily-ratio-h: 20px;
+  --m-screen-estimate-progress-x: 24px;
+  --m-screen-estimate-progress-y: 628px;
+  --m-screen-estimate-progress-w: 327px;
+  --m-screen-estimate-progress-h: 5px;
+  --m-screen-estimate-progress-range-10-20mg-x: 8px;
+  --m-screen-estimate-progress-range-10-20mg-y: 0px;
+  --m-screen-estimate-progress-range-10-20mg-w: 8px;
+  --m-screen-estimate-progress-range-10-20mg-h: 5px;
+  --m-screen-estimate-source-x: 24px;
+  --m-screen-estimate-source-y: 645px;
+  --m-screen-estimate-source-w: 213px;
+  --m-screen-estimate-source-h: 21px;
+  --m-screen-estimate-section-title-x: 24px;
+  --m-screen-estimate-section-title-y: 714px;
+  --m-screen-estimate-section-title-w: 62px;
+  --m-screen-estimate-section-title-h: 26px;
+  --m-screen-estimate-tabbar-x: 0px;
+  --m-screen-estimate-tabbar-y: 1031px;
+  --m-screen-estimate-tabbar-w: 375px;
+  --m-screen-estimate-tabbar-h: 100px;
+  --m-screen-report-w: 375px;
+  --m-screen-report-h: 944px;
+  --m-screen-report-icon-chevron-left-x: 24px;
+  --m-screen-report-icon-chevron-left-y: 56px;
+  --m-screen-report-icon-chevron-left-w: 24px;
+  --m-screen-report-icon-chevron-left-h: 24px;
+  --m-screen-report-title-x: 56px;
+  --m-screen-report-title-y: 55px;
+  --m-screen-report-title-w: 100px;
+  --m-screen-report-title-h: 27px;
+  --m-screen-report-headline-x: 24px;
+  --m-screen-report-headline-y: 123px;
+  --m-screen-report-headline-w: 219px;
+  --m-screen-report-headline-h: 36px;
+  --m-screen-report-sub-x: 24px;
+  --m-screen-report-sub-y: 167px;
+  --m-screen-report-sub-w: 218px;
+  --m-screen-report-sub-h: 21px;
+  --m-screen-report-field-label-1-x: 24px;
+  --m-screen-report-field-label-1-y: 220px;
+  --m-screen-report-field-label-1-w: 48px;
+  --m-screen-report-field-label-1-h: 20px;
+  --m-screen-report-input-1-x: 24px;
+  --m-screen-report-input-1-y: 248px;
+  --m-screen-report-input-1-w: 327px;
+  --m-screen-report-input-1-h: 51px;
+  --m-screen-report-input-1-stroke: 1.5px;
+  --m-screen-report-field-label-2-x: 24px;
+  --m-screen-report-field-label-2-y: 331px;
+  --m-screen-report-field-label-2-w: 67px;
+  --m-screen-report-field-label-2-h: 20px;
+  --m-screen-report-input-2-x: 24px;
+  --m-screen-report-input-2-y: 359px;
+  --m-screen-report-input-2-w: 327px;
+  --m-screen-report-input-2-h: 51px;
+  --m-screen-report-input-2-stroke: 1px;
+  --m-screen-report-field-label-3-x: 24px;
+  --m-screen-report-field-label-3-y: 442px;
+  --m-screen-report-field-label-3-w: 23px;
+  --m-screen-report-field-label-3-h: 20px;
+  --m-screen-report-category-chips-x: 24px;
+  --m-screen-report-category-chips-y: 470px;
+  --m-screen-report-category-chips-w: 327px;
+  --m-screen-report-category-chips-h: 118px;
+  --m-screen-report-category-chips-chip-1-h: 34px;
+  --m-screen-report-category-chips-chip-2-h: 34px;
+  --m-screen-report-category-chips-chip-3-h: 34px;
+  --m-screen-report-category-chips-chip-4-h: 34px;
+  --m-screen-report-category-chips-chip-5-h: 34px;
+  --m-screen-report-category-chips-chip-6-h: 34px;
+  --m-screen-report-category-chips-chip-7-h: 34px;
+  --m-screen-report-category-chips-chip-8-h: 34px;
+  --m-screen-report-category-chips-chip-9-h: 34px;
+  --m-screen-report-button-x: 24px;
+  --m-screen-report-button-y: 768px;
+  --m-screen-report-button-w: 327px;
+  --m-screen-report-button-h: 52px;
+  --m-screen-report-field-label-4-x: 24px;
+  --m-screen-report-field-label-4-y: 620px;
+  --m-screen-report-field-label-4-w: 56px;
+  --m-screen-report-field-label-4-h: 20px;
+  --m-screen-report-photo-upload-x: 24px;
+  --m-screen-report-photo-upload-y: 648px;
+  --m-screen-report-photo-upload-w: 227px;
+  --m-screen-report-photo-upload-h: 72px;
+  --m-screen-report-photo-upload-add-photo-w: 72px;
+  --m-screen-report-photo-upload-add-photo-h: 72px;
+  --m-screen-report-photo-upload-add-photo-stroke: 1.2px;
+  --m-screen-report-tabbar-x: 0px;
+  --m-screen-report-tabbar-y: 844px;
+  --m-screen-report-tabbar-w: 375px;
+  --m-screen-report-tabbar-h: 100px;
+  --m-screen-info-w: 375px;
+  --m-screen-info-h: 970px;
+  --m-screen-info-headline-x: 24px;
+  --m-screen-info-headline-y: 79px;
+  --m-screen-info-headline-w: 109px;
+  --m-screen-info-headline-h: 45px;
+  --m-screen-info-articles-x: 24px;
+  --m-screen-info-articles-y: 160px;
+  --m-screen-info-articles-w: 327px;
+  --m-screen-info-articles-h: 630px;
+  --m-screen-info-footer-x: 24px;
+  --m-screen-info-footer-y: 818px;
+  --m-screen-info-footer-w: 162px;
+  --m-screen-info-footer-h: 20px;
+  --m-screen-info-tabbar-x: 0px;
+  --m-screen-info-tabbar-y: 870px;
+  --m-screen-info-tabbar-w: 375px;
+  --m-screen-info-tabbar-h: 100px;
+  --m-screen-flip-mid-w: 375px;
+  --m-screen-flip-mid-h: 1134px;
+  --m-screen-flip-mid-flip-behind-front-x: 186.9px;
+  --m-screen-flip-mid-flip-behind-front-y: 121.67px;
+  --m-screen-flip-mid-flip-behind-front-w: 2px;
+  --m-screen-flip-mid-flip-behind-front-h: 338px;
+  --m-screen-flip-mid-flip-behind-front-rotate: -10deg;
+  --m-screen-flip-mid-flip-behind-back-x: 186.9px;
+  --m-screen-flip-mid-flip-behind-back-y: 121.67px;
+  --m-screen-flip-mid-flip-behind-back-w: 2px;
+  --m-screen-flip-mid-flip-behind-back-h: 338px;
+  --m-screen-flip-mid-flip-behind-back-rotate: -10deg;
+  --m-screen-flip-mid-lanyard-x: 173px;
+  --m-screen-flip-mid-lanyard-y: 0px;
+  --m-screen-flip-mid-lanyard-w: 29px;
+  --m-screen-flip-mid-lanyard-h: 108px;
+  --m-screen-flip-mid-flip-top-front-x: 186.5px;
+  --m-screen-flip-mid-flip-top-front-y: 98px;
+  --m-screen-flip-mid-flip-top-front-w: 2px;
+  --m-screen-flip-mid-flip-top-front-h: 338px;
+  --m-screen-flip-mid-flip-top-back-x: 186.5px;
+  --m-screen-flip-mid-flip-top-back-y: 98px;
+  --m-screen-flip-mid-flip-top-back-w: 2px;
+  --m-screen-flip-mid-flip-top-back-h: 338px;
+}
+
+/* Text styles (40) */
+/* Display/50 Black */
+.t-display-50-black {
+  font-family: var(--font-family);
+  font-size: var(--font-size-50);
+  font-weight: var(--font-weight-black);
+  line-height: 75px;
+  letter-spacing: -0.02em;
+}
+
+/* Caption/10 SemiBold */
+.t-caption-10-semibold {
+  font-family: var(--font-family);
+  font-size: var(--font-size-10);
+  font-weight: var(--font-weight-semibold);
+  line-height: 15px;
+  letter-spacing: -0.02em;
+}
+
+/* Display/31 ExtraBold */
+.t-display-31-extrabold {
+  font-family: var(--font-family);
+  font-size: var(--font-size-31);
+  font-weight: var(--font-weight-extrabold);
+  line-height: 47px;
+  letter-spacing: -0.02em;
+}
+
+/* Body/13 Regular */
+.t-body-13-regular {
+  font-family: var(--font-family);
+  font-size: var(--font-size-13);
+  font-weight: var(--font-weight-regular);
+  line-height: 20px;
+  letter-spacing: -0.02em;
+}
+
+/* Display/30 Bold */
+.t-display-30-bold {
+  font-family: var(--font-family);
+  font-size: var(--font-size-30);
+  font-weight: var(--font-weight-bold);
+  line-height: 45px;
+  letter-spacing: -0.02em;
+}
+
+/* Body/15 Regular */
+.t-body-15-regular {
+  font-family: var(--font-family);
+  font-size: var(--font-size-15);
+  font-weight: var(--font-weight-regular);
+  line-height: 23px;
+  letter-spacing: -0.02em;
+}
+
+/* Heading/16 SemiBold */
+.t-heading-16-semibold {
+  font-family: var(--font-family);
+  font-size: var(--font-size-16);
+  font-weight: var(--font-weight-semibold);
+  line-height: 24px;
+  letter-spacing: -0.02em;
+}
+
+/* Title/24 Bold */
+.t-title-24-bold {
+  font-family: var(--font-family);
+  font-size: var(--font-size-24);
+  font-weight: var(--font-weight-bold);
+  line-height: 36px;
+  letter-spacing: -0.02em;
+}
+
+/* Heading/17 Regular */
+.t-heading-17-regular {
+  font-family: var(--font-family);
+  font-size: var(--font-size-17);
+  font-weight: var(--font-weight-regular);
+  line-height: 26px;
+  letter-spacing: -0.02em;
+}
+
+/* Heading/17 Medium */
+.t-heading-17-medium {
+  font-family: var(--font-family);
+  font-size: var(--font-size-17);
+  font-weight: var(--font-weight-medium);
+  line-height: 26px;
+  letter-spacing: -0.02em;
+}
+
+/* Body/14 Regular */
+.t-body-14-regular {
+  font-family: var(--font-family);
+  font-size: var(--font-size-14);
+  font-weight: var(--font-weight-regular);
+  line-height: 21px;
+  letter-spacing: -0.02em;
+}
+
+/* Heading/16 Regular */
+.t-heading-16-regular {
+  font-family: var(--font-family);
+  font-size: var(--font-size-16);
+  font-weight: var(--font-weight-regular);
+  line-height: 24px;
+  letter-spacing: -0.02em;
+}
+
+/* Heading/17 Bold */
+.t-heading-17-bold {
+  font-family: var(--font-family);
+  font-size: var(--font-size-17);
+  font-weight: var(--font-weight-bold);
+  line-height: 26px;
+  letter-spacing: -0.02em;
+}
+
+/* Body/15 SemiBold */
+.t-body-15-semibold {
+  font-family: var(--font-family);
+  font-size: var(--font-size-15);
+  font-weight: var(--font-weight-semibold);
+  line-height: 23px;
+  letter-spacing: -0.02em;
+}
+
+/* Heading/16 Bold */
+.t-heading-16-bold {
+  font-family: var(--font-family);
+  font-size: var(--font-size-16);
+  font-weight: var(--font-weight-bold);
+  line-height: 24px;
+  letter-spacing: -0.02em;
+}
+
+/* Body/13 Medium */
+.t-body-13-medium {
+  font-family: var(--font-family);
+  font-size: var(--font-size-13);
+  font-weight: var(--font-weight-medium);
+  line-height: 20px;
+  letter-spacing: -0.02em;
+}
+
+/* Caption/12 Medium */
+.t-caption-12-medium {
+  font-family: var(--font-family);
+  font-size: var(--font-size-12);
+  font-weight: var(--font-weight-medium);
+  line-height: 18px;
+  letter-spacing: -0.02em;
+}
+
+/* Caption/12 Regular */
+.t-caption-12-regular {
+  font-family: var(--font-family);
+  font-size: var(--font-size-12);
+  font-weight: var(--font-weight-regular);
+  line-height: 18px;
+  letter-spacing: -0.02em;
+}
+
+/* Body/15 Bold */
+.t-body-15-bold {
+  font-family: var(--font-family);
+  font-size: var(--font-size-15);
+  font-weight: var(--font-weight-bold);
+  line-height: 23px;
+  letter-spacing: -0.02em;
+}
+
+/* Body/14 SemiBold */
+.t-body-14-semibold {
+  font-family: var(--font-family);
+  font-size: var(--font-size-14);
+  font-weight: var(--font-weight-semibold);
+  line-height: 21px;
+  letter-spacing: -0.02em;
+}
+
+/* Body/14 Bold */
+.t-body-14-bold {
+  font-family: var(--font-family);
+  font-size: var(--font-size-14);
+  font-weight: var(--font-weight-bold);
+  line-height: 21px;
+  letter-spacing: -0.02em;
+}
+
+/* Caption/12 SemiBold */
+.t-caption-12-semibold {
+  font-family: var(--font-family);
+  font-size: var(--font-size-12);
+  font-weight: var(--font-weight-semibold);
+  line-height: 18px;
+  letter-spacing: -0.02em;
+}
+
+/* Heading/18 Bold */
+.t-heading-18-bold {
+  font-family: var(--font-family);
+  font-size: var(--font-size-18);
+  font-weight: var(--font-weight-bold);
+  line-height: 27px;
+  letter-spacing: -0.02em;
+}
+
+/* Display/30 Bold · 125% */
+.t-display-30-bold-125 {
+  font-family: var(--font-family);
+  font-size: var(--font-size-30);
+  font-weight: var(--font-weight-bold);
+  line-height: 38px;
+  letter-spacing: -0.02em;
+}
+
+/* Heading/16 ExtraBold · 140% */
+.t-heading-16-extrabold-140 {
+  font-family: var(--font-family);
+  font-size: var(--font-size-16);
+  font-weight: var(--font-weight-extrabold);
+  line-height: 22px;
+  letter-spacing: -0.02em;
+}
+
+/* Title/26 SemiBold · 125% */
+.t-title-26-semibold-125 {
+  font-family: var(--font-family);
+  font-size: var(--font-size-26);
+  font-weight: var(--font-weight-semibold);
+  line-height: 33px;
+  letter-spacing: -0.02em;
+}
+
+/* Caption/10 Bold */
+.t-caption-10-bold {
+  font-family: var(--font-family);
+  font-size: var(--font-size-10);
+  font-weight: var(--font-weight-bold);
+  line-height: 15px;
+  letter-spacing: -0.02em;
+}
+
+/* Caption/11 Regular */
+.t-caption-11-regular {
+  font-family: var(--font-family);
+  font-size: var(--font-size-11);
+  font-weight: var(--font-weight-regular);
+  line-height: 17px;
+  letter-spacing: -0.02em;
+}
+
+/* Caption/10 Regular */
+.t-caption-10-regular {
+  font-family: var(--font-family);
+  font-size: var(--font-size-10);
+  font-weight: var(--font-weight-regular);
+  line-height: 15px;
+  letter-spacing: -0.02em;
+}
+
+/* Heading/16 Bold · 140% */
+.t-heading-16-bold-140 {
+  font-family: var(--font-family);
+  font-size: var(--font-size-16);
+  font-weight: var(--font-weight-bold);
+  line-height: 22px;
+  letter-spacing: -0.02em;
+}
+
+/* Body/13 Bold · 125% */
+.t-body-13-bold-125 {
+  font-family: var(--font-family);
+  font-size: var(--font-size-13);
+  font-weight: var(--font-weight-bold);
+  line-height: 16px;
+  letter-spacing: -0.02em;
+}
+
+/* Body/14 Medium */
+.t-body-14-medium {
+  font-family: var(--font-family);
+  font-size: var(--font-size-14);
+  font-weight: var(--font-weight-medium);
+  line-height: 21px;
+  letter-spacing: -0.02em;
+}
+
+/* Heading/16 SemiBold · Auto */
+.t-heading-16-semibold-auto {
+  font-family: var(--font-family);
+  font-size: var(--font-size-16);
+  font-weight: var(--font-weight-semibold);
+  line-height: normal;
+  letter-spacing: -0.02em;
+}
+
+/* Title/22 Bold */
+.t-title-22-bold {
+  font-family: var(--font-family);
+  font-size: var(--font-size-22);
+  font-weight: var(--font-weight-bold);
+  line-height: 33px;
+  letter-spacing: -0.02em;
+}
+
+/* Heading/19 Bold */
+.t-heading-19-bold {
+  font-family: var(--font-family);
+  font-size: var(--font-size-19);
+  font-weight: var(--font-weight-bold);
+  line-height: 29px;
+  letter-spacing: -0.02em;
+}
+
+/* Title/20 Bold */
+.t-title-20-bold {
+  font-family: var(--font-family);
+  font-size: var(--font-size-20);
+  font-weight: var(--font-weight-bold);
+  line-height: 30px;
+  letter-spacing: -0.02em;
+}
+
+/* Title/20 SemiBold · Auto */
+.t-title-20-semibold-auto {
+  font-family: var(--font-family);
+  font-size: var(--font-size-20);
+  font-weight: var(--font-weight-semibold);
+  line-height: normal;
+  letter-spacing: -0.02em;
+}
+
+/* Display/32 SemiBold · Auto */
+.t-display-32-semibold-auto {
+  font-family: var(--font-family);
+  font-size: var(--font-size-32);
+  font-weight: var(--font-weight-semibold);
+  line-height: normal;
+  letter-spacing: -0.02em;
+}
+
+/* Display/28 Regular · 105% */
+.t-display-28-regular-105 {
+  font-family: var(--font-family);
+  font-size: var(--font-size-28);
+  font-weight: var(--font-weight-regular);
+  line-height: 29px;
+  letter-spacing: -0.02em;
+}
+
+/* Body/13 SemiBold · Auto */
+.t-body-13-semibold-auto {
+  font-family: var(--font-family);
+  font-size: var(--font-size-13);
+  font-weight: var(--font-weight-semibold);
+  line-height: normal;
+  letter-spacing: -0.02em;
+}

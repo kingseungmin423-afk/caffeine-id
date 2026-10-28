@@ -1,0 +1,75 @@
+/* 피그마 07 추정 결과 (--m-screen-estimate-*) */
+.screen {
+  padding-bottom: calc(var(--m-screen-estimate-h) - var(--m-screen-estimate-button-y) - var(--m-screen-estimate-button-h));
+}
+
+.stage {
+  composes: stage from global;
+  height: var(--m-screen-estimate-caption-y);
+}
+
+.header {
+  composes: stage-item from global;
+  --x: var(--m-screen-estimate-icon-chevron-left-x);
+  --y: var(--m-screen-estimate-title-y);
+  z-index: 1;
+}
+
+.lanyard {
+  composes: stage-item from global;
+  --x: var(--m-screen-estimate-lanyard-x);
+  --y: var(--m-screen-estimate-lanyard-y);
+}
+
+.card {
+  composes: stage-item from global;
+  --x: var(--m-screen-estimate-idcard-x);
+  --y: var(--m-screen-estimate-idcard-y);
+}
+
+/* 피그마 caption은 화면 전체 폭(x 0, w 375): 좌우 여백 밖까지 써서 한 줄에 들어가게 */
+.caption {
+  composes: t-body-13-regular from global;
+  width: var(--m-screen-estimate-caption-w);
+  margin: 0 0 0 calc(var(--m-screen-estimate-caption-x) - var(--space-24));
+  text-align: center;
+  color: var(--text-inverse-tertiary);
+}
+
+.infoTitle {
+  composes: t-heading-17-bold from global;
+  margin: calc(var(--m-screen-estimate-section-title-정보-y) - var(--m-screen-estimate-caption-y) - var(--m-screen-estimate-caption-h)) 0 0;
+}
+
+.ratio {
+  margin-top: calc(var(--m-screen-estimate-daily-ratio-y) - var(--m-screen-estimate-section-title-정보-y) - var(--m-screen-estimate-section-title-정보-h));
+}
+
+.basisTitle {
+  composes: t-heading-17-bold from global;
+  margin: calc(var(--m-screen-estimate-section-title-y) - var(--m-screen-estimate-source-y) - var(--m-screen-estimate-source-h)) 0 0;
+}
+
+.similar {
+  display: flex;
+  flex-direction: column;
+  margin-top: calc(var(--m-screen-estimate-similar-foods-y) - var(--m-screen-estimate-section-title-y) - var(--m-screen-estimate-section-title-h));
+}
+
+.divider {
+  flex: none;
+  width: 100%;
+  height: var(--m-screen-estimate-similar-foods-divider-h);
+  margin: 0;
+  border: none;
+  background: var(--bg-inverse-raised);
+}
+
+.register {
+  margin-top: calc(var(--m-screen-estimate-button-y) - var(--m-screen-estimate-similar-foods-y) - var(--m-screen-estimate-similar-foods-h));
+}
+
+/* 비슷한 음식이 없을 때: 문구 아래 같은 간격 (피그마에 없는 상태) */
+.registerAlone {
+  margin-top: calc(var(--m-screen-estimate-section-title-정보-y) - var(--m-screen-estimate-caption-y) - var(--m-screen-estimate-caption-h));
+}

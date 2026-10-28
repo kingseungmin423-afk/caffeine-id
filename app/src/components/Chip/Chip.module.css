@@ -1,0 +1,49 @@
+/* 피그마는 On(테두리 없음, SemiBold)과 Off(테두리 1.2 포함, Medium)의 폭이 달라 누를 때마다 칩이 커졌다 작아진다.
+ * 크기가 그대로이도록 (사용자 요청):
+ *  - 안쪽 여백은 둘 다 Off 기준(16 + 테두리)
+ *  - 글자 칸은 굵은 글자 폭으로 미리 잡는다 (보이지 않는 굵은 사본) */
+.root {
+  composes: t-body-14-medium from global;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  height: var(--m-chip-h);
+  padding: 0 calc(var(--space-16) + var(--m-chip-stroke));
+  margin: 0;
+  border: none;
+  border-radius: var(--radius-16);
+  background: none;
+  cursor: pointer;
+  white-space: nowrap;
+  transition:
+    background-color var(--motion-press) var(--ease-screen),
+    color var(--motion-press) var(--ease-screen);
+}
+
+.label {
+  display: inline-grid;
+  justify-items: center;
+}
+
+.label::after {
+  content: attr(data-text);
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+  font-weight: var(--font-weight-semibold);
+}
+
+.on {
+  background: var(--bg-inverse);
+  color: var(--text-inverse);
+}
+
+.on .label {
+  font-weight: var(--font-weight-semibold);
+}
+
+.off {
+  box-shadow: inset 0 0 0 var(--m-chip-stroke) var(--border-default);
+  color: var(--text-secondary);
+}

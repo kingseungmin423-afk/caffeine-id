@@ -1,0 +1,41 @@
+/* 움직임 기준값. 피그마 프로토타입에 있는 값은 그대로, 없는 값은 '추가'로 표시한다. */
+:root {
+  /* 카드 뒤집기: flip 05→06 · 1 → · 2 Smart Animate 0.16s Ease In, · 2 → · 3 0.2s Ease Out */
+  --motion-flip-out: 160ms;
+  --ease-flip-out: cubic-bezier(0.42, 0, 1, 1);
+  --motion-flip-in: 200ms;
+  --ease-flip-in: cubic-bezier(0, 0, 0.58, 1);
+
+  /* 화면 전환: 02-1 → 02-2, 더보기 → 02-2 Smart Animate 0.25s Ease Out */
+  --motion-screen: 250ms;
+  --ease-screen: cubic-bezier(0, 0, 0.58, 1);
+
+  /* 추가 (피그마에 없음): 탭바 튕김 — 선택 표시가 살짝 지나쳤다 돌아온다 */
+  --motion-tab: 450ms;
+  --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --motion-press: 120ms;
+
+  /* 추가: 04 로딩 스캔선이 카드를 위에서 아래로 한 번 훑는 시간, 끝에서 천천히 돌아서는 사인 곡선 */
+  --motion-scan: 1400ms;
+  --ease-scan: cubic-bezier(0.37, 0, 0.63, 1);
+  /* 스캔 빛 꼬리: 선의 빠르기(사인)를 따라 0 → 최대(빨라지다 무뎌짐), 최대 → 0(무뎌졌다 빨라짐) */
+  --ease-scan-rise: cubic-bezier(0.61, 1, 0.88, 1);
+  --ease-scan-fall: cubic-bezier(0.12, 0, 0.39, 0);
+
+  /* 추가 (피그마 flip 프레임 대신, 사용자 요청): 05↔06 앞 카드를 위쪽(목줄 고리)을 축으로 입체로 넘겨 뒤로 보내고, 뒤 카드가 앞으로 온다 */
+  --motion-card-swap: 1000ms;
+  --ease-card-lift: cubic-bezier(0.5, 0, 0.9, 0.55); /* 앞 카드가 들리기 시작해 점점 빨라진다 */
+  --ease-card-drop: cubic-bezier(0.1, 0.45, 0.3, 1); /* 넘어간 카드가 뒤에 내려앉으며 멈춘다 */
+  --ease-card-rise: cubic-bezier(0.45, 0, 0.2, 1); /* 뒤 카드가 앞으로 나와 자리 잡는다 */
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --motion-flip-out: 0ms;
+    --motion-flip-in: 0ms;
+    --motion-screen: 0ms;
+    --motion-tab: 0ms;
+    --motion-press: 0ms;
+    --motion-card-swap: 0ms;
+  }
+}

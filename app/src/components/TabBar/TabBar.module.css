@@ -1,0 +1,142 @@
+/* 피그마 TabBar 4칸: bar 높이 60, 캡슐 327(= 화면 375 − 좌우 24), 탭 4칸이 같은 폭으로 나눠 갖는다 */
+.root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: var(--m-tabbar-bar-h);
+  padding: 0 var(--space-24);
+}
+
+/* 테두리가 레이아웃에 포함돼 안쪽 여백이 선 굵기만큼 늘어난다 */
+.capsule {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: var(--m-tabbar-bar-capsule-w);
+  height: var(--m-tabbar-bar-capsule-h);
+  padding: 0 calc(var(--space-14) + var(--m-tabbar-bar-capsule-stroke));
+  border-radius: var(--radius-30);
+  transition:
+    background-color var(--motion-screen) var(--ease-screen),
+    box-shadow var(--motion-screen) var(--ease-screen);
+}
+
+.Light .capsule {
+  background: var(--bg-paper-dim);
+  box-shadow:
+    inset 0 0 0 var(--m-tabbar-bar-capsule-stroke) var(--border-glass),
+    var(--shadow-tabbar-light);
+  -webkit-backdrop-filter: var(--blur-tabbar-light);
+  backdrop-filter: var(--blur-tabbar-light);
+}
+
+.Dark .capsule {
+  background: var(--bg-overlay);
+  box-shadow:
+    inset 0 0 0 var(--m-tabbar-bar-capsule-stroke) var(--border-inverse-subtle),
+    var(--shadow-tabbar-dark);
+  -webkit-backdrop-filter: var(--blur-tabbar-dark);
+  backdrop-filter: var(--blur-tabbar-dark);
+}
+
+.tabs {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.tab {
+  position: relative;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-6);
+  min-width: 0;
+  height: var(--m-tabbar-bar-capsule-tab-홈-h);
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* 선택 표시: 켜진 칸 가운데로 튕기며 옮겨 간다 (피그마: 칸 74.25에서 x 9.13 = 가운데, y 1) */
+.pill {
+  position: absolute;
+  top: calc((100% - var(--m-tabbar-bar-capsule-tab-홈-h)) / 2 + var(--m-tabbar-bar-capsule-tab-홈-active-pill-y));
+  left: calc((var(--index) + 0.5) * 100% / var(--count) - var(--m-tabbar-bar-capsule-tab-홈-active-pill-w) / 2);
+  width: var(--m-tabbar-bar-capsule-tab-홈-active-pill-w);
+  height: var(--m-tabbar-bar-capsule-tab-홈-active-pill-h);
+  border-radius: var(--radius-16);
+  transition:
+    left var(--motion-tab) var(--ease-bounce),
+    background-color var(--motion-screen) var(--ease-screen);
+}
+
+.Light .pill {
+  background: var(--bg-overlay-subtle);
+}
+.Dark .pill {
+  background: var(--bg-inverse-glass);
+}
+
+.icon {
+  position: relative;
+  flex: none;
+  width: var(--m-tabbar-bar-capsule-tab-홈-icon-home-w);
+  height: var(--m-tabbar-bar-capsule-tab-홈-icon-home-h);
+  transition: transform var(--motion-press) var(--ease-screen);
+}
+
+/* 누르는 동안 살짝 눌리고, 켜지면 아이콘이 통 튄다 */
+.tab:active .icon {
+  transform: scale(0.88);
+}
+
+.active .icon {
+  animation: tab-pop var(--motion-tab) var(--ease-bounce);
+}
+
+@keyframes tab-pop {
+  0% {
+    transform: scale(0.8);
+  }
+  60% {
+    transform: scale(1.12);
+  }
+}
+
+.label {
+  composes: t-caption-12-medium from global;
+  position: relative;
+  transition: color var(--motion-press) var(--ease-screen);
+}
+
+.active .label {
+  font-weight: var(--font-weight-semibold);
+}
+
+.Light .tab {
+  color: var(--color-gray-500);
+}
+.Light .active {
+  color: var(--icon-primary);
+}
+.Light .active .label {
+  color: var(--text-primary);
+}
+
+.Dark .tab {
+  color: var(--icon-inverse-muted);
+}
+.Dark .tab .label {
+  color: var(--text-inverse-muted);
+}
+.Dark .active,
+.Dark .active .label {
+  color: var(--text-inverse);
+}

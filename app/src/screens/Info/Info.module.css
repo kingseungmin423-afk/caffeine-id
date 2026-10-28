@@ -1,0 +1,68 @@
+/* 피그마 09 정보 (--m-screen-info-*) */
+.screen {
+  padding-top: var(--m-screen-info-headline-y);
+  padding-bottom: calc(var(--m-screen-info-h) - var(--m-screen-info-footer-y) - var(--m-screen-info-footer-h));
+}
+
+.headline {
+  composes: t-display-30-bold from global;
+  margin: 0;
+}
+
+.articles {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-32);
+  margin-top: calc(var(--m-screen-info-articles-y) - var(--m-screen-info-headline-y) - var(--m-screen-info-headline-h));
+}
+
+.footer {
+  composes: t-body-13-regular from global;
+  margin: calc(var(--m-screen-info-footer-y) - var(--m-screen-info-articles-y) - var(--m-screen-info-articles-h)) 0 0;
+  color: var(--text-tertiary);
+}
+
+/* 조항 사이 간격과 같게. 제목은 조항 제목(Article), 펼치기는 '전체 보기'(SectionHeader)와 같은 글자 */
+.credits {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+  margin-top: var(--space-32);
+}
+
+.creditsToggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.creditsHeading {
+  composes: t-heading-16-bold from global;
+  color: var(--text-primary);
+}
+
+.creditsAction {
+  composes: t-body-13-regular from global;
+  color: var(--text-tertiary);
+}
+
+.creditList {
+  composes: t-body-13-regular from global;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: var(--text-tertiary);
+  overflow-wrap: anywhere;
+}
+
+.creditList a {
+  color: inherit;
+}

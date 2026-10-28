@@ -1,0 +1,301 @@
+.root {
+  position: relative;
+  display: flex;
+  flex: none;
+  flex-direction: column;
+  gap: var(--space-6);
+  width: var(--m-idcard-w);
+  height: var(--m-idcard-h);
+  padding: var(--space-8) var(--space-16) var(--space-16);
+  background: var(--bg-paper);
+  border-radius: var(--radius-12);
+}
+
+.확인 {
+  box-shadow: var(--shadow-idcard-확인);
+}
+
+.검사중 {
+  box-shadow: var(--shadow-idcard-검사중);
+}
+
+/* 추정: 점선 테두리가 레이아웃에 포함돼 안쪽 여백이 선 굵기만큼 늘어난다(피그마 strokesIncludedInLayout) */
+.추정 {
+  box-shadow: var(--shadow-idcard-검사중);
+  padding: calc(var(--space-8) + var(--m-idcard-stroke)) calc(var(--space-16) + var(--m-idcard-stroke)) calc(var(--space-16) + var(--m-idcard-stroke));
+}
+
+.dashCard {
+  --dash-color: var(--color-gray-500);
+  --dash-width: var(--m-idcard-stroke);
+  --dash-pattern: var(--m-idcard-dash);
+  --dash-radius: var(--radius-12);
+}
+
+.handle {
+  display: flex;
+  justify-content: center;
+}
+
+.bar {
+  width: var(--m-idcard-handle-bar-w);
+  height: var(--m-idcard-handle-bar-h);
+  background: var(--bg-warm-muted);
+  border-radius: var(--radius-4);
+}
+
+.titleRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-4);
+}
+
+.titleText {
+  composes: t-display-31-extrabold from global;
+  color: var(--text-primary);
+}
+
+.idMark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  width: var(--m-idcard-title-row-title-id-mark-w);
+  height: var(--m-idcard-title-row-title-id-mark-h);
+  border: var(--m-idcard-title-row-title-id-mark-stroke) solid var(--border-bold);
+  border-radius: var(--radius-8);
+}
+
+/* 피그마에서 텍스트 스타일 없이 Bold 6.5: 굵기·줄간격·자간은 Caption/10 Bold와 같고 크기만 다르다 */
+.idText {
+  composes: t-caption-10-bold from global;
+  font-size: var(--m-idcard-title-row-title-id-mark-id-fs);
+  color: var(--text-primary);
+}
+
+.temporary {
+  composes: t-body-13-medium from global;
+  color: var(--text-secondary);
+}
+
+.illustBox {
+  position: relative;
+  flex: none;
+  width: var(--m-idcard-illust-box-w);
+  height: var(--m-idcard-illust-box-h);
+  overflow: hidden;
+  border-radius: var(--radius-8);
+}
+
+.확인 .illustBox {
+  background: var(--bg-muted);
+}
+
+.검사중 .illustBox,
+.추정 .illustBox {
+  background: var(--bg-warm-subtle);
+}
+
+.dashBox {
+  --dash-color: var(--border-strong);
+  --dash-width: var(--m-idcard-illust-box-stroke);
+  --dash-pattern: var(--m-idcard-illust-box-dash);
+  --dash-radius: var(--radius-8);
+}
+
+.photo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.skeletonInfo {
+  gap: var(--space-10);
+}
+
+.name {
+  composes: t-title-22-bold from global;
+  margin: 0;
+  overflow: hidden;
+  color: var(--text-primary);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.metaRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.meta {
+  composes: t-body-13-regular from global;
+  color: var(--text-tertiary);
+}
+
+.stats {
+  display: flex;
+}
+
+.stat {
+  display: flex;
+  flex: none;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.stat1 {
+  width: var(--m-idcard-stats-stat-1-w);
+}
+
+.stat2 {
+  width: var(--m-idcard-stats-stat-2-w);
+}
+
+.skeletonStat {
+  gap: var(--space-8);
+}
+
+.label {
+  composes: t-caption-12-regular from global;
+  color: var(--text-tertiary);
+}
+
+.value {
+  composes: t-heading-19-bold from global;
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+/* 검사중 빈 칸 */
+.skName,
+.skMeta,
+.skLabel,
+.skValue1,
+.skValue2 {
+  display: block;
+  flex: none;
+  border-radius: var(--radius-4);
+}
+
+.skName {
+  width: var(--m-idcard-info-skeleton-name-w);
+  height: var(--m-idcard-info-skeleton-name-h);
+  background: var(--bg-warm-subtle);
+}
+
+.skMeta {
+  width: var(--m-idcard-info-meta-row-skeleton-meta-w);
+  height: var(--m-idcard-info-meta-row-skeleton-meta-h);
+  background: var(--bg-warm-muted);
+}
+
+.skLabel {
+  width: var(--m-idcard-stats-stat-1-skeleton-label-w);
+  height: var(--m-idcard-stats-stat-1-skeleton-label-h);
+  background: var(--bg-warm-muted);
+}
+
+.skValue1 {
+  width: var(--m-idcard-stats-stat-1-skeleton-value-w);
+  height: var(--m-idcard-stats-stat-1-skeleton-value-h);
+  background: var(--bg-warm-subtle);
+}
+
+.skValue2 {
+  width: var(--m-idcard-stats-stat-2-skeleton-value-w);
+  height: var(--m-idcard-stats-stat-2-skeleton-value-h);
+  background: var(--bg-warm-subtle);
+}
+
+/* 도장: 피그마 회전 노드의 x·y는 회전한 왼쪽 위 꼭짓점 기준 */
+.stamp {
+  position: absolute;
+  left: var(--m-idcard-stamp-x);
+  top: var(--m-idcard-stamp-y);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--m-idcard-stamp-w);
+  height: var(--m-idcard-stamp-h);
+  border-radius: var(--radius-full);
+  transform-origin: 0 0;
+  transform: rotate(var(--m-idcard-stamp-rotate));
+}
+
+.innerRing {
+  position: absolute;
+  left: var(--m-idcard-stamp-inner-ring-x);
+  top: var(--m-idcard-stamp-inner-ring-y);
+  width: var(--m-idcard-stamp-inner-ring-w);
+  height: var(--m-idcard-stamp-inner-ring-h);
+  border-radius: var(--radius-full);
+}
+
+.stampLabel {
+  composes: t-title-20-bold from global;
+  position: relative;
+}
+
+.확인 .stamp {
+  background: var(--color-alpha-white-0);
+  box-shadow: inset 0 0 0 var(--m-idcard-stamp-stroke) var(--border-danger);
+}
+.확인 .innerRing {
+  box-shadow: inset 0 0 0 var(--m-idcard-stamp-inner-ring-stroke) var(--icon-danger);
+}
+.확인 .stampLabel {
+  color: var(--text-danger);
+}
+
+/* 카페인 없음: 피그마에 없는 상태 → 확인 도장에 status/safe 색만 바꾼다 */
+.none .stamp {
+  box-shadow: inset 0 0 0 var(--m-idcard-stamp-stroke) var(--status-safe);
+}
+.none .innerRing {
+  box-shadow: inset 0 0 0 var(--m-idcard-stamp-inner-ring-stroke) var(--status-safe);
+}
+.none .stampLabel {
+  color: var(--status-safe);
+}
+
+.추정 .stamp {
+  background: var(--color-alpha-warm-50-60);
+}
+.추정 .stampLabel {
+  color: var(--color-gray-800);
+}
+
+.dashStamp {
+  --dash-color: var(--color-gray-700);
+  --dash-width: var(--m-idcard-stamp-stroke);
+  --dash-pattern: var(--m-idcard-stamp-dash);
+  --dash-radius: calc(var(--m-idcard-stamp-w) / 2);
+}
+
+.dashInner {
+  --dash-color: var(--icon-secondary);
+  --dash-width: var(--m-idcard-stamp-inner-ring-stroke);
+  --dash-pattern: var(--m-idcard-stamp-inner-ring-dash);
+  --dash-radius: calc(var(--m-idcard-stamp-inner-ring-w) / 2);
+}
+
+.photoUnknown {
+  composes: t-display-32-semibold-auto from global;
+  position: absolute;
+  left: var(--m-idcard-photo-unknown-x);
+  top: var(--m-idcard-photo-unknown-y);
+  color: var(--text-warm-muted);
+}

@@ -1,0 +1,29 @@
+.root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  background: var(--bg-subtle);
+  color: var(--icon-primary);
+}
+
+.L {
+  width: var(--m-categorythumb-l-w);
+  height: var(--m-categorythumb-l-h);
+  border-radius: var(--radius-12);
+}
+.L .icon {
+  width: var(--m-categorythumb-l-categoryicon-w);
+  height: var(--m-categorythumb-l-categoryicon-h);
+}
+.M .icon {
+  width: var(--m-categorythumb-m-categoryicon-w);
+  height: var(--m-categorythumb-m-categoryicon-h);
+}
+
+/* 피그마에서 L을 44로 줄인 인스턴스라 모서리가 radius/12가 아닌 7.86 */
+.M {
+  width: var(--m-categorythumb-m-w);
+  height: var(--m-categorythumb-m-h);
+  border-radius: var(--m-categorythumb-radius);
+}

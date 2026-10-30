@@ -4,6 +4,7 @@ import { Badge } from '../Badge'
 import { cx } from '../cx'
 import { ProductThumb } from '../ProductThumb'
 import styles from './FoodRow.module.css'
+import type { Category } from '../../data/categories'
 
 type Props = {
   상태: '조회' | '미조회'
@@ -14,14 +15,15 @@ type Props = {
   /** 카페인이 있으면 배지 표시 (조회 상태에서만) */
   hasCaffeine?: boolean
   photoSrc?: string
+  photoFallback?: Category | null
   onClick?: () => void
 }
 
-export function FoodRow({ 상태, name, meta, amount, hasCaffeine, photoSrc, onClick }: Props) {
+export function FoodRow({ 상태, name, meta, amount, hasCaffeine, photoSrc, photoFallback, onClick }: Props) {
   const seen = 상태 === '조회'
   return (
     <button type="button" className={styles.root} onClick={onClick}>
-      <ProductThumb size="M" 상태={상태} src={photoSrc} />
+      <ProductThumb size="M" 상태={상태} src={photoSrc} fallback={photoFallback} />
       <span className={styles.text}>
         <span className={styles.name}>{name}</span>
         <span className={styles.meta}>{meta}</span>

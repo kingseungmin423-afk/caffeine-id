@@ -71,7 +71,7 @@ export default function Estimate() {
             {similar.map((s, i) => (
               <Fragment key={s.id}>
                 {i > 0 && <hr className={styles.divider} />}
-                <EvidenceRow name={s.name} amount={mgLabel(s.mg)} photoSrc={photoFor(s.id)?.src} onClick={() => open(s.id)} />
+                <EvidenceRow name={s.name} amount={mgLabel(s.mg)} photoSrc={photoFor(s.id)?.src} photoFallback={s.app} onClick={() => open(s.id)} />
               </Fragment>
             ))}
           </div>

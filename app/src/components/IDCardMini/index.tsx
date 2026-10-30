@@ -3,6 +3,8 @@ import { copy } from '../../copy'
 import { cx } from '../cx'
 import { DashedOutline } from '../DashedOutline'
 import styles from './IDCardMini.module.css'
+import type { Category } from '../../data/categories'
+import { PhotoFallback } from '../Icon'
 
 type Props = {
   상태: '발급' | '미발급'
@@ -13,10 +15,11 @@ type Props = {
   /** 발급 카드 함량 (예: '54mg') */
   amount?: string
   photoSrc?: string
+  photoFallback?: Category | null
   onClick?: () => void
 }
 
-export function IDCardMini({ 상태, name, serving, serial, amount, photoSrc, onClick }: Props) {
+export function IDCardMini({ 상태, name, serving, serial, amount, photoSrc, photoFallback, onClick }: Props) {
   const issued = 상태 === '발급'
   return (
     <button type="button" className={cx(styles.root, styles[상태])} onClick={onClick}>
@@ -32,7 +35,7 @@ export function IDCardMini({ 상태, name, serving, serial, amount, photoSrc, on
       </span>
       <span className={styles.photoBox}>
         {issued ? (
-          <span className={styles.photo}>{photoSrc && <img src={photoSrc} alt="" className={styles.img} />}</span>
+          <span className={styles.photo}>{photoSrc ? <img src={photoSrc} alt="" className={styles.img} /> : <PhotoFallback category={photoFallback} />}</span>
         ) : (
           <>
             <DashedOutline className={styles.dashBox} />

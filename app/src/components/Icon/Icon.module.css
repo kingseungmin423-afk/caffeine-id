@@ -1,0 +1,10 @@
+/* 사진이 없는 음식의 사진 칸 (피그마에 없는 상태, 2026-10-30 사용자 요청):
+ * 빈 회색 칸 대신 분류 아이콘을 칸 가운데에 흐린 색으로. 칸(부모)은 position이 있는 요소여야 한다 */
+.fallback {
+  position: absolute;
+  inset: 0;
+  width: 56%;
+  height: 56%;
+  margin: auto;
+  color: var(--icon-tertiary);
+}

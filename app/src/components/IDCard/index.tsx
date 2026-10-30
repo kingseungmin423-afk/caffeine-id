@@ -3,6 +3,8 @@ import { copy } from '../../copy'
 import { cx } from '../cx'
 import { DashedOutline } from '../DashedOutline'
 import styles from './IDCard.module.css'
+import type { Category } from '../../data/categories'
+import { PhotoFallback } from '../Icon'
 
 export type IDCardProps =
   | {
@@ -17,6 +19,8 @@ export type IDCardProps =
       /** false면 도장이 '없음' (피그마에 없는 상태: 같은 도장에 status/safe 색) */
       hasCaffeine?: boolean
       photoSrc?: string
+      /** 사진이 없을 때 대신 보일 분류 아이콘 */
+      photoFallback?: Category | null
       className?: string
     }
   | { state: '검사중'; className?: string }
@@ -51,7 +55,7 @@ export function IDCard(props: IDCardProps) {
       </div>
 
       <div className={styles.illustBox}>
-        {state === '확인' && props.photoSrc && <img src={props.photoSrc} alt="" className={styles.photo} />}
+        {state === '확인' && (props.photoSrc ? <img src={props.photoSrc} alt="" className={styles.photo} /> : <PhotoFallback category={props.photoFallback} />)}
         {state === '추정' && <DashedOutline className={styles.dashBox} />}
       </div>
 

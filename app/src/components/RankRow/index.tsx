@@ -2,14 +2,15 @@
 import { cx } from '../cx'
 import { ProductThumb } from '../ProductThumb'
 import styles from './RankRow.module.css'
+import type { Category } from '../../data/categories'
 
-type Props = { rank: number; highlight: boolean; name: string; meta: string; amount: string; photoSrc?: string; onClick?: () => void }
+type Props = { rank: number; highlight: boolean; name: string; meta: string; amount: string; photoSrc?: string; photoFallback?: Category | null; onClick?: () => void }
 
-export function RankRow({ rank, highlight, name, meta, amount, photoSrc, onClick }: Props) {
+export function RankRow({ rank, highlight, name, meta, amount, photoSrc, photoFallback, onClick }: Props) {
   return (
     <button type="button" className={styles.root} onClick={onClick}>
       <span className={cx(styles.rank, highlight && styles.highlight)}>{rank}</span>
-      <ProductThumb size="S" 상태="조회" src={photoSrc} />
+      <ProductThumb size="S" 상태="조회" src={photoSrc} fallback={photoFallback} />
       <span className={styles.text}>
         <span className={styles.name}>{name}</span>
         <span className={styles.meta}>{meta}</span>

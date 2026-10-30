@@ -3,6 +3,8 @@ import { copy } from '../../copy'
 import { cx } from '../cx'
 import { DashedOutline } from '../DashedOutline'
 import styles from './RelatedCard.module.css'
+import type { Category } from '../../data/categories'
+import { PhotoFallback } from '../Icon'
 
 type Props = {
   상태: '조회' | '미조회'
@@ -11,10 +13,11 @@ type Props = {
   /** 조회한 음식 함량 (예: '38mg') */
   amount?: string
   photoSrc?: string
+  photoFallback?: Category | null
   onClick?: () => void
 }
 
-export function RelatedCard({ 상태, category, name, amount, photoSrc, onClick }: Props) {
+export function RelatedCard({ 상태, category, name, amount, photoSrc, photoFallback, onClick }: Props) {
   const seen = 상태 === '조회'
   return (
     <button type="button" className={cx(styles.root, styles[상태])} onClick={onClick}>
@@ -24,7 +27,7 @@ export function RelatedCard({ 상태, category, name, amount, photoSrc, onClick 
       </span>
       <span className={styles.illustBox}>
         {seen ? (
-          <span className={styles.photo}>{photoSrc && <img src={photoSrc} alt="" className={styles.img} />}</span>
+          <span className={styles.photo}>{photoSrc ? <img src={photoSrc} alt="" className={styles.img} /> : <PhotoFallback category={photoFallback} />}</span>
         ) : (
           <>
             <DashedOutline className={styles.dashBox} />

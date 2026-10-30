@@ -21,6 +21,7 @@ import Frozen from '../../assets/category/빙과류.svg?react'
 import Snack from '../../assets/category/과자류.svg?react'
 import Choco from '../../assets/category/초콜릿.svg?react'
 import Medicine from '../../assets/category/약.svg?react'
+import styles from './Icon.module.css'
 import type { Category } from '../../data/categories'
 
 type SvgProps = SVGProps<SVGSVGElement>
@@ -66,4 +67,9 @@ export function Illust({ name, ...rest }: { name: IllustName } & SvgProps) {
 export function CategoryIcon({ category, ...rest }: { category: Category } & SvgProps) {
   const C = CATEGORY_ICONS[category]
   return <C aria-hidden {...rest} />
+}
+
+/** 사진이 없는 음식의 사진 칸: 분류 아이콘을 가운데에 흐리게 (분류가 없으면 빈 칸 그대로) */
+export function PhotoFallback({ category }: { category?: Category | null }) {
+  return category ? <CategoryIcon category={category} className={styles.fallback} /> : null
 }

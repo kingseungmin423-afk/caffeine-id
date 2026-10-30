@@ -81,6 +81,7 @@ export default function Main() {
               amount={mgLabel(i.mg)}
               hasCaffeine={i.caffeine}
               photoSrc={photoFor(i.id)?.src}
+              photoFallback={i.app}
               onClick={() => open(i.id)}
             />
           ))
@@ -102,6 +103,7 @@ export default function Main() {
             meta={metaLabel(i)}
             amount={mgLabel(i.mg)}
             photoSrc={photoFor(i.id)?.src}
+            photoFallback={i.app}
             onClick={() => open(i.id)}
           />
         ))}
@@ -115,11 +117,11 @@ export default function Main() {
           </div>
           <div className={styles.options}>
             <div className={styles.option}>
-              <QuizOption name={quizName(quiz.a)} sub={servingLabel(quiz.a.serving)} photoSrc={photoFor(quiz.a.id)?.src} result={resultOf('a')} onClick={() => pick('a')} />
+              <QuizOption name={quizName(quiz.a)} sub={servingLabel(quiz.a.serving)} photoSrc={photoFor(quiz.a.id)?.src} photoFallback={quiz.a.app} result={resultOf('a')} onClick={() => pick('a')} />
             </div>
             <span className={styles.vs}>{copy.main.quizVs}</span>
             <div className={styles.option}>
-              <QuizOption name={quizName(quiz.b)} sub={servingLabel(quiz.b.serving)} photoSrc={photoFor(quiz.b.id)?.src} result={resultOf('b')} onClick={() => pick('b')} />
+              <QuizOption name={quizName(quiz.b)} sub={servingLabel(quiz.b.serving)} photoSrc={photoFor(quiz.b.id)?.src} photoFallback={quiz.b.app} result={resultOf('b')} onClick={() => pick('b')} />
             </div>
           </div>
           <p className={quizPick ? styles.quizResult : styles.quizHint} aria-live="polite">

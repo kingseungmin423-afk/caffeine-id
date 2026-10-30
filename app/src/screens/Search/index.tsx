@@ -88,6 +88,7 @@ export default function Search() {
                   amount={mgLabel(i.mg)}
                   hasCaffeine={i.caffeine}
                   photoSrc={photoFor(i.id)?.src}
+                  photoFallback={i.app}
                   onClick={() => open(i.id)}
                 />
               ) : (

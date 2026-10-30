@@ -76,6 +76,7 @@ export default function Result() {
       coffeeCups={copy.result.coffeeCups(coffeeCups(item.mg))}
       hasCaffeine={item.caffeine}
       photoSrc={photo?.src}
+      photoFallback={item.app}
     />
   )
   const backCard = (
@@ -124,7 +125,7 @@ export default function Result() {
           <div className={styles.related} ref={relatedRef}>
             {related.map((r) =>
               r.id in issued ? (
-                <RelatedCard key={r.id} 상태="조회" category={r.app ?? r.category} name={r.name} amount={mgLabel(r.mg)} photoSrc={photoFor(r.id)?.src} onClick={() => open(r.id)} />
+                <RelatedCard key={r.id} 상태="조회" category={r.app ?? r.category} name={r.name} amount={mgLabel(r.mg)} photoSrc={photoFor(r.id)?.src} photoFallback={r.app} onClick={() => open(r.id)} />
               ) : (
                 <RelatedCard key={r.id} 상태="미조회" category={r.app ?? r.category} name={r.name} onClick={() => open(r.id)} />
               ),

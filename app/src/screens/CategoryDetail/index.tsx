@@ -79,6 +79,7 @@ export default function CategoryDetail() {
               serial={copy.idCard.serial(issued[i.id])}
               amount={mgLabel(i.mg)}
               photoSrc={photoFor(i.id)?.src}
+              photoFallback={i.app}
               onClick={() => open(i.id)}
             />
           ) : (

@@ -1,7 +1,7 @@
 // PC(마우스를 쓰는 넓은 화면)에서는 앱을 가운데 375 폭 화면으로 두고 양옆은 회색으로 구분한다 (사용자 요청, 피그마에 없음).
-// 화면 높이에 맞춰 피그마 한 화면(01 온보딩 375×812)이 한눈에 들어오도록 키운다. 배율 상한은 MAX_ZOOM.
+// 화면 높이에 맞춰 피그마 한 화면(01 온보딩 375×812)이 한눈에 들어오도록 키운다. 배율 상한은 MAX_ZOOM(큰 모니터에서 너무 커 보여 1.5 → 1.2, 사용자 요청).
 // html에 data-frame과 --app-zoom을 달면 나머지는 CSS(base.css, Screen.module.css)가 처리한다.
-const MAX_ZOOM = 1.5
+const MAX_ZOOM = 1.2
 const desktop = window.matchMedia('(hover: hover) and (pointer: fine)')
 
 function update() {

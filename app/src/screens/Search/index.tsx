@@ -45,7 +45,7 @@ export default function Search() {
   }
 
   return (
-    <Screen theme="Light" tab="조회" className={styles.screen}>
+    <Screen theme="Light" tab="조회" className={styles.screen} meta={copy.seo.search(q)}>
       <form
         className={styles.top}
         role="search"

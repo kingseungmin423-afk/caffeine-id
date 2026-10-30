@@ -88,7 +88,7 @@ export default function Result() {
   const ratio = dailyRatio(item.mg)
 
   return (
-    <Screen theme="Dark" tab="조회" className={styles.screen}>
+    <Screen theme="Dark" tab="조회" className={styles.screen} meta={copy.seo.item(item.name, mgLabel(item.mg), coffeeCups(item.mg))}>
       <div className={styles.stage}>
         <div className={styles.header}>
           <BackHeader theme="Dark" title={copy.result.title} onBack={back} />

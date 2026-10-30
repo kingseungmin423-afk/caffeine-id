@@ -60,7 +60,7 @@ export default function CategoryDetail() {
   if (!CATEGORIES.includes(category as Category)) return <Navigate to={paths.category} replace />
 
   return (
-    <Screen theme="Dark" tab="조회" className={styles.screen}>
+    <Screen theme="Dark" tab="조회" className={styles.screen} meta={copy.seo.categoryDetail(category)}>
       <BackHeader theme="Dark" title={copy.categoryDetail.back} onBack={back} />
       <h1 className={styles.title}>{category}</h1>
       <p className={styles.sub}>{copy.categoryDetail.sub}</p>

@@ -69,6 +69,24 @@ export const copy = {
 
   // ---------- 화면 ----------
   appName: '카페인 신원조회',
+  /** 검색엔진·링크 공유에 보이는 화면 제목과 설명 (브라우저 탭 제목도) */
+  seo: {
+    titleSuffix: ' | 카페인 신원조회',
+    home: {
+      title: '카페인 신원조회 — 먹기 전에 음식 속 카페인 확인',
+      description: '음식 이름을 검색하면 카페인 함량, 커피 몇 잔과 같은지, 하루 권고량(성인 400mg) 대비 비율을 신분증 카드로 보여줘요. 커피·차·탄산음료·초콜릿·약 등 음식 1,600여 개.',
+    },
+    category: { title: '분류별 카페인', description: '탄산음료, 에너지음료, 커피, 차, 빙과류, 과자류, 초콜릿, 약 8가지 분류로 숨은 카페인을 찾아보세요.' },
+    categoryDetail: (c: string) => ({ title: `${c} 카페인 함량`, description: `${c}의 카페인 함량을 신분증 카드로 한눈에 비교해 보세요.` }),
+    search: (q: string) => ({ title: q ? `'${q}' 카페인 검색` : '카페인 검색', description: '음식 이름으로 카페인 함량을 찾아보세요. 띄어쓰기나 줄임말도 찾아줘요.' }),
+    item: (name: string, mg: string, cups: string) => ({
+      title: `${name} 카페인 ${mg}`,
+      description: `${name}에는 카페인 ${mg}이 들어 있어요. 전문점 커피(132mg) 기준 ${cups}잔, 하루 권고량(성인 400mg)과 비교해 보세요.`,
+    }),
+    estimate: (q: string) => ({ title: `'${q}' 카페인 추정`, description: `'${q}'와 비슷한 음식의 기록으로 카페인 범위를 추정했어요.` }),
+    report: { title: '음식 등록 신청', description: '찾는 음식이 없으면 이름과 사진으로 카페인 신원 등록을 신청해 주세요.' },
+    info: { title: '발급 규정', description: '카페인 정보의 데이터 기준(식약처 등)과 판정 방법, 사진 출처를 안내해요.' },
+  },
   welcome: {
     headline: '먹기 전에,\n신원부터 조회하세요.',
     sub: '음식을 조회하면 카페인 신분증이 발급돼요.',

@@ -45,7 +45,7 @@ export default function Report() {
 
   return (
     // 접수 뒤에는 뒤로가기·탭바 없이 '홈으로 돌아가기'만 둔다 (피그마에 없는 상태: 온보딩처럼 버튼을 아래에)
-    <Screen theme="Light" tab={done ? undefined : '제보'} className={done ? styles.doneScreen : styles.screen}>
+    <Screen theme="Light" tab={done ? undefined : '제보'} className={done ? styles.doneScreen : styles.screen} meta={copy.seo.report}>
       {!done && <BackHeader theme="Light" title={copy.report.title} onBack={back} />}
       <h1 className={result ? styles.doneHeadline : styles.headline}>{result ? result.headline : copy.report.headline}</h1>
       <p className={result ? styles.doneSub : styles.sub}>{result ? result.sub : copy.report.sub}</p>

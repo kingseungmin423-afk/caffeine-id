@@ -40,7 +40,7 @@ export default function Estimate() {
   const pct = (mg: number) => copy.result.percent(dailyRatio(mg) * 100)
 
   return (
-    <Screen theme="Dark" tab="조회" className={styles.screen}>
+    <Screen theme="Dark" tab="조회" className={styles.screen} meta={copy.seo.estimate(q)}>
       <div className={styles.stage}>
         <div className={styles.header}>
           <BackHeader theme="Dark" title={copy.estimate.title} onBack={back} />

@@ -11,7 +11,7 @@ export default function Info() {
   const photos = allPhotos().sort((a, b) => a.name_ko.localeCompare(b.name_ko, 'ko'))
   const [creditsOpen, setCreditsOpen] = useState(false)
   return (
-    <Screen theme="Light" tab="정보" className={styles.screen}>
+    <Screen theme="Light" tab="정보" className={styles.screen} meta={copy.seo.info}>
       <h1 className={styles.headline}>{copy.info.headline}</h1>
       <div className={styles.articles}>
         {copy.info.articles.map((a) => (

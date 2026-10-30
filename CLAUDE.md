@@ -9,6 +9,7 @@
   - 토스에서 다른 점: 주소가 `#/item/…`(HashRouter), 설치 팝업·PC 틀 없음, 토스 내비게이션 바 색을 화면 배경에 맞춤(`TabDock.tsx` → `NavigationBar.setOptions`), 사진 출처는 링크 없이 글자(토스 밖 이동 금지).
   - 설정 `app/apps-in-toss.config.ts`: SDK `@apps-in-toss/web-framework` 3.8.0, `appName`은 콘솔 등록 이름과 같아야 함(지금 임시 `caffeine-id`), 자체 뒤로가기가 있어 토스 뒤로가기·홈 버튼 끔.
   - 출시 체크리스트(비게임): 토스 내비게이션 바 사용, 자체·토스 뒤로가기 동시 노출 금지, 첫 화면에서 뒤로가기 = 종료, 라이트 모드, 확대 금지, 토스 밖 이동·앱 설치 유도·자체 로그인 금지, HTTPS만, SSR 금지. 아직 샌드박스(실제 토스 환경)에서 확인 못 함: 위쪽 여백, 사진 올리기(input file), 안드로이드 뒤로가기, 제보 전송.
+- 검색 노출(PWA만, 2026-10-31): 구글 Search Console은 가비아 DNS TXT로 소유 확인, 네이버 서치어드바이저는 HTML 태그(`vite.config.ts`의 `seo()`가 index.html에 넣음). 빌드가 `robots.txt`·`sitemap.xml`(홈·분류·정보 + 음식 1,603개)·`og-image.png` 생성. 화면마다 탭 제목·설명·대표 주소는 `screens/pageMeta.ts`(문구 `copy.seo`), 대표 주소 `config/site.ts`.
 - PC 화면(사용자 요청, 피그마에 없음): 마우스 쓰는 넓은 화면이면 양옆 회색(`--color-gray-200`), 앱은 가운데 375 폭을 화면 높이에 맞춰 키움(최대 1.5배). `screens/desktopFrame.ts` + `styles/base.css`. 상단 바 색(theme-color)은 화면 테마를 따라감(`TabDock.tsx`).
 - 인터랙션: 움직임 값은 `app/src/styles/motion.css`(피그마 프로토타입 값 + '추가' 표시), `app/src/config/motion.ts`. 탭바는 앱에 하나(`screens/TabDock.tsx`)라 화면이 바뀌어도 선택 표시가 튕기며 옮겨 간다. 가로 줄 끌기·카드 단위 멈춤은 `components/useDragScroll.ts` + `styles/drag-scroll.css`.
 - 탭바는 사용자 요청으로 4칸(홈·조회·제보·정보), 떠 있는 뒤로가기 없음 (피그마 Components v2 `TabBar`, 이전 2칸은 `TabBar 2칸 (이전)`). 파이프라인은 `app/design/README.md`, 컴포넌트 목록은 `app/design/components.md`, 비교용 갤러리는 개발 서버 `/dev/gallery`.

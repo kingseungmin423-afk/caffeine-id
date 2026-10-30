@@ -13,7 +13,7 @@ export default function Category() {
   const navigate = useNavigate()
   const back = useBack()
   return (
-    <Screen theme="Light" tab="조회" className={styles.screen}>
+    <Screen theme="Light" tab="조회" className={styles.screen} meta={copy.seo.category}>
       <BackHeader theme="Light" onBack={back} />
       <h1 className={styles.title}>{copy.category.title}</h1>
       <p className={styles.sub}>{copy.category.sub}</p>

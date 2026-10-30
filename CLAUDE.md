@@ -1,4 +1,4 @@
-# 카페인 신원조회 PWA — 작업 인수인계
+# 카페인 신분증 PWA — 작업 인수인계
 
 '음식 속에 숨어 있는 카페인 찾기' 포트폴리오 과제. 먹기 전에 음식의 카페인을 신분증 형식으로 조회하는 PWA.
 현재 상태(2026-10-28): **개발 순서 1~6 완료, 7의 피그마 비교 완료** (토큰·아이콘·이미지, 공통 컴포넌트, 화면 9개, 인터랙션, PWA, 제보 전송). 배포 완료(2026-10-28): GitHub `kingseungmin423-afk/caffeine-id`(공개, main 올리면 Vercel 자동 배포), Vercel 프로젝트 `caffeine-id`(Root Directory `app`, 환경 변수 2개) → **https://www.caffeineid.com** (2026-10-31 가비아 도메인 연결: A `@` 216.198.79.1, CNAME `www` → Vercel, `caffeineid.com`은 www로 308 이동. 예전 주소 https://caffeine-id-eosin.vercel.app 도 열림). 남은 것: 실제 폰에서 설치·오프라인 확인. 피그마 비교는 개발 서버 콘솔 `compareScreen(키)` (애니메이션 끝난 뒤, 375px). 의도한 차이: 한글 낱말 단위 줄바꿈(피그마는 글자 단위라 09 정보 줄 수가 다름), 05 사진 출처 줄(관련 음식이 아래로), 4칸 탭바, 커피 환산 실제 계산값.

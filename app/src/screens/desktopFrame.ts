@@ -4,6 +4,13 @@
 const MAX_ZOOM = 1.5
 const desktop = window.matchMedia('(hover: hover) and (pointer: fine)')
 
+// 테스트용: 주소에 ?zoom=2.5 처럼 붙이면 PC 화면에서 그 배율로 고정(1~3배). 처음 연 주소에서 한 번만 읽는다
+const TEST_ZOOM_RANGE = [1, 3] as const
+const testZoom = (() => {
+  const v = parseFloat(new URLSearchParams(window.location.search).get('zoom') ?? '')
+  return Number.isFinite(v) ? Math.min(TEST_ZOOM_RANGE[1], Math.max(TEST_ZOOM_RANGE[0], v)) : null
+})()
+
 function update() {
   const html = document.documentElement
   const cs = getComputedStyle(html)
@@ -12,7 +19,7 @@ function update() {
   // 양옆에 회색이 보일 만큼 넓을 때만
   const on = desktop.matches && window.innerWidth > w * 1.5
   html.toggleAttribute('data-frame', on)
-  const zoom = on ? Math.min(MAX_ZOOM, Math.max(1, window.innerHeight / h)) : 1
+  const zoom = !on ? 1 : (testZoom ?? Math.min(MAX_ZOOM, Math.max(1, window.innerHeight / h)))
   html.style.setProperty('--app-zoom', String(Math.round(zoom * 100) / 100))
 }
 

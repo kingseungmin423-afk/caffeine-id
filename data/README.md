@@ -27,6 +27,7 @@ python data/scripts/collect_danawa.py build
 python data/scripts/fetch_label_images.py   # 사진만 받음. 값은 사람이 읽어 collect_labels.py에 기록
 python data/scripts/collect_labels.py
 python data/scripts/build_db.py
+node data/scripts/collect_soda.mjs          # 일반 탄산음료(카페인 없음). raw/soda_regular.csv를 쓰고 DB 맨 끝에 붙인다
 ```
 
 ## 항목 구조 (`caffeine_db.json` → `items[]`)

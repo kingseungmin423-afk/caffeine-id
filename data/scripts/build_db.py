@@ -12,7 +12,9 @@ OUT_CSV = os.path.join(HERE, '..', 'caffeine_db.csv')
 
 SOURCES = ['package_labels.csv', 'danawa_kr.csv', 'gongcha_kr.csv',
            'mfds_average.csv', 'kca_surveys.csv', 'starbucks_kr.csv', 'ediya_kr.csv', 'mega_kr.csv', 'paik_kr.csv',
-           'hollys_kr.csv', 'coffeebean_kr.csv', 'drugs_kr.csv', 'usda_generic_ko.csv']
+           'hollys_kr.csv', 'coffeebean_kr.csv', 'drugs_kr.csv', 'usda_generic_ko.csv',
+           # 새 출처는 맨 끝에 붙인다 (이미 있는 음식 번호가 바뀌면 사진·북마크·조회 수 연결이 깨진다)
+           'soda_regular.csv']
 
 # 이름에 이런 말이 있는데 카페인이 높게 적혀 있으면 출처 입력 오류일 수 있다
 NON_CAFFEINE_HINT = re.compile(r'(빵|베이글|샌드위치|스무디|에이드|주스|요거트|레모네이드|치즈|크루아상|스콘)')

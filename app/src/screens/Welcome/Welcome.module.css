@@ -6,6 +6,17 @@
 .stage {
   composes: stage from global;
   height: var(--m-screen-welcome-headline-y);
+  /* 화면이 짧으면 그림을 위로 올린다(목줄 윗부분이 화면 위로 나간다, 카드는 그대로).
+   * 필요한 높이 = 피그마 812 - 문구·버튼 간격 130 + 최소 간격 16. 모자란 만큼, 카드 위(목줄 길이 92)까지만 */
+  --welcome-need: calc(
+    var(--m-screen-welcome-h) - (var(--m-screen-welcome-button-y) - var(--m-screen-welcome-sub-y) - var(--m-screen-welcome-sub-h)) +
+      var(--space-16)
+  );
+  margin-top: clamp(
+    calc(-1 * var(--m-screen-welcome-idcard-y)),
+    calc(100dvh / var(--app-zoom, 1) - var(--welcome-need)),
+    var(--space-0)
+  );
 }
 
 .back {
@@ -40,8 +51,19 @@
   color: var(--text-inverse-tertiary);
 }
 
-/* 남는 높이는 문구와 버튼 사이로 (피그마 812에서는 130, 그보다 줄지 않는다) */
+/* 남는 높이는 문구와 버튼 사이로(버튼은 늘 화면 아래). 피그마 812 화면이면 130으로 피그마와 같다.
+ * 실제 휴대폰은 주소창·토스 바 때문에 812보다 짧아서, 짧으면 이 간격부터 줄인다(최소 16) */
 .spacer {
   flex: 1;
-  min-height: calc(var(--m-screen-welcome-button-y) - var(--m-screen-welcome-sub-y) - var(--m-screen-welcome-sub-h));
+  min-height: var(--space-16);
+}
+
+/* 그래도 넘치는 아주 짧은 화면: 버튼을 화면 아래(피그마와 같은 아래 여백)에 붙여 스크롤 없이 누를 수 있게 */
+.cta {
+  position: sticky;
+  bottom: max(
+    calc(var(--m-screen-welcome-h) - var(--m-screen-welcome-button-y) - var(--m-screen-welcome-button-h)),
+    env(safe-area-inset-bottom)
+  );
+  z-index: 1;
 }

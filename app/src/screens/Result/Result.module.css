@@ -15,6 +15,27 @@
   z-index: 4;
 }
 
+/* 북마크 버튼: 뒤로가기 화살표(x 24)와 좌우 대칭, 제목 줄 높이에 가운데 (피그마에 없음, 사용자 요청) */
+.bookmark {
+  composes: stage-item from global;
+  --x: calc(var(--m-screen-result-w) - var(--m-screen-result-icon-chevron-left-x) - var(--m-screen-result-icon-chevron-left-w));
+  --y: var(--m-screen-result-title-y);
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  height: var(--m-screen-result-title-h);
+  padding: 0;
+  border: none;
+  background: none;
+  color: var(--icon-inverse);
+  cursor: pointer;
+}
+
+.bookmarkIcon {
+  width: var(--m-screen-result-icon-chevron-left-w);
+  height: var(--m-screen-result-icon-chevron-left-h);
+}
+
 /* 카드 두 장과 목줄 (CardDeck): 앞 자리 = 피그마 05 앞 카드, 뒤 자리 = 뒤 카드(기울어짐), 목줄은 그 사이.
  * deck은 겹침 순서를 새로 만들지 않아서(transform·z-index 없음) 카드가 목줄 위·아래로 오갈 수 있다.
  * 앞뒤는 z-index로만 정한다. 3D로 움직이는 건 들려서 다가오는 카드 하나뿐이라 아이폰(WebKit)에서도 순서가 꼬이지 않는다 */

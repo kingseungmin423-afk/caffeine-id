@@ -4,6 +4,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { BackHeader } from '../../components/BackHeader'
 import { DailyRatio } from '../../components/DailyRatio'
 import { IDCard } from '../../components/IDCard'
+import { Icon } from '../../components/Icon'
 import { IDCardBack } from '../../components/IDCardBack'
 import { Lanyard } from '../../components/Lanyard'
 import { RelatedCard } from '../../components/RelatedCard'
@@ -15,6 +16,7 @@ import { coffeeCups, coffeeRatio, dailyRatio } from '../../data/calc'
 import { findItem, metaLabel, mgLabel, per100, servingLabel, useDb } from '../../data/db'
 import { issuer } from '../../data/issuer'
 import { creditLine, photoFor } from '../../data/photos'
+import { bookmarks, useBookmarks } from '../../store/bookmarks'
 import { recordView } from '../../store/views'
 import { useVisits, visits } from '../../store/visits'
 import { paths } from '../links'
@@ -30,6 +32,7 @@ export default function Result() {
   const { id = '' } = useParams()
   const items = useDb()
   const { issued } = useVisits()
+  const marked = useBookmarks()
   const back = useBack()
   const navigate = useNavigate()
   const open = useOpenItem()
@@ -97,6 +100,16 @@ export default function Result() {
         <div className={styles.header}>
           <BackHeader theme="Dark" title={copy.result.title} onBack={back} />
         </div>
+        {/* 북마크: 뒤로가기 화살표와 좌우 대칭 자리 (피그마에 없음, 사용자 요청) */}
+        <button
+          type="button"
+          className={styles.bookmark}
+          aria-pressed={marked.includes(item.id)}
+          aria-label={marked.includes(item.id) ? copy.result.bookmarkRemove : copy.result.bookmarkAdd}
+          onClick={() => bookmarks.toggle(item.id)}
+        >
+          <Icon name={marked.includes(item.id) ? 'bookmark-fill' : 'bookmark'} className={styles.bookmarkIcon} />
+        </button>
         <CardDeck
           front={front}
           back={backCard}

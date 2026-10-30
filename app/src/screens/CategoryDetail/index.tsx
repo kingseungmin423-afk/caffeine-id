@@ -8,6 +8,7 @@ import { copy } from '../../copy'
 import { CATEGORIES, type Category } from '../../data/categories'
 import { mgLabel, servingLabel, useDb } from '../../data/db'
 import { photoFor } from '../../data/photos'
+import { useBookmarks } from '../../store/bookmarks'
 import { useViewCounts } from '../../store/views'
 import { useVisits } from '../../store/visits'
 import { paths } from '../links'
@@ -66,14 +67,18 @@ export default function CategoryDetail() {
   const [sort, setSort] = useState(readSort)
   useEffect(() => saveSort(sort), [sort])
   const views = useViewCounts()
+  const marked = useBookmarks()
 
   const list = useMemo(() => {
     const byName = (a: { name: string }, b: { name: string }) => a.name.localeCompare(b.name, 'ko')
     const inCategory = (items ?? []).filter((i) => i.app === category)
     // 많이 찾는 순: 조회 수가 같으면(또는 아직 못 받았으면) 가나다순
     const count = (id: string) => views?.get(id) ?? 0
-    return inCategory.sort(sort === 'popular' ? (a, b) => count(b.id) - count(a.id) || byName(a, b) : byName)
-  }, [items, category, sort, views])
+    const sorted = inCategory.sort(sort === 'popular' ? (a, b) => count(b.id) - count(a.id) || byName(a, b) : byName)
+    // 북마크한 음식은 정렬과 상관없이 맨 위 (그 안에서는 고른 정렬 그대로)
+    const top = new Set(marked)
+    return [...sorted.filter((i) => top.has(i.id)), ...sorted.filter((i) => !top.has(i.id))]
+  }, [items, category, sort, views, marked])
 
   useEffect(() => {
     const el = sentinel.current
@@ -115,10 +120,11 @@ export default function CategoryDetail() {
               amount={mgLabel(i.mg)}
               photoSrc={photoFor(i.id)?.src}
               photoFallback={i.app}
+              bookmarked={marked.includes(i.id)}
               onClick={() => open(i.id)}
             />
           ) : (
-            <IDCardMini key={i.id} 상태="미발급" name={i.name} serving={servingLabel(i.serving)} onClick={() => open(i.id)} />
+            <IDCardMini key={i.id} 상태="미발급" name={i.name} serving={servingLabel(i.serving)} bookmarked={marked.includes(i.id)} onClick={() => open(i.id)} />
           ),
         )}
       </div>

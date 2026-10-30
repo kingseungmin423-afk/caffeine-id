@@ -53,6 +53,21 @@
   gap: var(--space-4);
 }
 
+/* 북마크 표시 (피그마에 없음, 사용자 요청): 제목 줄 오른쪽 끝 */
+.bookmark {
+  flex: none;
+  width: var(--space-16);
+  height: var(--space-16);
+  margin-left: auto;
+  align-self: center;
+}
+.발급 .bookmark {
+  color: var(--icon-primary);
+}
+.미발급 .bookmark {
+  color: var(--icon-inverse);
+}
+
 .title {
   composes: t-heading-16-extrabold-140 from global;
 }

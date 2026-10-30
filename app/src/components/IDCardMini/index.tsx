@@ -4,7 +4,7 @@ import { cx } from '../cx'
 import { DashedOutline } from '../DashedOutline'
 import styles from './IDCardMini.module.css'
 import type { Category } from '../../data/categories'
-import { PhotoFallback } from '../Icon'
+import { Icon, PhotoFallback } from '../Icon'
 
 type Props = {
   상태: '발급' | '미발급'
@@ -16,10 +16,12 @@ type Props = {
   amount?: string
   photoSrc?: string
   photoFallback?: Category | null
+  /** 북마크한 음식: 제목 줄 오른쪽 끝에 작은 북마크 표시 (피그마에 없음, 사용자 요청) */
+  bookmarked?: boolean
   onClick?: () => void
 }
 
-export function IDCardMini({ 상태, name, serving, serial, amount, photoSrc, photoFallback, onClick }: Props) {
+export function IDCardMini({ 상태, name, serving, serial, amount, photoSrc, photoFallback, bookmarked, onClick }: Props) {
   const issued = 상태 === '발급'
   return (
     <button type="button" className={cx(styles.root, styles[상태])} onClick={onClick}>
@@ -32,6 +34,7 @@ export function IDCardMini({ 상태, name, serving, serial, amount, photoSrc, ph
         <span className={styles.idMark}>
           <span className={styles.idText}>{copy.idCard.idMark}</span>
         </span>
+        {bookmarked && <Icon name="bookmark-fill" className={styles.bookmark} aria-label={copy.categoryDetail.bookmarked} role="img" aria-hidden={false} />}
       </span>
       <span className={styles.photoBox}>
         {issued ? (

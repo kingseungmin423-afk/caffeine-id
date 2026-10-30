@@ -129,6 +129,7 @@ export const copy = {
     /** 정렬 글자를 누를 때마다 바뀐다 (피그마에는 '가나다순'만) */
     sortPopular: '많이 찾는 순',
     sortChange: '정렬 바꾸기',
+    bookmarked: '북마크한 음식',
     hint: '미발급 카드를 누르면 바로 신원조회를 시작해요',
   },
   search: {
@@ -168,6 +169,9 @@ export const copy = {
     },
     percent: (p: number) => `${p < 10 ? Math.round(p * 10) / 10 : Math.round(p)}%`,
     photoCredit: '사진',
+    /** 상단 오른쪽 북마크 버튼 (피그마에 없음, 사용자 요청) */
+    bookmarkAdd: '북마크하기',
+    bookmarkRemove: '북마크 해제',
   },
   estimate: {
     title: '조회 결과',

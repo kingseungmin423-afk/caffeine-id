@@ -8,6 +8,8 @@ import CheckCircle from '../../assets/icons/check-circle.svg?react'
 import Battery from '../../assets/icons/battery.svg?react'
 import Home from '../../assets/icons/home.svg?react'
 import Report from '../../assets/icons/report.svg?react'
+import Bookmark from '../../assets/icons/bookmark.svg?react'
+import BookmarkFill from '../../assets/icons/bookmark-fill.svg?react'
 import Can from '../../assets/illust/can.svg?react'
 import EnergyDrink from '../../assets/illust/energy-drink.svg?react'
 import IceCream from '../../assets/illust/ice-cream.svg?react'
@@ -35,6 +37,8 @@ const ICONS = {
   battery: Battery,
   home: Home,
   report: Report,
+  bookmark: Bookmark,
+  'bookmark-fill': BookmarkFill,
 }
 const ILLUSTS = { can: Can, 'energy-drink': EnergyDrink, 'ice-cream': IceCream, cookie: Cookie, chocolate: Chocolate }
 const CATEGORY_ICONS: Record<Category, typeof Soda> = {

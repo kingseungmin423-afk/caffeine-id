@@ -2,7 +2,7 @@
 
 '음식 속에 숨어 있는 카페인 찾기' 포트폴리오 과제. 먹기 전에 음식의 카페인을 신분증 형식으로 조회하는 PWA.
 현재 상태(2026-10-28): **개발 순서 1~6 완료, 7의 피그마 비교 완료** (토큰·아이콘·이미지, 공통 컴포넌트, 화면 9개, 인터랙션, PWA, 제보 전송). 배포 완료(2026-10-28): GitHub `kingseungmin423-afk/caffeine-id`(공개, main 올리면 Vercel 자동 배포), Vercel 프로젝트 `caffeine-id`(Root Directory `app`, 환경 변수 2개) → https://caffeine-id-eosin.vercel.app . 남은 것: 실제 폰에서 설치·오프라인 확인. 피그마 비교는 개발 서버 콘솔 `compareScreen(키)` (애니메이션 끝난 뒤, 375px). 의도한 차이: 한글 낱말 단위 줄바꿈(피그마는 글자 단위라 09 정보 줄 수가 다름), 05 사진 출처 줄(관련 음식이 아래로), 4칸 탭바, 커피 환산 실제 계산값.
-- PWA: `app/vite.config.ts`(vite-plugin-pwa 1.3.0, manifest 색은 토큰, 처음 방문 때 앱·DB·사진·글꼴 전부 캐시, 새 버전은 받자마자 교체(autoUpdate)되고 다음 실행·새로고침 때 화면에 적용. prompt 방식은 아이폰 홈 화면 앱에서 업데이트가 계속 미뤄져서 바꿈), `app/vercel.json`(주소 새로고침 → index.html). 임시 아이콘은 `npm run app-icons` → `public/icons/*` (진짜 아이콘 받으면 파일만 교체). 설치 팝업 자리 `screens/InstallPrompt.tsx` + `store/install.ts`(02 메인에서, 디자인 받기 전 임시). 배포본 확인은 `npm run build` 후 미리보기 `app-preview`(4173).
+- PWA: `app/vite.config.ts`(vite-plugin-pwa 1.3.0, manifest 색은 토큰, 처음 방문 때 앱·DB·사진·글꼴 전부 캐시, 새 버전은 받자마자 교체(autoUpdate)되고 다음 실행·새로고침 때 화면에 적용. prompt 방식은 아이폰 홈 화면 앱에서 업데이트가 계속 미뤄져서 바꿈), `app/vercel.json`(주소 새로고침 → index.html). 아이콘은 `npm run app-icons` → `public/icons/*` (원본 `design/logo/app-icon.svg`). 설치 팝업 자리 `screens/InstallPrompt.tsx` + `store/install.ts`(02 메인에서, 디자인 받기 전 임시). 배포본 확인은 `npm run build` 후 미리보기 `app-preview`(4173).
 - **토스 미니앱(앱인토스)도 함께 출시 예정 (2026-10-30 시작). PWA에 문제가 생기면 안 된다** → 같은 코드에서 빌드만 나눈다.
   - `npm run build`(PWA·Vercel)는 그대로. `npm run build:toss` = `vite build --mode toss`(→ `dist-toss`, 상대 경로, 서비스 워커·manifest 없음, 확대 금지) + `ait build`(→ `app/<appName>.ait`, 콘솔에 올리는 파일). 확인은 미리보기 `app-toss-preview`(4175).
   - 토스 전용 분기는 `config/target.ts`의 `IS_TOSS`(빌드 때 정해져 PWA 번들에는 토스 코드·SDK가 안 들어감). 토스 SDK 호출은 `toss/bridge.ts`를 `if (IS_TOSS) import(...)`로만.
@@ -75,7 +75,7 @@
 - 조건: 온보딩 완료 또는 첫 검색 후, 닫으면 7일간 안 띄움, 설치된 앱(standalone)에서는 안 띄움
 
 ## 사용자가 나중에 줄 것
-- 설치 팝업 디자인, 아이폰 안내 그림, 앱 아이콘(192·512·maskable). 그 전까지는 임시 아이콘. 아이콘 시안 4종(A 신분증·B 도장·C 목줄 카드·D 커피콩)은 피그마 섹션 `App Icon 시안 (2026-10-28)`(`61:1690`)에 컴포넌트 `AppIcon/*`로 있음 → 고르면 512로 내보내 `app/public/icons`에 넣고 `scripts/build-app-icons.mjs`는 지움.
+- 설치 팝업 디자인, 아이폰 안내 그림. **앱 아이콘·로고는 확정(2026-10-30): 피그마 `AppIcon/A2 신분증 (확정)`(`77:1728`)** → SVG로 내보낸 `app/design/logo/app-icon.svg`를 `npm run app-icons`가 `public/icons/*`(PWA·토스 빌드 공통)와 `design/logo/toss-logo-600.png`(앱인토스 콘솔 앱 로고·다크모드 로고 600×600)로 만든다. 로고를 바꾸면 SVG만 다시 내보내고 스크립트를 다시 돌린다.
 - Supabase 프로젝트 생성·키
 
 ## 개발 순서

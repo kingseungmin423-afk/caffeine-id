@@ -8,10 +8,10 @@ import {
   PHOTO_MAX_EDGE,
   PHOTO_QUALITY,
   REPORT_BUCKET,
-  SUPABASE_KEY,
   SUPABASE_URL,
   TEXT_MAX,
 } from '../config/report'
+import { supabaseConfigured, supabaseHeaders } from './supabase'
 
 export type ReportDraft = { name: string; maker: string; category: string; photo: File | null }
 /** 봇 막기용: 화면을 연 시각, 사람에게는 안 보이는 칸에 들어온 값 */
@@ -128,13 +128,8 @@ function uuid() {
   return `${h.slice(0, 8)}-${h.slice(8, 12)}-${h.slice(12, 16)}-${h.slice(16, 20)}-${h.slice(20)}`
 }
 
-const configured = () => SUPABASE_URL !== '' && SUPABASE_KEY !== ''
-
-function headers(extra: Record<string, string>) {
-  // 예전 공개 키(eyJ…)는 Authorization에도 넣어야 하고, 새 공개 키(sb_publishable_…)는 apikey만으로 된다
-  const auth: Record<string, string> = SUPABASE_KEY.startsWith('eyJ') ? { Authorization: `Bearer ${SUPABASE_KEY}` } : {}
-  return { apikey: SUPABASE_KEY, ...auth, ...extra }
-}
+const configured = supabaseConfigured
+const headers = supabaseHeaders
 
 /** 한 건 보내기. 'retry' = 나중에 다시 (인터넷 문제·서버 일시 오류) */
 async function sendOne(item: Outgoing): Promise<'sent' | 'limited' | 'failed' | 'retry'> {

@@ -40,7 +40,22 @@
 
 .sort {
   composes: t-body-13-medium from global;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
   color: var(--text-inverse);
+  cursor: pointer;
+}
+
+/* 정렬을 바꿀 수 있다는 표시: 기존 chevron 아이콘을 아래로 돌려 글자 크기에 맞춘다 */
+.sortIcon {
+  width: var(--space-12);
+  height: var(--space-12);
+  transform: rotate(-90deg);
 }
 
 /* 2열 지갑: 가로·세로 간격 space/20 */

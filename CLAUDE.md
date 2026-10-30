@@ -15,6 +15,7 @@
 - 탭바는 사용자 요청으로 4칸(홈·조회·제보·정보), 떠 있는 뒤로가기 없음 (피그마 Components v2 `TabBar`, 이전 2칸은 `TabBar 2칸 (이전)`). 파이프라인은 `app/design/README.md`, 컴포넌트 목록은 `app/design/components.md`, 비교용 갤러리는 개발 서버 `/dev/gallery`.
 - 코드 위치: 화면 `app/src/screens/*`, 데이터 `app/src/data/*`(DB·카테고리 대응표·검색·사진), 계산 기준 `app/src/config/caffeine.ts`(식약처 132mg·400mg + 출처), 기기 저장 `app/src/store/*`, 문구 `app/src/copy.ts`.
 - 제보(08) 6단계 코드 완료: `store/reports.ts`(IndexedDB 보관함 → Supabase REST로 글 넣고 사진 올림, 오프라인·실패면 보관했다가 연결/앱 시작 때 자동 전송, 사진은 긴 변 1280으로 다시 저장해 EXIF 제거, 기기 하루 5건, 숨은 칸·2.5초 미만 제출은 봇으로 버림), 기준값 `config/report.ts`, 서버 `app/supabase/schema.sql`(익명 insert만, IP 해시로 1시간 5건·전체 1분 30건, 비공개 사진 통 2MB), 준비 안내 `app/supabase/README.md`. 키는 `app/.env.local`(`.env.example` 참고)·Vercel 환경 변수. 2026-10-28 실제 프로젝트(`ypkzddafxcxumgamozsa`) 연결·전송 확인 완료 (익명 읽기·덮어쓰기·모르는 번호 사진 모두 막힘). 배포 때 Vercel 환경 변수에도 같은 두 값 필요.
+- 02-2 정렬(2026-10-31 사용자 요청): '가나다순' 글자를 누를 때마다 가나다순 ↔ 많이 찾는 순. 많이 찾는 순 = 전체 사용자 조회 수(Supabase `item_views` + `record_view` 함수, `app/supabase/item-views.sql`, 익명 숫자만·같은 접속 주소는 음식마다 하루 1번). 앱 `store/views.ts`(결과 화면에서 보냄, 분류 상세에서 받아 옴), 연결 공통 `store/supabase.ts`. 서버에 연결 안 되면 가나다순으로 대신.
 - 사진 없는 음식의 대체 일러스트는 만들지 않기로 함(사용자 결정, 2026-10-28) → 사진 없으면 기존 '?' 카드. 출시 전 사진 출처 재검사는 Node판 `node data/scripts/review_photos.mjs`(review_photos.py와 같은 점검 + 앱 표기 대조)로 2026-10-30 실행: 49장 모두 문제 없음 → `assets/photos/license_review.csv`.
 
 ## 절대 규칙

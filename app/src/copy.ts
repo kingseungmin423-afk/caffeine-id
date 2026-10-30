@@ -126,6 +126,9 @@ export const copy = {
     sub: '조회한 음식은 사진이 붙은 신분증으로 보여요',
     count: (n: number) => `전체 ${n}장`,
     sort: '가나다순',
+    /** 정렬 글자를 누를 때마다 바뀐다 (피그마에는 '가나다순'만) */
+    sortPopular: '많이 찾는 순',
+    sortChange: '정렬 바꾸기',
     hint: '미발급 카드를 누르면 바로 신원조회를 시작해요',
   },
   search: {

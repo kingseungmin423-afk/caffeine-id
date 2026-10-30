@@ -15,6 +15,7 @@ import { coffeeCups, coffeeRatio, dailyRatio } from '../../data/calc'
 import { findItem, metaLabel, mgLabel, per100, servingLabel, useDb } from '../../data/db'
 import { issuer } from '../../data/issuer'
 import { creditLine, photoFor } from '../../data/photos'
+import { recordView } from '../../store/views'
 import { useVisits, visits } from '../../store/visits'
 import { paths } from '../links'
 import { Screen } from '../Screen'
@@ -38,7 +39,10 @@ export default function Result() {
 
   // 결과를 보면 발급(조회 기록)
   useEffect(() => {
-    if (item) visits.view(item.id)
+    if (!item) return
+    visits.view(item.id)
+    // '많이 찾는 순' 정렬용 전체 조회 수
+    recordView(item.id)
   }, [item])
   useEffect(() => {
     setFlipped(false)

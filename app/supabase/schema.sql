@@ -87,3 +87,52 @@ create policy "익명은 제보 사진 올리기만" on storage.objects
     and private.report_accepts_photo(name)
   );
 -- 덮어쓰기·읽기·지우기 정책은 만들지 않는다
+
+-- 4. 많이 찾는 순: 음식별 조회 수 (item-views.sql과 같은 내용) ------------------------
+create table if not exists public.item_views (
+  item_id text primary key check (item_id ~ '^caf-[0-9]{5}$'),
+  views bigint not null default 0,
+  updated_at timestamptz not null default now()
+);
+
+alter table public.item_views enable row level security;
+
+drop policy if exists "누구나 조회 수 읽기" on public.item_views;
+create policy "누구나 조회 수 읽기" on public.item_views
+  for select to anon
+  using (true);
+-- 넣기·고치기·지우기 정책은 만들지 않는다 = 아래 함수로만 늘어난다
+
+create schema if not exists private;
+create table if not exists private.view_limits (
+  key text not null,
+  item_id text not null,
+  day date not null default current_date,
+  primary key (key, item_id, day)
+);
+
+create or replace function public.record_view(p_item_id text) returns void
+language plpgsql security definer set search_path = '' as $$
+declare
+  ip text := split_part(coalesce(current_setting('request.headers', true)::json ->> 'x-forwarded-for', ''), ',', 1);
+  k text := encode(extensions.digest(ip || '|' || to_char(now(), 'YYYY-MM-DD'), 'sha256'), 'hex');
+  added int;
+begin
+  if p_item_id is null or p_item_id !~ '^caf-[0-9]{5}$' then
+    return;
+  end if;
+  delete from private.view_limits where day < current_date - 1;
+  if (select count(*) from private.view_limits where key = k and day = current_date) >= 300 then
+    return;
+  end if;
+  insert into private.view_limits (key, item_id) values (k, p_item_id) on conflict do nothing;
+  get diagnostics added = row_count;
+  if added = 0 then
+    return; -- 오늘 이미 센 음식
+  end if;
+  insert into public.item_views (item_id, views) values (p_item_id, 1)
+  on conflict (item_id) do update set views = public.item_views.views + 1, updated_at = now();
+end $$;
+
+revoke all on function public.record_view(text) from public;
+grant execute on function public.record_view(text) to anon;

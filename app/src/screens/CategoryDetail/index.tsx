@@ -2,11 +2,13 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { Navigate, useParams } from 'react-router-dom'
 import { BackHeader } from '../../components/BackHeader'
+import { Icon } from '../../components/Icon'
 import { IDCardMini } from '../../components/IDCardMini'
 import { copy } from '../../copy'
 import { CATEGORIES, type Category } from '../../data/categories'
 import { mgLabel, servingLabel, useDb } from '../../data/db'
 import { photoFor } from '../../data/photos'
+import { useViewCounts } from '../../store/views'
 import { useVisits } from '../../store/visits'
 import { paths } from '../links'
 import { Screen } from '../Screen'
@@ -16,6 +18,24 @@ import styles from './CategoryDetail.module.css'
 
 /** 한 번에 그리는 카드 수. 아래 끝에 가까워지면 더 그린다 (커피는 700장이 넘는다) */
 const PAGE = 24
+
+// 정렬: 가나다순 ↔ 많이 찾는 순 (전체 사용자 조회 수). 고른 정렬은 이번 방문 동안 기억한다
+type Sort = 'name' | 'popular'
+const SORT_KEY = 'caffeine-id:wallet-sort'
+const readSort = (): Sort => {
+  try {
+    return sessionStorage.getItem(SORT_KEY) === 'popular' ? 'popular' : 'name'
+  } catch {
+    return 'name'
+  }
+}
+const saveSort = (s: Sort) => {
+  try {
+    sessionStorage.setItem(SORT_KEY, s)
+  } catch {
+    // 저장이 막힌 환경: 이번 화면 동안만
+  }
+}
 
 const shownKey = (c: string) => `caffeine-id:wallet:${c}`
 const readShown = (c: string) => {
@@ -43,11 +63,17 @@ export default function CategoryDetail() {
   const [shown, setShown] = useState(() => readShown(category))
   useEffect(() => saveShown(category, shown), [category, shown])
   const sentinel = useRef<HTMLDivElement>(null)
+  const [sort, setSort] = useState(readSort)
+  useEffect(() => saveSort(sort), [sort])
+  const views = useViewCounts()
 
-  const list = useMemo(
-    () => (items ?? []).filter((i) => i.app === category).sort((a, b) => a.name.localeCompare(b.name, 'ko')),
-    [items, category],
-  )
+  const list = useMemo(() => {
+    const byName = (a: { name: string }, b: { name: string }) => a.name.localeCompare(b.name, 'ko')
+    const inCategory = (items ?? []).filter((i) => i.app === category)
+    // 많이 찾는 순: 조회 수가 같으면(또는 아직 못 받았으면) 가나다순
+    const count = (id: string) => views?.get(id) ?? 0
+    return inCategory.sort(sort === 'popular' ? (a, b) => count(b.id) - count(a.id) || byName(a, b) : byName)
+  }, [items, category, sort, views])
 
   useEffect(() => {
     const el = sentinel.current
@@ -66,7 +92,16 @@ export default function CategoryDetail() {
       <p className={styles.sub}>{copy.categoryDetail.sub}</p>
       <div className={styles.meta}>
         <span className={styles.count}>{copy.categoryDetail.count(list.length)}</span>
-        <span className={styles.sort}>{copy.categoryDetail.sort}</span>
+        {/* 누를 때마다 정렬이 바뀐다 (피그마에는 '가나다순' 글자만 있어 같은 글자 스타일에 작은 화살표만 붙였다) */}
+        <button
+          type="button"
+          className={styles.sort}
+          aria-label={copy.categoryDetail.sortChange}
+          onClick={() => setSort((s) => (s === 'name' ? 'popular' : 'name'))}
+        >
+          {sort === 'name' ? copy.categoryDetail.sort : copy.categoryDetail.sortPopular}
+          <Icon name="chevron-left" className={styles.sortIcon} />
+        </button>
       </div>
       <div className={styles.wallet}>
         {list.slice(0, shown).map((i) =>

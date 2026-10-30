@@ -3,6 +3,12 @@
 '음식 속에 숨어 있는 카페인 찾기' 포트폴리오 과제. 먹기 전에 음식의 카페인을 신분증 형식으로 조회하는 PWA.
 현재 상태(2026-10-28): **개발 순서 1~6 완료, 7의 피그마 비교 완료** (토큰·아이콘·이미지, 공통 컴포넌트, 화면 9개, 인터랙션, PWA, 제보 전송). 배포 완료(2026-10-28): GitHub `kingseungmin423-afk/caffeine-id`(공개, main 올리면 Vercel 자동 배포), Vercel 프로젝트 `caffeine-id`(Root Directory `app`, 환경 변수 2개) → https://caffeine-id-eosin.vercel.app . 남은 것: 실제 폰에서 설치·오프라인 확인. 피그마 비교는 개발 서버 콘솔 `compareScreen(키)` (애니메이션 끝난 뒤, 375px). 의도한 차이: 한글 낱말 단위 줄바꿈(피그마는 글자 단위라 09 정보 줄 수가 다름), 05 사진 출처 줄(관련 음식이 아래로), 4칸 탭바, 커피 환산 실제 계산값.
 - PWA: `app/vite.config.ts`(vite-plugin-pwa 1.3.0, manifest 색은 토큰, 처음 방문 때 앱·DB·사진·글꼴 전부 캐시, 새 버전은 받자마자 교체(autoUpdate)되고 다음 실행·새로고침 때 화면에 적용. prompt 방식은 아이폰 홈 화면 앱에서 업데이트가 계속 미뤄져서 바꿈), `app/vercel.json`(주소 새로고침 → index.html). 임시 아이콘은 `npm run app-icons` → `public/icons/*` (진짜 아이콘 받으면 파일만 교체). 설치 팝업 자리 `screens/InstallPrompt.tsx` + `store/install.ts`(02 메인에서, 디자인 받기 전 임시). 배포본 확인은 `npm run build` 후 미리보기 `app-preview`(4173).
+- **토스 미니앱(앱인토스)도 함께 출시 예정 (2026-10-30 시작). PWA에 문제가 생기면 안 된다** → 같은 코드에서 빌드만 나눈다.
+  - `npm run build`(PWA·Vercel)는 그대로. `npm run build:toss` = `vite build --mode toss`(→ `dist-toss`, 상대 경로, 서비스 워커·manifest 없음, 확대 금지) + `ait build`(→ `app/<appName>.ait`, 콘솔에 올리는 파일). 확인은 미리보기 `app-toss-preview`(4175).
+  - 토스 전용 분기는 `config/target.ts`의 `IS_TOSS`(빌드 때 정해져 PWA 번들에는 토스 코드·SDK가 안 들어감). 토스 SDK 호출은 `toss/bridge.ts`를 `if (IS_TOSS) import(...)`로만.
+  - 토스에서 다른 점: 주소가 `#/item/…`(HashRouter), 설치 팝업·PC 틀 없음, 토스 내비게이션 바 색을 화면 배경에 맞춤(`TabDock.tsx` → `NavigationBar.setOptions`), 사진 출처는 링크 없이 글자(토스 밖 이동 금지).
+  - 설정 `app/apps-in-toss.config.ts`: SDK `@apps-in-toss/web-framework` 3.8.0, `appName`은 콘솔 등록 이름과 같아야 함(지금 임시 `caffeine-id`), 자체 뒤로가기가 있어 토스 뒤로가기·홈 버튼 끔.
+  - 출시 체크리스트(비게임): 토스 내비게이션 바 사용, 자체·토스 뒤로가기 동시 노출 금지, 첫 화면에서 뒤로가기 = 종료, 라이트 모드, 확대 금지, 토스 밖 이동·앱 설치 유도·자체 로그인 금지, HTTPS만, SSR 금지. 아직 샌드박스(실제 토스 환경)에서 확인 못 함: 위쪽 여백, 사진 올리기(input file), 안드로이드 뒤로가기, 제보 전송.
 - PC 화면(사용자 요청, 피그마에 없음): 마우스 쓰는 넓은 화면이면 양옆 회색(`--color-gray-200`), 앱은 가운데 375 폭을 화면 높이에 맞춰 키움(최대 1.5배). `screens/desktopFrame.ts` + `styles/base.css`. 상단 바 색(theme-color)은 화면 테마를 따라감(`TabDock.tsx`).
 - 인터랙션: 움직임 값은 `app/src/styles/motion.css`(피그마 프로토타입 값 + '추가' 표시), `app/src/config/motion.ts`. 탭바는 앱에 하나(`screens/TabDock.tsx`)라 화면이 바뀌어도 선택 표시가 튕기며 옮겨 간다. 가로 줄 끌기·카드 단위 멈춤은 `components/useDragScroll.ts` + `styles/drag-scroll.css`.
 - 탭바는 사용자 요청으로 4칸(홈·조회·제보·정보), 떠 있는 뒤로가기 없음 (피그마 Components v2 `TabBar`, 이전 2칸은 `TabBar 2칸 (이전)`). 파이프라인은 `app/design/README.md`, 컴포넌트 목록은 `app/design/components.md`, 비교용 갤러리는 개발 서버 `/dev/gallery`.

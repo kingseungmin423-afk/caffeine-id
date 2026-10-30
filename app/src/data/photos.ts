@@ -3,7 +3,10 @@ import data from './photos.json'
 
 export type Photo = (typeof data.photos)[keyof typeof data.photos]
 
-const photos = data.photos as Record<string, Photo>
+// 사진 주소는 '/photos/…'로 저장돼 있다. 빌드 기준 경로(PWA '/', 토스 './')를 붙인다
+const photos = Object.fromEntries(
+  Object.entries(data.photos as Record<string, Photo>).map(([k, p]) => [k, { ...p, src: import.meta.env.BASE_URL + p.src.replace(/^\//, '') }]),
+) as Record<string, Photo>
 const byItem = data.byItem as Record<string, string>
 
 export const photoFor = (itemId: string): Photo | null => {

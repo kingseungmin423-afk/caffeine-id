@@ -1,6 +1,7 @@
 // 화면 주소 (CLAUDE.md 화면·주소 표)
 import { lazy, Suspense, useEffect, type ReactNode } from 'react'
-import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, HashRouter, Navigate, Route, Routes } from 'react-router-dom'
+import { IS_TOSS } from './config/target'
 import { loadDb } from './data/db'
 import Category from './screens/Category'
 import CategoryDetail from './screens/CategoryDetail'
@@ -17,6 +18,9 @@ import { ScrollManager } from './screens/ScrollManager'
 import { TabDockProvider } from './screens/TabDock'
 import { useVisits } from './store/visits'
 
+// 토스 미니앱은 번들 파일을 그대로 열기 때문에 주소를 #/item/… 형태로 쓴다 (PWA는 지금처럼 /item/…)
+const Router = IS_TOSS ? HashRouter : BrowserRouter
+
 const Gallery = import.meta.env.DEV ? lazy(() => import('./dev/Gallery')) : null
 
 /** 처음 방문자는 메인 대신 온보딩 */
@@ -31,7 +35,7 @@ export default function App() {
     loadDb()
   }, [])
   return (
-    <BrowserRouter>
+    <Router>
       <ScrollManager />
       <TabDockProvider>
       <Routes>
@@ -65,6 +69,6 @@ export default function App() {
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
       </TabDockProvider>
-    </BrowserRouter>
+    </Router>
   )
 }

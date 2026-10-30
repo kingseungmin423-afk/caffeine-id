@@ -20,3 +20,7 @@ data/cache/
 .DS_Store
 Thumbs.db
 *.log
+
+# 토스 미니앱 빌드 결과 (npm run build:toss)
+dist-toss/
+*.ait

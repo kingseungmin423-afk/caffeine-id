@@ -7,12 +7,16 @@ import './styles/motion.css'
 import './styles/drag-scroll.css'
 import './screens/stage.css'
 import App from './App.tsx'
+import { IS_TOSS } from './config/target'
 import { startDesktopFrame } from './screens/desktopFrame'
 import { listenInstall } from './store/install'
 import { startReportSync } from './store/reports'
 
-startDesktopFrame()
-listenInstall()
+// PC 화면 틀·설치 안내는 PWA만 (토스 미니앱은 토스 앱 안에서만 열리고 설치 유도가 금지)
+if (!IS_TOSS) {
+  startDesktopFrame()
+  listenInstall()
+}
 startReportSync()
 
 createRoot(document.getElementById('root')!).render(

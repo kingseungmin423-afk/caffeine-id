@@ -3,6 +3,7 @@
 import { useEffect, useLayoutEffect, useState, type ReactNode } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { cx } from '../components/cx'
+import { IS_TOSS } from '../config/target'
 import { TabBar, type Tab } from '../components/TabBar'
 import { getLastLookup } from '../store/nav'
 import { paths } from './links'
@@ -26,11 +27,12 @@ function TabDock({ theme, tab }: Dock) {
   useLayoutEffect(() => {
     if (tab) setLast(tab)
   }, [tab])
-  // 휴대폰 상단 바(theme-color)도 화면 배경을 따라간다
+  // 휴대폰 상단 바(theme-color)도 화면 배경을 따라간다. 토스 미니앱은 토스 내비게이션 바를 같은 색으로
   useEffect(() => {
     const meta = document.querySelector('meta[name="theme-color"]')
-    const color = getComputedStyle(document.documentElement).getPropertyValue(theme === 'Dark' ? '--bg-inverse' : '--bg-canvas')
-    meta?.setAttribute('content', color.trim())
+    const color = getComputedStyle(document.documentElement).getPropertyValue(theme === 'Dark' ? '--bg-inverse' : '--bg-canvas').trim()
+    meta?.setAttribute('content', color)
+    if (IS_TOSS) void import('../toss/bridge').then((t) => t.matchNavigationBar(theme, color))
   }, [theme])
 
   const select = (t: Tab) => {

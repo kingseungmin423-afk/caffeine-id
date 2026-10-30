@@ -9,7 +9,13 @@ const tokens = tokenValues as Record<string, string | number>
 const token = (name: string) => String(tokens[name])
 
 // https://vite.dev/config/
-export default defineConfig({
+// mode 'toss'(npm run build:toss)는 토스 미니앱용: PWA(서비스 워커·manifest)를 빼고 dist-toss에 상대 경로로 만든다.
+// 그 밖의 mode는 지금의 PWA(Vercel) 빌드 그대로다.
+export default defineConfig(({ mode }) => {
+  const toss = mode === 'toss'
+  return {
+  base: toss ? './' : '/',
+  build: toss ? { outDir: 'dist-toss' } : undefined,
   plugins: [
     // 아이콘 SVG를 `?react`로 불러오면 React 컴포넌트가 된다 (currentColor로 토큰 색 적용)
     react(),
@@ -19,7 +25,16 @@ export default defineConfig({
       name: 'html-tokens',
       transformIndexHtml: (html) => html.replace(/%TOKEN:(--[\w-]+)%/g, (_, name: string) => token(name)),
     },
-    VitePWA({
+    // 토스 미니앱: 확대·축소 제스처를 막고(출시 체크리스트), 홈 화면 설치용 태그는 뺀다
+    toss && {
+      name: 'toss-html',
+      transformIndexHtml: (html: string) =>
+        html
+          .replace('initial-scale=1.0"', 'initial-scale=1.0, maximum-scale=1.0, user-scalable=no"')
+          .replace(/\s*<meta name="apple-mobile-web-app-[^>]*>/g, '')
+          .replace(/\s*<link rel="apple-touch-icon"[^>]*>/g, ''),
+    },
+    !toss && VitePWA({
       // 새 버전은 받자마자 대기 없이 교체되고, 다음에 앱을 열거나 새로고침할 때 화면에 적용된다 (업데이트 안내 UI 없음).
       // 'prompt'(모든 창을 닫아야 교체)는 아이폰 홈 화면 앱처럼 창이 잘 안 닫히는 환경에서 업데이트가 계속 미뤄졌다
       registerType: 'autoUpdate',
@@ -57,4 +72,5 @@ export default defineConfig({
   ],
   // 개발 서버가 의존성을 한 번에 묶도록 (나중에 발견되면 React가 두 벌로 묶여 화면이 안 뜨는 문제가 있었다)
   optimizeDeps: { include: ['react', 'react-dom/client', 'react/jsx-dev-runtime', 'react-router-dom'] },
+  }
 })

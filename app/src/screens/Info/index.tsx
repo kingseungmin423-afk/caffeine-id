@@ -1,6 +1,7 @@
 // 09 정보 (발급 규정, /info) + 사진 출처 목록 (CC BY·BY-SA 표시 의무)
 import { useState } from 'react'
 import { Article } from '../../components/Article'
+import { IS_TOSS } from '../../config/target'
 import { copy } from '../../copy'
 import { allPhotos, creditLine } from '../../data/photos'
 import { Screen } from '../Screen'
@@ -38,7 +39,8 @@ export default function Info() {
             {photos.map((p) => (
               <li key={p.src}>
                 {p.name_ko} —{' '}
-                {p.source_page ? (
+                {/* 토스 미니앱은 토스 밖 사이트로 이동할 수 없어(출시 체크리스트) 출처를 글자로만 표시한다 */}
+                {p.source_page && !IS_TOSS ? (
                   <a href={p.source_page} target="_blank" rel="noreferrer">
                     {creditLine(p)}
                   </a>

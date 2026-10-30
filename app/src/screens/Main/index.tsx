@@ -16,6 +16,7 @@ import { dailyQuiz, quizName, today, withAnd } from '../../data/quiz'
 import { readPick, savePick } from '../../store/quiz'
 import { useVisits } from '../../store/visits'
 import { paths } from '../links'
+import { IS_TOSS } from '../../config/target'
 import { InstallPrompt } from '../InstallPrompt'
 import { Screen } from '../Screen'
 import { useOpenItem } from '../useOpenItem'
@@ -128,7 +129,7 @@ export default function Main() {
           </p>
         </section>
       )}
-      <InstallPrompt />
+      {!IS_TOSS && <InstallPrompt />}
     </Screen>
   )
 }

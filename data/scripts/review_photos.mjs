@@ -43,6 +43,27 @@ async function api(params) {
 const rows = JSON.parse(readFileSync(resolve(PHOTOS, 'credits.json'), 'utf8'))
 const out = []
 for (const r of rows) {
+  // 오픈푸드팩츠 사진(2026-10-31~): 제품 사진 전체가 CC BY-SA 3.0. 제품 페이지가 아직 있는지만 본다
+  if (r.source_page.includes('openfoodfacts.org')) {
+    const code = r.source_page.split('/product/')[1]
+    let ok = false
+    try {
+      const res = await fetch(`https://world.openfoodfacts.org/api/v2/product/${code}?fields=code`, { headers: UA, signal: AbortSignal.timeout(40000) })
+      ok = res.ok && (await res.json()).status === 1
+    } catch {
+      // 접속 실패는 아래에서 '확인 못 함'
+    }
+    const row = {
+      photo_key: r.photo_key, title: r.title, license_then: r.license, license_now: ok ? 'CC BY-SA 3.0' : '',
+      license_same: ok, deletion: '', from_flickr: false, review: '해당 없음', trademark: true, personality: false,
+      artist: true, restrictions: '', status: ok ? '문제 없음' : '제품 페이지 확인 못 함',
+      trademark_note: '상표 있음(제품 식별 용도로만)',
+    }
+    out.push(row)
+    console.log(r.photo_key, row.status, '(오픈푸드팩츠)')
+    await sleep(1000)
+    continue
+  }
   const d = await api({
     action: 'query', titles: 'File:' + r.title, prop: 'imageinfo|categories|templates',
     iiprop: 'extmetadata', cllimit: 'max', tllimit: 'max', tlnamespace: '10',

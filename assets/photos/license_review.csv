@@ -36,7 +36,7 @@ orange_juice,Orange juice 1 edit1.jpg,Public domain,Public domain,True,,False,�
 water,Glass-of-water.jpg,Public domain,Public domain,True,,False,해당 없음,False,False,True,,문제 없음,
 cider,Lemon lime soda.jpg,CC BY-SA 4.0,CC BY-SA 4.0,True,,False,해당 없음,False,False,True,,문제 없음,
 brand_coca_cola,15-09-26-RalfR-WLC-0098 - Coca-Cola glass bottle (Germany).jpg,Public domain,Public domain,True,,False,해당 없음,True,False,True,trademarked,문제 없음,상표 있음(제품 식별 용도로만)
-brand_coke_zero,Coca Cola Skinny Can Black Sheep Coffee (55117537916).jpg,CC BY 4.0,CC BY 4.0,True,,True,통과,False,False,True,,문제 없음,상표 있음(제품 식별 용도로만)
+brand_coke_zero,Coca cola zero 1.jpg,CC BY 2.0,CC BY 2.0,True,,False,해당 없음,False,False,True,,문제 없음,상표 있음(제품 식별 용도로만)
 brand_pepsi,"Pepsi 355 ml, Canada (obverse), 2026-03-05.jpg",Public domain,Public domain,True,,False,해당 없음,True,False,True,trademarked,문제 없음,상표 있음(제품 식별 용도로만)
 brand_pepsi_zero,Pepsi Zero Sugar Lime Philippines version 2023.jpg,CC BY 4.0,CC BY 4.0,True,,False,해당 없음,False,False,True,,문제 없음,상표 있음(제품 식별 용도로만)
 brand_dr_pepper,Dr Pepper Dose 2024.jpg,CC BY-SA 4.0,CC BY-SA 4.0,True,,False,해당 없음,False,False,True,,문제 없음,상표 있음(제품 식별 용도로만)
@@ -80,6 +80,15 @@ bread,ToastedWhiteBread.jpg,Public domain,Public domain,True,,False,해당 없�
 cereal,Cereal.jpg,Public domain,Public domain,True,,False,해당 없음,False,False,True,,문제 없음,
 vanilla_icecream,Day 354 - Photo365 - White (23766206842).jpg,CC BY-SA 2.0,CC BY-SA 2.0,True,,True,통과,False,False,True,,문제 없음,
 cheesecake,Plain cheesecake slice.jpg,CC BY-SA 2.0,CC BY-SA 2.0,True,,True,통과,False,False,True,,문제 없음,
-brand_fanta_grape,Fanta Grape Flavored Soda (US version) (1 of 3).jpg,CC BY-SA 4.0,CC BY-SA 4.0,True,,False,해당 없음,False,False,True,,문제 없음,상표 있음(제품 식별 용도로만)
-brand_chilsung,Korea Chilsung Cider 01 (15891088219).jpg,CC BY-SA 2.0,CC BY-SA 2.0,True,,True,통과,False,False,True,,문제 없음,상표 있음(제품 식별 용도로만)
-brand_milkis,Milkis can.jpg,CC BY 4.0,CC BY 4.0,True,,False,해당 없음,False,False,True,,문제 없음,상표 있음(제품 식별 용도로만)
+brand_fanta_grape,Fanta Grape Flavor (Fanta) 4890008123308,CC BY-SA 3.0,CC BY-SA 3.0,True,,False,해당 없음,True,False,True,,문제 없음,상표 있음(제품 식별 용도로만)
+brand_chilsung,Chilsung cider (Chilsung) 8801056190019,CC BY-SA 3.0,CC BY-SA 3.0,True,,False,해당 없음,True,False,True,,문제 없음,상표 있음(제품 식별 용도로만)
+brand_milkis,Milkis (Lotte) 8801056237684,CC BY-SA 3.0,CC BY-SA 3.0,True,,False,해당 없음,True,False,True,,문제 없음,상표 있음(제품 식별 용도로만)
+brand_mountain_dew,Mountain Dew Flasche (cropped).jpg,CC BY-SA 4.0,CC BY-SA 4.0,True,,False,해당 없음,False,False,True,,문제 없음,상표 있음(제품 식별 용도로만)
+brand_sprite,Sprite lemon lime 1.jpg,CC BY 2.0,CC BY 2.0,True,,False,해당 없음,False,False,True,,문제 없음,상표 있음(제품 식별 용도로만)
+brand_sprite_zero,Sprite Zero Sugar 1.jpg,CC BY 2.0,CC BY 2.0,True,,False,해당 없음,False,False,True,,문제 없음,상표 있음(제품 식별 용도로만)
+brand_monster_strawberry,Monster Energy Ultra Strawberry Dreams (Monster) 5056784900482,CC BY-SA 3.0,CC BY-SA 3.0,True,,False,해당 없음,True,False,True,,문제 없음,상표 있음(제품 식별 용도로만)
+brand_monster_peachy,Ultra Peachy Keen (Monster Energy) 31080071,CC BY-SA 3.0,CC BY-SA 3.0,True,,False,해당 없음,True,False,True,,문제 없음,상표 있음(제품 식별 용도로만)
+brand_monster_mango,"Mango loco lattina da (Monster, Monster Energy) 5060639121854",CC BY-SA 3.0,CC BY-SA 3.0,True,,False,해당 없음,True,False,True,,문제 없음,상표 있음(제품 식별 용도로만)
+brand_red_bull_summer,The Peach Edition Sugarfree White Peach Energy Drink (Red Bull) 90474590,CC BY-SA 3.0,CC BY-SA 3.0,True,,False,해당 없음,True,False,True,,문제 없음,상표 있음(제품 식별 용도로만)
+brand_xs_cranberry,XS energy drink () 0859710000004,CC BY-SA 3.0,CC BY-SA 3.0,True,,False,해당 없음,True,False,True,,문제 없음,상표 있음(제품 식별 용도로만)
+brand_xs_tropical,Xs tropical energy drink (Xs) 0859710000622,CC BY-SA 3.0,CC BY-SA 3.0,True,,False,해당 없음,True,False,True,,문제 없음,상표 있음(제품 식별 용도로만)

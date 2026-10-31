@@ -1,3 +1,4 @@
+import { readFileSync } from 'node:fs'
 import { defineConfig, type Plugin } from 'vite'
 import react from '@vitejs/plugin-react'
 import svgr from 'vite-plugin-svgr'
@@ -6,6 +7,7 @@ import tokenValues from './src/styles/tokens.resolved.json'
 import dbData from './src/data/db.json'
 import { CATEGORIES } from './src/data/categories'
 import { SITE_URL } from './src/config/site'
+import { copy } from './src/copy'
 
 // 앱 정보(manifest)의 색은 피그마 토큰에서 (npm run tokens가 만든 값)
 const tokens = tokenValues as Record<string, string | number>
@@ -14,16 +16,29 @@ const token = (name: string) => String(tokens[name])
 // 검색엔진 등록·링크 공유용 (PWA만)
 // - index.html: 대표 주소(canonical), 공유 미리보기(Open Graph), 네이버 소유 확인
 //   (구글은 가비아 DNS의 TXT 레코드로 소유 확인을 했다)
-// - 빌드 결과에 robots.txt, sitemap.xml(홈·분류·정보 + 음식 1,603개), og-image.png(1200×630) 추가
+// - 구글 검색 결과용: 기본 설명을 홈 화면 설명(copy.seo.home)으로, 사이트 이름(WebSite 구조화 데이터), favicon.ico
+// - 빌드 결과에 robots.txt, sitemap.xml(홈·분류·정보 + 음식 전체), og-image.png(1200×630), favicon.ico 추가
 const NAVER_SITE_VERIFICATION = '168ecfbbc17dee6b1e981311170539000aeb4599'
 function seo(): Plugin {
   const page = (path: string) => SITE_URL + encodeURI(path)
+  // 구글 검색 결과에서 주소(caffeineid.com) 대신 보여 줄 사이트 이름
+  const siteJsonLd = JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: copy.appName,
+    alternateName: ['카페인신분증', 'caffeineid'],
+    url: `${SITE_URL}/`,
+  })
   return {
     name: 'seo',
     transformIndexHtml: (html) =>
-      html.replace(
+      html
+        // 화면이 열리기 전(검색엔진이 먼저 읽는) 기본 설명도 홈 화면 설명과 같게
+        .replace(/<meta name="description" content="[^"]*" \/>/, `<meta name="description" content="${copy.seo.home.description}" />`)
+        .replace(
         '</head>',
         [
+          `<script type="application/ld+json">${siteJsonLd}</script>`,
           `<link rel="canonical" href="${SITE_URL}/" />`,
           `<meta name="naver-site-verification" content="${NAVER_SITE_VERIFICATION}" />`,
           `<meta property="og:type" content="website" />`,
@@ -56,6 +71,13 @@ function seo(): Plugin {
       const sharp = (await import('sharp')).default
       const og = await sharp('design/store-screenshots/6-landscape.png').resize(1200, 630, { fit: 'cover' }).png().toBuffer()
       this.emitFile({ type: 'asset', fileName: 'og-image.png', source: og })
+      // /favicon.ico: 구글·브라우저가 따로 찾는 주소. 48px PNG를 그대로 담은 ICO (ICO 안에 PNG를 넣는 형식)
+      const png = readFileSync('public/icons/favicon-48.png')
+      const ico = Buffer.alloc(22)
+      ico.writeUInt16LE(0, 0); ico.writeUInt16LE(1, 2); ico.writeUInt16LE(1, 4) // 아이콘 1개
+      ico.writeUInt8(48, 6); ico.writeUInt8(48, 7); ico.writeUInt16LE(1, 10); ico.writeUInt16LE(32, 12)
+      ico.writeUInt32LE(png.length, 14); ico.writeUInt32LE(22, 18)
+      this.emitFile({ type: 'asset', fileName: 'favicon.ico', source: Buffer.concat([ico, png]) })
     },
   }
 }

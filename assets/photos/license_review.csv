@@ -25,8 +25,6 @@ chocolate_milk,Chocolate milk.JPG,CC0,CC0,True,,False,해당 없음,False,False,
 cocoa_powder,Cocoa-powder-1883108.jpg,CC0,CC0,True,,False,해당 없음,False,False,True,,문제 없음,
 tiramisu,Buche Tiramisu 1.jpg,CC BY-SA 3.0,CC BY-SA 3.0,True,,False,해당 없음,False,False,True,,문제 없음,
 chocolate_icecream,Vegan Double Chocolate Brownie Chunk Ice Cream (4869832969).jpg,CC BY-SA 2.0,CC BY-SA 2.0,True,,True,통과,False,False,True,,문제 없음,
-greentea_icecream,Matcha ice cream 001.jpg,CC BY 2.0,CC BY 2.0,True,,True,통과,False,False,True,,문제 없음,
-matcha_cookie,Matcha cookies.jpg,CC BY 2.0,CC BY 2.0,True,,True,통과,False,False,True,,문제 없음,
 chocochip_cookie,Choc-Chip-Cookie.jpg,Public domain,Public domain,True,,False,해당 없음,False,False,True,,문제 없음,
 brownie,Brownie-dessert-cake-sweet-45202.jpg,CC0,CC0,True,,False,해당 없음,False,False,True,,문제 없음,
 chocolate_cake,Baileys Chocolate Cake - Cafe Coho 2026-01-08.jpg,CC0,CC0,True,,False,해당 없음,False,False,True,,문제 없음,
@@ -42,7 +40,6 @@ brand_pepsi_zero,Pepsi Zero Sugar Lime Philippines version 2023.jpg,CC BY 4.0,CC
 brand_dr_pepper,Dr Pepper Dose 2024.jpg,CC BY-SA 4.0,CC BY-SA 4.0,True,,False,해당 없음,False,False,True,,문제 없음,상표 있음(제품 식별 용도로만)
 brand_monster,Monster Energy drink (cropped).jpg,CC BY-SA 4.0,CC BY-SA 4.0,True,,False,해당 없음,False,False,True,,문제 없음,상표 있음(제품 식별 용도로만)
 brand_red_bull,Red Bull ice.jpg,CC BY-SA 4.0,CC BY-SA 4.0,True,,False,해당 없음,False,False,True,,문제 없음,상표 있음(제품 식별 용도로만)
-brand_starbucks,Starbucks Coffee (29871391053).jpg,CC BY 2.0,CC BY 2.0,True,,True,통과,False,False,True,,문제 없음,상표 있음(제품 식별 용도로만)
 brand_hersheys,"2020-07-22 10 32 43 A wrapped Hershey's Milk Chocolate bar in the Dulles section of Sterling, Loudoun County, Virginia.jpg",CC BY-SA 4.0,CC BY-SA 4.0,True,,False,해당 없음,False,False,True,,문제 없음,상표 있음(제품 식별 용도로만)
 brand_kisses,Hershey's Kisses and Cherry Cordial Creme Kisses.jpg,CC BY-SA 3.0,CC BY-SA 3.0,True,,False,해당 없음,True,False,True,trademarked,문제 없음,상표 있음(제품 식별 용도로만)
 brand_toblerone,Toblerone 3362.jpg,CC BY 3.0,CC BY 3.0,True,,False,해당 없음,False,False,True,,문제 없음,상표 있음(제품 식별 용도로만)
@@ -54,7 +51,6 @@ fruit_smoothie,Glass of strawberry smoothie (6828826294).jpg,CC BY 2.0,CC BY 2.0
 coffee_frappe,Starbucks iced persimmon frappuccino.jpg,CC0,CC0,True,,False,해당 없음,False,False,True,,문제 없음,
 chocolate_shake,Chocolate Milkshake (52354323549).jpg,CC BY-SA 2.0,CC BY-SA 2.0,True,,True,통과,False,False,True,,문제 없음,
 caramel_macchiato,Latte macchiato with coffee beans.jpg,CC BY-SA 2.5,CC BY-SA 2.5,True,,False,해당 없음,False,False,True,,문제 없음,
-cream_coffee,Espresso Coffee Milkshake.jpg,CC BY 2.0,CC BY 2.0,True,,True,통과,False,False,True,,문제 없음,
 affogato,Affogato al Caffe.jpg,CC BY-SA 3.0,CC BY-SA 3.0,True,,False,해당 없음,False,False,True,,문제 없음,
 flat_white,Flat White 1.jpg,CC BY-SA 3.0,CC BY-SA 3.0,True,,False,해당 없음,False,False,True,,문제 없음,
 earl_grey,Frisch aufgebrühter EarlGrey Tee.jpg,CC BY-SA 3.0,CC BY-SA 3.0,True,,False,해당 없음,False,False,True,,문제 없음,
@@ -68,7 +64,6 @@ drug_capsules,Xarelto.jpg,CC0,CC0,True,,False,해당 없음,False,False,True,,�
 drug_syrup,Coughsyrup-promethcode.jpg,Public domain,Public domain,True,,False,해당 없음,False,False,True,,문제 없음,
 drug_vial,Antique Amber Medicine Bottle (42378014251).jpg,CC BY 2.0,CC BY 2.0,True,,True,통과,False,False,True,,문제 없음,
 coffee_capsule,Nespresso-capsules AB-03.jpg,CC BY-SA 4.0,CC BY-SA 4.0,True,,False,해당 없음,False,False,True,,문제 없음,
-teabag,City of London Cemetery café tea bag mug of tea.jpg,CC BY-SA 4.0,CC BY-SA 4.0,True,,False,해당 없음,False,False,True,,문제 없음,
 strawberry_milk,Strawberry Milk in a glass cup..jpg,CC BY-SA 4.0,CC BY-SA 4.0,True,,False,해당 없음,False,False,True,,문제 없음,
 soy_milk,Soy milk (2).jpg,CC BY-SA 3.0,CC BY-SA 3.0,True,,False,해당 없음,False,False,True,,문제 없음,
 yogurt,"2020-02-19 16 31 03 A cup of Chobani Greek Yogurt with Blueberry on the Bottom before being mixed in the Franklin Farm section of Oak Hill, Fairfax County, Virginia.jpg",CC BY-SA 4.0,CC BY-SA 4.0,True,,False,해당 없음,False,False,True,,문제 없음,
@@ -79,7 +74,6 @@ wine,Glass wine white background.jpg,Public domain,Public domain,True,,False,해
 bread,ToastedWhiteBread.jpg,Public domain,Public domain,True,,False,해당 없음,False,False,True,,문제 없음,
 cereal,Cereal.jpg,Public domain,Public domain,True,,False,해당 없음,False,False,True,,문제 없음,
 vanilla_icecream,Day 354 - Photo365 - White (23766206842).jpg,CC BY-SA 2.0,CC BY-SA 2.0,True,,True,통과,False,False,True,,문제 없음,
-cheesecake,Plain cheesecake slice.jpg,CC BY-SA 2.0,CC BY-SA 2.0,True,,True,통과,False,False,True,,문제 없음,
 brand_fanta_grape,Fanta Grape Flavor (Fanta) 4890008123308,CC BY-SA 3.0,CC BY-SA 3.0,True,,False,해당 없음,True,False,True,,문제 없음,상표 있음(제품 식별 용도로만)
 brand_chilsung,Chilsung cider (Chilsung) 8801056190019,CC BY-SA 3.0,CC BY-SA 3.0,True,,False,해당 없음,True,False,True,,문제 없음,상표 있음(제품 식별 용도로만)
 brand_milkis,Milkis (Lotte) 8801056237684,CC BY-SA 3.0,CC BY-SA 3.0,True,,False,해당 없음,True,False,True,,문제 없음,상표 있음(제품 식별 용도로만)
@@ -90,7 +84,6 @@ brand_monster_strawberry,Monster Energy Ultra Strawberry Dreams (Monster) 505678
 brand_monster_peachy,Ultra Peachy Keen (Monster Energy) 31080071,CC BY-SA 3.0,CC BY-SA 3.0,True,,False,해당 없음,True,False,True,,문제 없음,상표 있음(제품 식별 용도로만)
 brand_monster_mango,"Mango loco lattina da (Monster, Monster Energy) 5060639121854",CC BY-SA 3.0,CC BY-SA 3.0,True,,False,해당 없음,True,False,True,,문제 없음,상표 있음(제품 식별 용도로만)
 brand_red_bull_summer,The Peach Edition Sugarfree White Peach Energy Drink (Red Bull) 90474590,CC BY-SA 3.0,CC BY-SA 3.0,True,,False,해당 없음,True,False,True,,문제 없음,상표 있음(제품 식별 용도로만)
-brand_xs_cranberry,XS energy drink () 0859710000004,CC BY-SA 3.0,CC BY-SA 3.0,True,,False,해당 없음,True,False,True,,문제 없음,상표 있음(제품 식별 용도로만)
 brand_xs_tropical,Xs tropical energy drink (Xs) 0859710000622,CC BY-SA 3.0,CC BY-SA 3.0,True,,False,해당 없음,True,False,True,,문제 없음,상표 있음(제품 식별 용도로만)
 misugaru,Misu.jpg,CC BY-SA 2.0 kr,CC BY-SA 2.0 kr,True,,False,해당 없음,False,False,True,,문제 없음,
 java_chip_frappuccino,Starbucks Chocolate Java Mint Frappuccino (52933436830).jpg,CC BY-SA 2.0,CC BY-SA 2.0,True,,True,통과,False,False,True,,문제 없음,
@@ -104,6 +97,3 @@ lemonade,Crystal Light lemonade.jpg,CC0,CC0,True,,False,해당 없음,False,Fals
 mojito,15-09-26-RalfR-WLC-0067.jpg,CC BY-SA 3.0,CC BY-SA 3.0,True,,False,해당 없음,False,False,True,,문제 없음,
 blue_lemonade,"2025-11-07 14 58 45 A glass of blue raspberry lemonade at the Applebee's along U.S. Route 1 (Brunswick Pike) in Lawrence Township, Mercer County, New Jersey.jpg",CC BY-SA 4.0,CC BY-SA 4.0,True,,False,해당 없음,False,False,True,,문제 없음,
 chocolate_soft_serve,Soft serve in a cup 01.jpg,CC BY 4.0,CC BY 4.0,True,,False,해당 없음,False,False,True,,문제 없음,
-brand_jello_pudding,"2019-01-25 20 08 29 An unopened cup of Jell-O chocolate pudding in the Franklin Farm section of Oak Hill, Fairfax County, Virginia.jpg",CC BY-SA 4.0,CC BY-SA 4.0,True,,False,해당 없음,False,False,True,,문제 없음,상표 있음(제품 식별 용도로만)
-brand_hersheys_syrup,HERSHEYS SYRUP CHOC (Hershey's) 0034000003129,CC BY-SA 3.0,CC BY-SA 3.0,True,,False,해당 없음,True,False,True,,문제 없음,상표 있음(제품 식별 용도로만)
-brand_nutella,"Nutella (Nutella, Ferrero) 3017620429484",CC BY-SA 3.0,CC BY-SA 3.0,True,,False,해당 없음,True,False,True,,문제 없음,상표 있음(제품 식별 용도로만)

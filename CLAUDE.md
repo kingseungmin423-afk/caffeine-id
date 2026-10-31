@@ -17,7 +17,7 @@
 - 제보(08) 6단계 코드 완료: `store/reports.ts`(IndexedDB 보관함 → Supabase REST로 글 넣고 사진 올림, 오프라인·실패면 보관했다가 연결/앱 시작 때 자동 전송, 사진은 긴 변 1280으로 다시 저장해 EXIF 제거, 기기 하루 5건, 숨은 칸·2.5초 미만 제출은 봇으로 버림), 기준값 `config/report.ts`, 서버 `app/supabase/schema.sql`(익명 insert만, IP 해시로 1시간 5건·전체 1분 30건, 비공개 사진 통 2MB), 준비 안내 `app/supabase/README.md`. 키는 `app/.env.local`(`.env.example` 참고)·Vercel 환경 변수. 2026-10-28 실제 프로젝트(`ypkzddafxcxumgamozsa`) 연결·전송 확인 완료 (익명 읽기·덮어쓰기·모르는 번호 사진 모두 막힘). 배포 때 Vercel 환경 변수에도 같은 두 값 필요.
 - 북마크(2026-10-31 사용자 요청, 피그마에 없음): 05 결과 상단 오른쪽(뒤로가기와 좌우 대칭) 버튼으로 켜고 끔, 기기 저장 `store/bookmarks.ts`. 02-2에서는 정렬과 상관없이 맨 위 + 카드 제목 줄 오른쪽에 작은 표시. 아이콘은 피그마 Components v2 `icon/bookmark`(`85:1785`)·`icon/bookmark-fill`(`85:1790`) → `npm run icons`.
 - 02-2 정렬(2026-10-31 사용자 요청): '가나다순' 글자를 누를 때마다 가나다순 ↔ 많이 찾는 순. 많이 찾는 순 = 전체 사용자 조회 수(Supabase `item_views` + `record_view` 함수, `app/supabase/item-views.sql`, 익명 숫자만·같은 접속 주소는 음식마다 하루 1번). 앱 `store/views.ts`(결과 화면에서 보냄, 분류 상세에서 받아 옴), 연결 공통 `store/supabase.ts`. 서버에 연결 안 되면 가나다순으로 대신.
-- 사진 없는 음식의 대체 일러스트는 만들지 않기로 함(사용자 결정, 2026-10-28) → 사진 없으면 기존 '?' 카드. 출시 전 사진 출처 재검사는 Node판 `node data/scripts/review_photos.mjs`(review_photos.py와 같은 점검 + 앱 표기 대조)로 2026-10-31 실행: 84장 모두 문제 없음 → `assets/photos/license_review.csv`.
+- 사진 없는 음식의 대체 일러스트는 만들지 않기로 함(사용자 결정, 2026-10-28) → 사진 없으면 기존 '?' 카드. 출시 전 사진 출처 재검사는 Node판 `node data/scripts/review_photos.mjs`(review_photos.py와 같은 점검 + 앱 표기 대조)로 2026-10-31 실행: 108장 모두 문제 없음 → `assets/photos/license_review.csv`.
 
 ## 절대 규칙
 - **피그마 디자인 규칙(색, 간격, 모서리, 글꼴, 레이아웃)을 변경·수정하지 않는다.** 화면은 피그마 그대로 구현한다.
@@ -62,8 +62,8 @@
 ## 데이터·계산 규칙
 - DB: `data/caffeine_db.json` (1,609개). 설명은 `data/README.md`. 새 출처는 항상 맨 끝에 붙인다(음식 번호가 바뀌면 사진·북마크·조회 수 연결이 깨짐). 2026-10-31 일반 탄산음료 6개 추가(`data/scripts/collect_soda.mjs`, 이 PC에 파이썬이 없어 Node로 DB 끝에 붙임) → `cd app && npm run db`
 - **계산은 반드시 조사한 식약처 자료 기준.** 커피 환산 = 카페인 ÷ **132mg**(식약처 전문점 커피 국내 평균, DB `caf-00304`), 하루 권고량 = 성인 **400mg**(식약처). 피그마의 '0.23잔'은 예시 값일 뿐. 개발 시 식약처 원문을 다시 확인하고 출처와 함께 설정 파일 한 곳에 둔다.
-- 이미지: `assets/photos/cutout/*.png`(배경 제거 사진 84장, `credits.csv`의 `item_ids`로 항목 연결, 브랜드 사진 우선. 2026-10-31 35장 추가: 사람·손 없음, 글자는 한국어·영어만(사용자 기준), 종류 대표 사진을 같은 종류 메뉴에 연결해 사진 붙은 음식 1,355개 → `cd app && npm run photos`) → 없으면 `assets/food/{image_key}.svg` 일러스트
-- **사진 출처 표시 필수**(CC BY·BY-SA 57장): 09 정보 화면 맨 아래 '사진 출처' 목록 + 06 카드 뒷면 출처 칸 아래 한 줄. `credits.csv`의 `credit`, `modified`(배경 제거 = 수정함) 사용. 출시 전 `python data/scripts/review_photos.py`로 재검사.
+- 이미지: `assets/photos/cutout/*.png`(배경 제거 사진 108장, `credits.csv`의 `item_ids`로 항목 연결, 브랜드 사진 우선. 2026-10-31 35장 추가: 사람·손 없음, 글자는 한국어·영어만(사용자 기준), 종류 대표 사진을 같은 종류 메뉴에 연결해 사진 붙은 음식 1,383개(2026-10-31 브랜드·종류 사진 추가 후) → `cd app && npm run photos`) → 없으면 `assets/food/{image_key}.svg` 일러스트
+- **사진 출처 표시 필수**(CC BY·BY-SA 대부분, 오픈푸드팩츠 사진은 CC BY-SA 3.0): 09 정보 화면 맨 아래 '사진 출처' 목록 + 06 카드 뒷면 출처 칸 아래 한 줄. `credits.csv`의 `credit`, `modified`(배경 제거 = 수정함) 사용. 출시 전 `python data/scripts/review_photos.py`로 재검사.
 
 ## 음식 제보 (Supabase)
 - 앱에서 바로 Supabase로 저장(구글폼 사용 안 함). 사진은 Supabase Storage.
